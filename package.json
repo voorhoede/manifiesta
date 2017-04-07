@@ -1,0 +1,24 @@
+{
+  "name": "manifiesta",
+  "version": "1.0.0",
+  "description": "Configure and preview your Progressive Web App Manifest.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "start:static": "http-server src/ -c-1 -o -p 3378",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jasper Moelker <jasper@voorhoede.nl> (https://voorhoede.nl/)",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "0.9.0"
+  },
+  "dependencies": {
+    "cheerio": "0.22.0",
+    "express": "4.15.2",
+    "nodemon": "1.11.0",
+    "request": "2.81.0",
+    "request-promise": "4.2.0"
+  }
+}
