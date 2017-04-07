@@ -56,6 +56,7 @@ Emulate appearance of the app on different screens: install prompt in browser, a
 
 ## Extras
 
+* Add message when content fails to load in iframe. May be undetectable, so could add text behind iframe after x seconds.
 * Support `meta[name="theme_color"]`.
 * Support Android "back", "home" and "options" buttons in bottom bar.
 * Support "show tabs" button in browser to show tab in overview with theme color.

@@ -7,6 +7,7 @@
     <title>Manifiesta</title>
     <meta name="description" content="Configure and preview your Progressive Web App Manifest.">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
 </head>
 <body>
 <h1>Manifiesta</h1>
@@ -35,29 +36,7 @@
             <button type="button" data-manifest-form__fetch>Fetch manifest from site</button>
             <div>
                 <label for="manifest">Manifest (JSON)</label>
-                <textarea name="manifest" id="manifest">
-    {
-    "short_name": "De Voorhoede",
-    "name": "De Voorhoede \n Front-end Developers",
-    "start_url": "/?homescreen=true",
-    "display": "standalone",
-    "orientation": "portrait",
-    "theme_color": "#12353C",
-    "background_color": "#E7D81D",
-    "icons": [
-        {
-        "src": "/assets/images/logo.png",
-        "sizes": "250x250",
-        "type": "image/png"
-        },
-        {
-        "src": "/assets/images/logo-144.png",
-        "sizes": "144x144",
-        "type": "image/png"
-        }
-    ]
-    }
-                </textarea>
+                <textarea id="manifest" name="manifest" required></textarea>
             </div>
             <button type="submit">Preview</button>
         </form>
@@ -66,13 +45,20 @@
     <div class="grid__item">
         <div class="device device--nexus-5x">
             <!-- @todo: add and configure `sandbox` on iframe? -->
-            <div class="device__viewport device__viewport--nexus-5x" data-browser-screen>
+            <div class="device__viewport device__viewport--nexus-5x browser-screen" data-browser-screen>
                 <div class="browser-screen__top-bar">
                     <input readonly class="browser-screen__url-input" data-browser-screen__url-input>
                     <button>1</button>
                     <button disabled>.</button>
                 </div>
                 <iframe src="" frameborder="0" class="browser-screen__content" data-browser-screen__content></iframe>
+                <div class="browser-screen__prompt">
+                    <button type="button" class="browser-screen__prompt-close">×</button>
+                    <img class="browser-screen__prompt-icon" data-browser-screen__prompt-icon>
+                    <span class="browser-screen__prompt-title" data-browser-screen__prompt-title></span>
+                    <span class="browser-screen__prompt-subtitle" data-browser-screen__prompt-subtitle></span>
+                    <button type="button" class="browser-screen__prompt-add">Add to homescreen</button>
+                </div>
             </div>
         </div>
     </div>
@@ -109,152 +95,6 @@
 
 </div>
 
-    <style>
-        :root {
-            --chrome-top-bar-height: 56px;
-        }
-
-        html {
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        *, *:before, *:after {
-            box-sizing: inherit;
-        }
-
-        .grid {
-            display: flex;
-        }
-        .grid__item {
-            max-width: 350px;
-            padding-right: 20px;
-        }
-
-        .form {
-            width: 100%;
-            min-width: 300px;
-        }
-
-        input[type="url"],
-        textarea {
-            width: 100%;
-            margin-bottom: 1em;
-        }
-
-        textarea {
-            height: 40em;
-        }
-
-
-        .device {
-            transform: scale(.7);
-            transform-origin: top left;
-        }
-
-        .device__viewport {
-            position: relative;
-            border: none;
-        }
-
-        .device--nexus-5x {
-            font-family: 'Roboto', sans-serif;
-            width: 452px;
-            height: 918px;
-            padding-top: 112px;
-            padding-left: 18px;
-            background-image: url('assets/nexus-5x.png');
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
-
-        .device__viewport--nexus-5x {
-            width: 412px;
-            height: 660px;
-            background-image: url('assets/android-background.jpg');
-            background-size: cover;
-        }
-
-        .browser-screen__top-bar {
-            display: flex;
-            width: 100%;
-            height: var(--chrome-top-bar-height);
-            background-color: #F5F5F5;
-            padding: 9px;
-        }
-
-        .browser-screen__top-bar button {
-            width: 38px;
-            height: 38px;
-            margin-left: 9px;
-            color: white;
-        }
-
-        .browser-screen__url-input {
-            display: block;
-            width: 100%;
-            height: 38px;
-            color: black;
-            font-size: 16px;
-            padding: 0 5px;
-        }
-
-        .browser-screen__content {
-            width: 100%;
-            height: calc(100% - var(--chrome-top-bar-height));
-            background-color: white;
-        }
-
-
-        .home-screen__shortcut {
-            float: left;
-            width: 80px;
-            height: 80px;
-            margin: 10px;
-            text-align: center;
-            background: none;
-            border: none;
-        }
-
-        .home-screen__icon {
-            max-width: 64px;
-            max-height: 64px;
-            border: none;
-        }
-
-        .home-screen__name {
-            display: block;
-            color: white;
-            text-shadow: 1px 1px 2px black;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-
-        .splash-screen {
-            width: 100%;
-            height: 100%;
-        }
-
-        .splash-screen__icon {
-            width: 128px;
-            height: auto;
-            position: absolute;
-            top: calc(50% - 64px);
-            left: calc(50% - 64px);
-        }
-
-        .splash-screen__name {
-            position: absolute;
-            top: 50%;
-            margin-top: 80px;
-            width: 100%;
-            text-align: center;
-            padding: 0 1em 2em;
-            overflow: hidden;
-            font-size: 1.7em;
-        }
-    </style>
-
     <script>
     (function(){
         var form = document.querySelector('[data-manifest-form]');
@@ -262,6 +102,10 @@
         var homeScreen = document.querySelector('[data-home-screen]');
         var splashScreen = document.querySelector('[data-splash-screen]');
         var appScreen = document.querySelector('[data-app-screen]');
+
+        document.querySelector('iframe').addEventListener('error', function(err) {
+            console.log('err!', err);
+        });
 
         form.addEventListener('submit', function(event){
             event.preventDefault();
@@ -272,6 +116,10 @@
 
             browserScreen.querySelector('[data-browser-screen__url-input]').value = siteUrl;
             browserScreen.querySelector('[data-browser-screen__content]').src = siteUrl;
+            browserScreen.querySelector('[data-browser-screen__prompt-icon]').src = iconUrl;
+            browserScreen.querySelector('[data-browser-screen__prompt-title]').innerHTML = manifest.name;
+            browserScreen.querySelector('[data-browser-screen__prompt-subtitle]').innerHTML = (new URL(siteUrl)).hostname;
+            browserScreen.setAttribute('data--loaded', true);
 
             homeScreen.querySelector('[data-home-screen__icon]').src = iconUrl;
             homeScreen.querySelector('[data-home-screen__name]').innerHTML = manifest.short_name;
@@ -288,17 +136,20 @@
                 .then(function(response){ return response.json(); })
                 .then(function(response){
                     form.manifest.value = JSON.stringify(response.data, null, 2);
+                    validateJsonInput();
                 });
         });
 
-        form.manifest.addEventListener('input', function() {
+        form.manifest.addEventListener('input', validateJsonInput());
+
+        function validateJsonInput() {
             try {
                 JSON.parse(form.manifest.value);
                 form.manifest.setCustomValidity('');
             } catch (err) {
                 form.manifest.setCustomValidity('Input must be valid JSON');
             }
-        })
+        }
 
         function getLargestIcon(icons) {
             return icons.map(function(icon) {
