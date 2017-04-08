@@ -15,13 +15,13 @@
 <form data-settings-form>
     <div>
         <label for="scaleInput">Zoom</label>
-        <input name="scale" id="scaleInput" type="range" value="0.7" min="0" max="1" step="0.05">
+        <input name="scale" id="scaleInput" type="range" value="0.7" min="0" max="1" step="0.05" disabled>
         <output for="scaleInput">70%</output>
     </div>
     <fieldset>
         <legend>Orientation</legend>
         <label><input name="orientation" type="radio" value="portrait" checked>portrait</label>
-        <label><input name="orientation" type="radio" value="landscape">landscape</label>
+        <label><input name="orientation" type="radio" value="landscape" disabled>landscape</label>
     </fieldset>
 </form>
 
@@ -129,6 +129,7 @@
             splashScreen.querySelector('[data-splash-screen__name]').innerHTML = manifest.name.replace('\n', '<br>');
 
             appScreen.src = new URL(manifest.start_url, siteUrl);
+            appScreen.setAttribute('data--orientation', manifest.orientation);
         });
 
         form.querySelector('[data-manifest-form__fetch]').addEventListener('click', function(){

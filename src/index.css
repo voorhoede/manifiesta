@@ -1,6 +1,8 @@
 
 :root {
     --chrome-top-bar-height: 56px;
+    --nexus-5x-viewport-width: 412px;
+    --nexus-5x-viewport-height: 660px;
 }
 
 html {
@@ -57,10 +59,17 @@ textarea {
 }
 
 .device__viewport--nexus-5x {
-    width: 412px;
-    height: 660px;
+    width: var(--nexus-5x-viewport-width);
+    height: var(--nexus-5x-viewport-height);
     background-image: url('assets/android-background.jpg');
     background-size: cover;
+}
+
+.device__viewport--nexus-5x[data--orientation="landscape"] {
+    width: var(--nexus-5x-viewport-height);
+    height: var(--nexus-5x-viewport-width);
+    transform-origin: top left;
+    transform: translateX(var(--nexus-5x-viewport-width)) rotateZ(90deg);
 }
 
 .browser-screen__top-bar {
