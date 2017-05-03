@@ -91,6 +91,12 @@ body {
     background-color: #FFF;
 }
 
+h1,
+h2,
+h3 {
+    font-family: 'Raleway', sans-serif;
+}
+
 a,
 a:visited {
     color: inherit;
@@ -98,7 +104,8 @@ a:visited {
 }
 
 a,
-input[type="submit"] {
+input[type="submit"],
+button {
     cursor: pointer;
     -webkit-transition: color 250ms ease, border-bottom 250ms ease;
     transition: color 250ms ease, border-bottom 250ms ease;
@@ -272,15 +279,27 @@ section {
     }
 }
 
+.create {
+    margin-bottom: 5rem;
+}
+
 @media (min-width: 768px) {
     .create {
         max-width: 30%;
+        margin: 0;
     }
 }
 
 .create form {
+    padding: 0rem 1rem;
     background-color: #12353C;
     color: #FFF;
+}
+
+@media (min-width: 768px) {
+    .create form {
+        padding: 0;
+    }
 }
 
 fieldset {
@@ -300,11 +319,10 @@ form fieldset legend {
     position: relative;
     padding: 1rem;
     background-color: #1A4E57;
-    border-bottom: solid 1px #12353C;
 }
 
-.dropdown:last-of-type {
-    border: 0;
+.dropdown:not(:nth-of-type(8)) {
+    border-bottom: solid 1px #12353C;
 }
 
 .tooltip {
@@ -362,6 +380,7 @@ label.field span {
 div.field {
     max-height: 10rem;
     overflow: hidden;
+    margin-top: 1rem;
     -webkit-transition: max-height .35s;
     -o-transition: max-height .35s;
     transition: max-height .35s;
@@ -371,8 +390,12 @@ input.field:checked ~ div.field {
     max-height: 0;
 }
 
+label.field span {
+    transform: rotate(-180deg);
+}
+
 input.field:checked ~ label.field span {
-    transform: rotate(180deg);
+    transform: rotate(0deg);
 }
 
 .dropdown span:hover .tooltip {
@@ -394,7 +417,6 @@ input.field:checked ~ label.field span {
 
 .dropdown label {
     cursor: pointer;
-    margin-bottom: 1rem;
 }
 
 .dropdown input,
@@ -404,7 +426,6 @@ input.field:checked ~ label.field span {
     display: block;
     width: 100%;
     padding: .5rem;
-    margin-top: .5rem;
 }
 
 .dropdown input[type="radio"] {
@@ -418,28 +439,32 @@ input.field:checked ~ label.field span {
     padding: 0;
 }
 
-form div:last-of-type {
-    display: flex;
-    justify-content: space-between;
+.dropdown:nth-of-type(8) {
+    margin-bottom: 5rem;
 }
 
-input[type="submit"] {
+input[type="submit"],
+button {
     display: inline-block;
     outline: 0;
     font-size: 1.125rem;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
-    margin-top: 5rem;
+    margin-right: 2rem
 }
 
-.preview {
+button:last-of-type {
+    margin: 0;
+}
+
+.btn {
     background-color: #EDDD3E;
     padding: 1rem;
     border: 0;
     color: #12353C;
 }
 
-.preview:hover {
+.btn:hover {
     color: #12353C;
     background-color: #e3d015;
     -webkit-transition: background-color 250ms ease;
@@ -447,8 +472,8 @@ input[type="submit"] {
     border: 0;
 }
 
-input.preview--json{
-    margin-top: 2.5rem;
+input.btn--json {
+    margin-top: 2rem;
 }
 
 .reset {
@@ -473,13 +498,14 @@ input.preview--json{
 }
 
 .json {
+    display: none;
     padding: 0 1rem 1rem 1rem;
     background-color: #12353C;
 }
 
 textarea {
     width: 100%;
-    min-height: 75vh;
+    min-height: 72vh;
     resize: none;
     border: 0;
     border-radius: 3px;
@@ -488,20 +514,59 @@ textarea {
     padding: .5rem;
 }
 
+#preview {
+    display: flex;
+    flex-direction: column;
+}
+
+#preview div.btn-container {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    #preview div.btn-container {
+        margin-top: 1rem;
+    }
+}
+
+.devices{
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
 .devices {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
+}
 }
 
 .devices h1 {
     text-align: center;
 }
 
-.devices div {}
+.devices > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.devices > div:last-of-type{
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .devices > div{
+        max-width: calc(50% - (.875em/2));
+        align-items: center;
+    }
+}
 
 .device {
-    transform: scale(.7);
-    transform-origin: top center;
     position: relative;
     overflow: hidden;
 }
@@ -511,8 +576,7 @@ textarea {
     width: 452px;
     max-width: 100%;
     height: 918px;
-    padding-top: 87px;
-    padding-left: 17px;
+    padding: 87px 22px 86px 17px;
     background-image: url('../img/nexus-5x.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -525,8 +589,8 @@ textarea {
 
 :root {
     --chrome-top-bar-height: 56px;
-    --nexus-5x-viewport-width: 413px;
-    --nexus-5x-viewport-height: 733px;
+    --nexus-5x-viewport-width: 100%;
+    --nexus-5x-viewport-height: 100%;
 }
 
 .device__viewport--nexus-5x {
