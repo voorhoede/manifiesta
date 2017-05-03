@@ -480,7 +480,7 @@ input.preview--json{
 textarea {
     width: 100%;
     min-height: 75vh;
-    resize: vertical;
+    resize: none;
     border: 0;
     border-radius: 3px;
     font-family: 'Inconsolata', monospace;
