@@ -76,9 +76,12 @@
     font-style: italic
 }
 
+html {
+    font-size: 100%;
+}
+
 body {
     margin: 0;
-    font-size: 16px;
     letter-spacing: 0;
     overflow-x: hidden;
     font-family: 'Noto', 'Georgia', serif;
@@ -89,6 +92,12 @@ body {
     -webkit-font-smoothing: antialiased;
     color: #12353C;
     background-color: #FFF;
+}
+
+@media (min-width: 1024px) {
+    body {
+        font-size: 1.125rem;
+    }
 }
 
 h1,
@@ -109,6 +118,10 @@ button {
     cursor: pointer;
     -webkit-transition: color 250ms ease, border-bottom 250ms ease;
     transition: color 250ms ease, border-bottom 250ms ease;
+}
+
+label {
+    position: relative;
 }
 
 .app-header {
@@ -363,7 +376,7 @@ form fieldset legend {
 .dropdown span svg {
     fill: #FFF;
     opacity: .8;
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 input.field {
@@ -373,17 +386,24 @@ input.field {
 }
 
 label.field span {
-    -webkit-transition: all .35s;
-    transition: all .35s;
+    -webkit-transition: all 250ms;
+    transition: all 250ms;
 }
 
 div.field {
+    position: relative;
     max-height: 10rem;
     overflow: hidden;
+    -webkit-transition: max-height 250ms;
+    -o-transition: max-height 250ms;
+    transition: max-height 250ms;
+}
+
+div.field label,
+div.field input,
+div.field select {
+    display: inline-block;
     margin-top: 1rem;
-    -webkit-transition: max-height .35s;
-    -o-transition: max-height .35s;
-    transition: max-height .35s;
 }
 
 input.field:checked ~ div.field {
@@ -417,6 +437,7 @@ input.field:checked ~ label.field span {
 
 .dropdown label {
     cursor: pointer;
+    margin: 0 .5rem 0 0;
 }
 
 .dropdown input,
@@ -426,17 +447,76 @@ input.field:checked ~ label.field span {
     display: block;
     width: 100%;
     padding: .5rem;
+    border-radius: 0;
+    outline: none;
+    border: 0;
 }
 
-.dropdown input[type="radio"] {
+.dropdown label input[type="radio"] {
+    position: absolute;
     display: inline-block;
+    z-index: -1;
+    opacity: 0;
 }
 
-.dropdown select,
+.dropdown label .radio {
+    position: relative;
+    display: inline-block;
+    top: 2px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background: #FFF;
+    border-radius: 50%;
+    margin: 0 .5rem;
+}
+
+.dropdown label .radio:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 6px;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.dropdown label input:checked ~ .radio {
+    background: #0CAFCD;
+}
+
+.dropdown label input:checked ~ .radio:after {
+    display: block;
+}
+
 .dropdown input[type="radio"],
 .dropdown input[type="color"] {
     width: auto;
     padding: 0;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.dropdown .field div.arrow {
+    position: absolute;
+    top: 30px;
+    right: 7px;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-width: 8px 5px 0 5px;
+    border-style: solid;
+    border-color: #12353C transparent transparent transparent;
 }
 
 .dropdown:nth-of-type(8) {
@@ -472,8 +552,31 @@ button:last-of-type {
     border: 0;
 }
 
-input.btn--json {
-    margin-top: 2rem;
+label.input-file-trigger {
+    padding: 1rem;  
+    background: #39D2B4;
+    transition: all 250ms;
+    cursor: pointer;
+    margin: 1rem 0 0 0;
+    text-align: center;
+}
+
+.input-file {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 225px;
+    opacity: 0;
+    padding: 14px 0;
+    cursor: pointer;
+}
+
+.input-file:hover + .input-file-trigger,
+.input-file:focus + .input-file-trigger,
+.input-file-trigger:hover,
+.input-file-trigger:focus {
+    background: #12353C;
+    color: #FFF;
 }
 
 .reset {
@@ -511,6 +614,10 @@ textarea {
     font-family: 'Inconsolata', monospace;
     font-size: 1.125rem;
     padding: .5rem;
+}
+
+input.btn--json {
+    margin-top: 2rem;
 }
 
 .preview {

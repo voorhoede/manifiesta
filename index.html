@@ -156,11 +156,12 @@
                         </label>
                         <div class="field">
                             <select name="" id="display">
-                                <option value="">Fullscreen</option>
                                 <option value="">Standalone</option>
+                                <option value="">Fullscreen</option>
                                 <option value="">Minimal-ui</option>
                                 <option value="">Browser</option>
                             </select>
+                            <div class="arrow"></div>
                         </div>
                     </div>
                     <div class="dropdown">
@@ -184,11 +185,14 @@
                             </span>
                         </label>
                         <div class="field">
-                            <label for="landscape">Landscape</label>
-                            <input type="radio" id="landscape" name="orientation" value="landscape">
-                            <label for="portrait">Portrait</label>
-                            <input type="radio" id="portrait" name="orientation" value="portrait">
-                            </select>
+                            <label for="landscape">Landscape
+                                <input type="radio" id="landscape" name="orientation" value="landscape">
+                                <div class="radio"></div>
+                            </label>
+                            <label for="portrait">Portrait
+                                <input type="radio" id="portrait" name="orientation" value="portrait">
+                                <div class="radio"></div>
+                            </label>
                         </div>
                     </div>
                     <div class="dropdown">
@@ -225,7 +229,7 @@
                                 <p>Hierin komt de volledige naam van de extensie te staan. Voorbeeld: ‘De Voorhoede Front-end Developers’.</p>
                             </div>
                         </span>
-                        <label for="icons">Icon(s)</label>
+                        <label>Icon(s)</label>
                         <input class="field" id="field-icons" type="checkbox" name="tabs">
                         <label class="field" for="field-icons">
                             <span class="arrow">
@@ -236,7 +240,8 @@
                             </span>
                         </label>
                         <div class="field">
-                            <input type="file" id="icons" name="iconupload">
+                            <input class="input-file" id="my-file" type="file">
+    <label tabindex="0" for="my-file" class="input-file-trigger">Select a file...</label>
                         </div>
                     </div>
                     <div>
