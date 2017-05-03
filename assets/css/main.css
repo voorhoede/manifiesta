@@ -447,6 +447,10 @@ input[type="submit"] {
     border: 0;
 }
 
+input.preview--json{
+    margin-top: 2.5rem;
+}
+
 .reset {
     background-color: transparent;
     color: #FFF;
