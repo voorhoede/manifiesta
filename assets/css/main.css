@@ -498,7 +498,6 @@ input.btn--json {
 }
 
 .json {
-    display: none;
     padding: 0 1rem 1rem 1rem;
     background-color: #12353C;
 }
@@ -514,53 +513,53 @@ textarea {
     padding: .5rem;
 }
 
-#preview {
+.preview {
     display: flex;
     flex-direction: column;
 }
 
-#preview div.btn-container {
+.preview div.btn-container {
     margin: 0;
     display: flex;
     justify-content: center;
 }
 
 @media (min-width: 768px) {
-    #preview div.btn-container {
+    .preview div.btn-container {
         margin-top: 1rem;
     }
 }
 
-.devices{
+.devices {
     flex-direction: column;
 }
 
 @media (min-width: 768px) {
-.devices {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
+    .devices {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 }
 
 .devices h1 {
     text-align: center;
 }
 
-.devices > div{
+.devices > div {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 3rem;
 }
 
-.devices > div:last-of-type{
+.devices > div:last-of-type {
     margin: 0;
 }
 
 @media (min-width: 768px) {
-    .devices > div{
+    .devices > div {
         max-width: calc(50% - (.875em/2));
         align-items: center;
     }
@@ -576,7 +575,7 @@ textarea {
     width: 452px;
     max-width: 100%;
     height: 918px;
-    padding: 87px 22px 86px 17px;
+    padding: 87px 21px 86px 17px;
     background-image: url('../img/nexus-5x.png');
     background-repeat: no-repeat;
     background-size: contain;
