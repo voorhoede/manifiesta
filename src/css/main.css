@@ -1,0 +1,757 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(../fonts/raleway-extrabold-webfont.eot);
+    src: url(../fonts/raleway-extrabold-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/raleway-extrabold-webfont.woff2) format('woff2'), url(../fonts/raleway-extrabold-webfont.woff) format('woff'), url(../fonts/raleway-extrabold-webfont.ttf) format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(../fonts/raleway-semibold-webfont.eot);
+    src: url(../fonts/raleway-semibold-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/raleway-semibold-webfont.woff2) format('woff2'), url(../fonts/raleway-semibold-webfont.woff) format('woff'), url(../fonts/raleway-semibold-webfont.ttf) format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(../fonts/raleway-medium-webfont.eot);
+    src: url(../fonts/raleway-medium-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/raleway-medium-webfont.woff2) format('woff2'), url(../fonts/raleway-medium-webfont.woff) format('woff'), url(../fonts/raleway-medium-webfont.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(../fonts/raleway-light-webfont.eot);
+    src: url(../fonts/raleway-light-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/raleway-light-webfont.woff2) format('woff2'), url(../fonts/raleway-light-webfont.woff) format('woff'), url(../fonts/raleway-light-webfont.ttf) format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto';
+    src: url(../fonts/notoserif-regular-webfont.eot);
+    src: url(../fonts/notoserif-regular-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/notoserif-regular-webfont.woff2) format('woff2'), url(../fonts/notoserif-regular-webfont.woff) format('woff'), url(../fonts/notoserif-regular-webfont.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto';
+    src: url(../fonts/notoserif-bold-webfont.eot);
+    src: url(../fonts/notoserif-bold-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/notoserif-bold-webfont.woff2) format('woff2'), url(../fonts/notoserif-bold-webfont.woff) format('woff'), url(../fonts/notoserif-bold-webfont.ttf) format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto';
+    src: url(../fonts/notoserif-italic-webfont.eot);
+    src: url(../fonts/notoserif-italic-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/notoserif-italic-webfont.woff2) format('woff2'), url(../fonts/notoserif-italic-webfont.woff) format('woff'), url(../fonts/notoserif-italic-webfont.ttf) format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url(../fonts/inconsolata-bold.eot);
+    src: url(../fonts/inconsolata-bold.eot?#iefix) format('embedded-opentype'), url(../fonts/inconsolata-bold.woff2) format('woff2'), url(../fonts/inconsolata-bold.woff) format('woff'), url(../fonts/inconsolata-bold.ttf) format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url(../fonts/inconsolata-regular.eot);
+    src: url(../fonts/inconsolata-regular.eot?#iefix) format('embedded-opentype'), url(../fonts/inconsolata-regular.woff2) format('woff2'), url(../fonts/inconsolata-regular.woff) format('woff'), url(../fonts/inconsolata-regular.ttf) format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+    letter-spacing: 0;
+    overflow-x: hidden;
+    font-family: 'Noto', 'Georgia', serif;
+    letter-spacing: .0385em;
+    line-height: 1.6;
+    -webkit-font-feature-settings: "kern", "liga";
+    font-feature-settings: "kern", "liga";
+    -webkit-font-smoothing: antialiased;
+    color: #12353C;
+    background-color: #FFF;
+}
+
+@media (min-width: 1024px) {
+    body {
+        font-size: 1.125rem;
+    }
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Raleway', sans-serif;
+}
+
+a,
+a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+a,
+input[type="submit"],
+button {
+    cursor: pointer;
+    -webkit-transition: color 250ms ease, border-bottom 250ms ease;
+    transition: color 250ms ease, border-bottom 250ms ease;
+}
+
+label {
+    position: relative;
+}
+
+.app-header {
+    font-family: sans-serif;
+    letter-spacing: -.005em;
+    padding: 1rem .875rem;
+    background-color: #EDDD3E;
+}
+
+.app-header:after,
+.app-header:before {
+    display: table;
+    content: "";
+}
+
+.app-header:after {
+    clear: both;
+}
+
+.app-header a {
+    border-bottom: 0;
+}
+
+.app-header-identify {
+    float: left;
+}
+
+@media (min-width: 600px) {
+    .app-header {
+        display: table;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .app-header {
+        padding: 1rem calc(49.9% - 512px + 2rem)
+    }
+}
+
+@media (min-width: 1190px) {
+    .app-header {
+        padding: 1rem calc(40% - 500px + 2rem);
+    }
+}
+
+.app-logo-container {
+    display: inline-block;
+    vertical-align: middle;
+    width: 2.7rem;
+}
+
+@media (min-width: 600px) {
+    .app-logo-container {
+        width: 3rem;
+    }
+}
+
+.app-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.app-header-titles {
+    display: inline-block;
+    margin-left: .5rem;
+    font-size: .9rem;
+    vertical-align: middle;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0;
+}
+
+@media (max-width: 799px) {
+    .app-header-titles {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+}
+
+.app-header-title,
+.app-header-tagline {
+    margin: 0;
+    padding: 0;
+}
+
+.app-header-title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+@media (min-width: 600px) {
+    .app-header {
+        display: table;
+        width: 100%;
+    }
+}
+
+.app-header-menu {
+    float: right;
+    text-align: right;
+    padding-top: .8rem;
+    font-size: .9rem;
+}
+
+@media (min-width: 600px) {
+    .app-header-menu {
+        font-size: 1rem;
+        display: table-cell;
+        float: none;
+        vertical-align: middle;
+        width: auto;
+    }
+}
+
+.app-header-menu ul {
+    display: block;
+    padding-left: 0;
+    list-style: none;
+    margin: 0 0 .5rem;
+}
+
+.app-header-menu ul li {
+    display: inline;
+    margin-left: .375rem;
+}
+
+.app-header-menu ul li:first-child {
+    margin-left: 0;
+}
+
+.app-header-menu ul li a {
+    text-transform: uppercase;
+    background: #FFF;
+    padding: 1rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 calc(40% - 500px + 2rem) 5rem;
+}
+
+@media (min-width: 768px) {
+    main {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+section {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    section {
+        max-width: calc(70% - (2em/2));
+    }
+}
+
+.create {
+    margin-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+    .create {
+        max-width: 30%;
+        margin: 0;
+    }
+}
+
+.create form {
+    padding: 0rem 1rem;
+    background-color: #12353C;
+    color: #FFF;
+}
+
+@media (min-width: 768px) {
+    .create form {
+        padding: 0;
+    }
+}
+
+fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+form fieldset legend {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1rem 0 1rem 1rem;
+    color: #EDDD3E;
+}
+
+.dropdown {
+    position: relative;
+    padding: 1rem;
+    background-color: #1A4E57;
+}
+
+.dropdown:not(:nth-of-type(8)) {
+    border-bottom: solid 1px #12353C;
+}
+
+.tooltip {
+    position: relative;
+    font-size: .8rem;
+    background-color: #D8D8D8;
+    padding: 1rem;
+    border-radius: 3px;
+    color: #12353C;
+    display: inline-block;
+}
+
+.tooltip:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 5px;
+    bottom: 100%;
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-bottom-color: #D8D8D8;
+}
+
+.dropdown .tooltip {
+    display: none;
+    opacity: 0;
+}
+
+.dropdown span {
+    cursor: pointer;
+}
+
+.dropdown .arrow {
+    float: right;
+}
+
+svg {
+    fill: #FFF;
+    opacity: .8;
+    vertical-align: middle;
+}
+
+input.field {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+label.field span {
+    -webkit-transition: all 250ms;
+    transition: all 250ms;
+}
+
+div.field {
+    position: relative;
+    max-height: 10rem;
+    overflow: hidden;
+    -webkit-transition: max-height 250ms;
+    -o-transition: max-height 250ms;
+    transition: max-height 250ms;
+}
+
+div.field label,
+div.field input,
+div.field select {
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+input.field:checked ~ div.field {
+    max-height: 0;
+}
+
+label.field span {
+    transform: rotate(-180deg);
+}
+
+input.field:checked ~ label.field span {
+    transform: rotate(0deg);
+}
+
+.dropdown span:hover .tooltip {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    margin: .5rem 1rem 0 0;
+    opacity: 1;
+}
+
+.tooltip p {
+    margin: 0;
+}
+
+.create form fieldset legend,
+.dropdown label {
+    font-family: 'Raleway', sans-serif;
+}
+
+.dropdown label {
+    cursor: pointer;
+}
+
+.dropdown input,
+.dropdown select {
+    font-family: 'Noto', 'Georgia', serif;
+    font-size: .9rem;
+    display: block;
+    width: 100%;
+    padding: .5rem;
+    border-radius: 0;
+    outline: none;
+    border: 0;
+}
+
+.dropdown label input[type="radio"] {
+    display: none;
+}
+
+.dropdown label .radio {
+    position: relative;
+    display: inline-block;
+    top: 2px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background: #FFF;
+    border-radius: 50%;
+    margin: 0 .5rem;
+}
+
+.dropdown label .radio:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 6px;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.dropdown label input:checked ~ .radio {
+    background: #0CAFCD;
+}
+
+.dropdown label input:checked ~ .radio:after {
+    display: block;
+}
+
+.dropdown input[type="radio"],
+.dropdown input[type="color"] {
+    width: auto;
+    padding: 0;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.dropdown .field div.arrow {
+    position: absolute;
+    top: 30px;
+    right: 7px;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-width: 8px 5px 0 5px;
+    border-style: solid;
+    border-color: #12353C transparent transparent transparent;
+}
+
+.dropdown:nth-of-type(8) {
+    margin-bottom: 5rem;
+}
+
+input[type="submit"],
+button {
+    display: inline-block;
+    outline: 0;
+    font-size: 1.125rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    margin-right: 2rem
+}
+
+button:last-of-type {
+    margin: 0;
+}
+
+.btn {
+    background-color: #EDDD3E;
+    padding: 1rem;
+    border: 0;
+    color: #12353C;
+}
+
+.btn:hover {
+    color: #12353C;
+    background-color: #e3d015;
+    -webkit-transition: background-color 250ms ease;
+    transition: background-color 250ms ease;
+    border: 0;
+}
+
+label.input-file-trigger {
+    padding: 1rem;
+    background: #0CAFCD;
+    transition: all 250ms;
+    cursor: pointer;
+    margin: 1rem 0 0 0;
+    text-align: center;
+}
+
+input.input-file {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 0;
+}
+
+.input-file:hover + .input-file-trigger,
+.input-file:focus + .input-file-trigger,
+.input-file-trigger:hover,
+.input-file-trigger:focus {
+    background: #12353C;
+    color: #FFF;
+}
+
+.reset {
+    background-color: transparent;
+    color: #FFF;
+    border: 0;
+    border-bottom: solid 1px #FFF;
+    padding: 0;
+    margin: .5rem;
+}
+
+.reset:after {
+    content: "";
+}
+
+.reset:focus,
+.reset:hover,
+.app-header-menu ul li a:focus,
+.app-header-menu ul li a:hover {
+    color: #0CAFCD;
+    border-bottom: 1px solid #0CAFCD;
+}
+
+.json {
+    padding: 0 1rem 1rem 1rem;
+    background-color: #12353C;
+}
+
+textarea {
+    width: 100%;
+    min-height: 72vh;
+    resize: none;
+    border: 0;
+    border-radius: 3px;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.125rem;
+    padding: .5rem;
+}
+
+input.btn--json {
+    margin-top: 2rem;
+}
+
+.preview {
+    display: flex;
+    flex-direction: column;
+}
+
+.preview div.btn-container {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .preview div.btn-container {
+        margin-top: 1rem;
+    }
+}
+
+.devices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.device--nexus-5x {
+    font-family: 'Roboto', sans-serif;
+    background-image: url(../img/nexus-5x.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 40%;
+    height: 0;
+    padding-bottom: 82%;
+    display: inline-block;
+    position: relative;
+}
+
+.content {
+    position: absolute;
+    top: 9%;
+    left: 3.8%;
+    width: 91.5%;
+    height: 80%;
+    overflow: hidden;
+}
+
+.device__viewport--nexus-5x {
+    background-image: url(../img/android-background.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 90.5%;
+    margin-top: 5.1%;
+}
+
+.top-bar,
+.action-bar {
+    display: flex;
+}
+
+.top-bar svg,
+.action-bar svg,
+.top-bar svg path {
+    height: 100%;
+    fill: #FFF;
+    opacity: 1;
+}
+
+.top-bar {
+    position: absolute;
+    z-index: 1;
+    height: 3%;
+    width: 100%;
+    background: #000;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.top-bar span {
+    height: 100%;
+    font-size: .55rem;
+    color: #FFF;
+}
+
+@media (min-width: 768px) {
+.top-bar span {
+    height: auto;
+    font-size: .7rem;
+}
+
+}
+
+.top-bar svg:nth-of-type(1) path:nth-of-type(1) {
+    fill-opacity: .3;
+}
+
+.top-bar svg:nth-of-type(1) path:nth-of-type(2) {
+    fill: none;
+}
+
+.top-bar svg:nth-of-type(2) path:nth-of-type(1) {
+    fill-opacity: .3;
+}
+
+.top-bar svg:nth-of-type(2) path:nth-of-type(3) {
+    fill: none;
+}
+
+.top-bar svg:nth-of-type(3) path:nth-of-type(1) {
+    fill: none;
+}
+
+.top-bar svg:nth-of-type(3) path:nth-of-type(2) {
+    fill-opacity: .3;
+}
+
+.action-bar {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    height: 7%;
+    width: 100%;
+    background: #000;
+    justify-content: space-around;
+}
+
+polygon,
+circle,
+rect {
+    fill: none;
+    stroke-width: 1.5px;
+    stroke: #FFF;
+    height: 15px;
+    width: 15px;
+}
+
+footer {
+    position: relative;
+    font-family: 'Noto', Georgia, serif;
+    letter-spacing: 0;
+    background-color: #12353C;
+    padding: 3rem calc(49.9% - 512px + 2rem);
+}

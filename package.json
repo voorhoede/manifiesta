@@ -1,0 +1,26 @@
+{
+  "name": "manifiesta",
+  "version": "1.0.0",
+  "description": "Manifiesta, manifest generator",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "hallo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voorhoede/manifiesta.git"
+  },
+  "keywords": [
+    "manifiesta",
+    "manifest",
+    "json"
+  ],
+  "author": "De Voorhoede",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/voorhoede/manifiesta/issues"
+  },
+  "homepage": "https://github.com/voorhoede/manifiesta#readme"
+}
