@@ -1,1 +1,0 @@
-!function(){function n(n){return n<10?"0"+n:n}function e(){var t=new Date,o=n(t.getHours()),u=n(t.getMinutes());document.querySelectorAll("span").innerHTML=o+":"+u,setTimeout(function(){e()},500)}e(),console.log(e)}();

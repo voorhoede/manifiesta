@@ -3,22 +3,24 @@
   "version": "1.0.0",
   "description": "Manifiesta, manifest generator",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "nodemon": "^1.11.0"
+  },
   "devDependencies": {},
   "scripts": {
-    "test": "hallo"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/voorhoede/manifiesta.git"
   },
   "keywords": [
-    "manifiesta",
-    "manifest",
-    "json"
+    "manifiesta"
   ],
   "author": "De Voorhoede",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/voorhoede/manifiesta/issues"
   },
