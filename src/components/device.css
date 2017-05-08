@@ -1,0 +1,114 @@
+.device--nexus-5x {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('../assets/img/nexus-5x.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: auto;
+    padding-bottom: 204%;
+    display: inline-block;
+    position: relative;
+}
+
+.content {
+    position: absolute;
+    top: 9%;
+    left: 3.8%;
+    width: 91.5%;
+    height: 80%;
+    overflow: hidden;
+}
+
+.device__viewport--nexus-5x {
+    background-image: url(../assets/img/android-background.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 90.5%;
+    margin-top: 5.1%;
+}
+
+.top-bar,
+.action-bar {
+    display: flex;
+}
+
+.top-bar svg,
+.action-bar svg,
+.top-bar svg path {
+    height: 100%;
+    fill: #FFF;
+    opacity: 1;
+}
+
+.top-bar {
+    position: absolute;
+    z-index: 1;
+    height: 3%;
+    width: 100%;
+    background: #000;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.top-bar svg {
+    width: 20px;
+}
+
+.top-bar span {
+    height: 100%;
+    font-size: .55rem;
+    color: #FFF;
+    margin-right: .2rem;
+}
+
+@media (min-width: 768px) {
+    .top-bar span {
+        height: auto;
+        font-size: .8rem;
+    }
+}
+
+.top-bar svg:nth-of-type(1) path:nth-of-type(1) {
+    fill-opacity: .3;
+}
+
+.top-bar svg:nth-of-type(1) path:nth-of-type(2) {
+    fill: none;
+}
+
+.top-bar svg:nth-of-type(2) path:nth-of-type(1) {
+    fill-opacity: .3;
+}
+
+.top-bar svg:nth-of-type(2) path:nth-of-type(3) {
+    fill: none;
+}
+
+.top-bar svg:nth-of-type(3) path:nth-of-type(1) {
+    fill: none;
+}
+
+.top-bar svg:nth-of-type(3) path:nth-of-type(2) {
+    fill-opacity: .3;
+}
+
+.action-bar {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    height: 7%;
+    width: 100%;
+    background: #000;
+    justify-content: space-around;
+}
+
+polygon,
+circle,
+rect {
+    fill: none;
+    stroke-width: 1px;
+    stroke: #FFF;
+    height: 15px;
+    width: 15px;
+    stroke-linejoin: round;
+}

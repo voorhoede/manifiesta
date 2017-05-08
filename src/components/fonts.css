@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'Raleway';
+    src: url(../fonts/raleway-extrabold-webfont.eot);
+    src: url(../fonts/raleway-extrabold-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/raleway-extrabold-webfont.woff2) format('woff2'), url(../fonts/raleway-extrabold-webfont.woff) format('woff'), url(../fonts/raleway-extrabold-webfont.ttf) format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(../fonts/raleway-semibold-webfont.eot);
+    src: url(../fonts/raleway-semibold-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/raleway-semibold-webfont.woff2) format('woff2'), url(../fonts/raleway-semibold-webfont.woff) format('woff'), url(../fonts/raleway-semibold-webfont.ttf) format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(../fonts/raleway-medium-webfont.eot);
+    src: url(../fonts/raleway-medium-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/raleway-medium-webfont.woff2) format('woff2'), url(../fonts/raleway-medium-webfont.woff) format('woff'), url(../fonts/raleway-medium-webfont.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(../fonts/raleway-light-webfont.eot);
+    src: url(../fonts/raleway-light-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/raleway-light-webfont.woff2) format('woff2'), url(../fonts/raleway-light-webfont.woff) format('woff'), url(../fonts/raleway-light-webfont.ttf) format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto';
+    src: url(../fonts/notoserif-regular-webfont.eot);
+    src: url(../fonts/notoserif-regular-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/notoserif-regular-webfont.woff2) format('woff2'), url(../fonts/notoserif-regular-webfont.woff) format('woff'), url(../fonts/notoserif-regular-webfont.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto';
+    src: url(../fonts/notoserif-bold-webfont.eot);
+    src: url(../fonts/notoserif-bold-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/notoserif-bold-webfont.woff2) format('woff2'), url(../fonts/notoserif-bold-webfont.woff) format('woff'), url(../fonts/notoserif-bold-webfont.ttf) format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto';
+    src: url(../fonts/notoserif-italic-webfont.eot);
+    src: url(../fonts/notoserif-italic-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/notoserif-italic-webfont.woff2) format('woff2'), url(../fonts/notoserif-italic-webfont.woff) format('woff'), url(../fonts/notoserif-italic-webfont.ttf) format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url(../fonts/inconsolata-bold.eot);
+    src: url(../fonts/inconsolata-bold.eot?#iefix) format('embedded-opentype'), url(../fonts/inconsolata-bold.woff2) format('woff2'), url(../fonts/inconsolata-bold.woff) format('woff'), url(../fonts/inconsolata-bold.ttf) format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url(../fonts/inconsolata-regular.eot);
+    src: url(../fonts/inconsolata-regular.eot?#iefix) format('embedded-opentype'), url(../fonts/inconsolata-regular.woff2) format('woff2'), url(../fonts/inconsolata-regular.woff) format('woff'), url(../fonts/inconsolata-regular.ttf) format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}

@@ -1,0 +1,7 @@
+footer {
+    position: relative;
+    font-family: 'Noto', Georgia, serif;
+    letter-spacing: 0;
+    background-color: #12353C;
+    padding: 3rem calc(49.9% - 512px + 2rem);
+}
