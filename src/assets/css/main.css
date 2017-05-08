@@ -126,7 +126,7 @@ label {
 
 .app-header {
     font-family: sans-serif;
-    letter-spacing: -.005em;
+    letter-spacing: -.005rem;
     padding: 1rem .875rem;
     background-color: #EDDD3E;
 }
@@ -158,13 +158,7 @@ label {
 
 @media (min-width: 1024px) {
     .app-header {
-        padding: 1rem calc(49.9% - 512px + 2rem)
-    }
-}
-
-@media (min-width: 1190px) {
-    .app-header {
-        padding: 1rem calc(40% - 500px + 2rem);
+        padding: 1rem calc(43.7% - 512px + 2rem);
     }
 }
 
@@ -271,7 +265,8 @@ main {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 0 calc(40% - 500px + 2rem) 5rem;
+    max-width: 75rem;
+    margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -393,6 +388,7 @@ label.field span {
 div.field {
     position: relative;
     max-height: 10rem;
+    width: 100%;
     overflow: hidden;
     -webkit-transition: max-height 250ms;
     -o-transition: max-height 250ms;
@@ -493,7 +489,9 @@ input.field:checked ~ label.field span {
     padding: 0;
 }
 
-select {
+input,
+select,
+button {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -526,9 +524,10 @@ button {
     font-size: 1.125rem;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
-    margin-right: 2rem
+    margin: 0 2rem 0 0;
 }
 
+input[type="submit"]:last-of-type,
 button:last-of-type {
     margin: 0;
 }
@@ -596,8 +595,12 @@ input.input-file {
 }
 
 .json {
-    padding: 0 1rem 1rem 1rem;
+    -webkit-flex: 1;
     background-color: #12353C;
+}
+
+.json form {
+    padding: 0 1rem 1rem 1rem;
 }
 
 textarea {
@@ -609,6 +612,7 @@ textarea {
     font-family: 'Inconsolata', monospace;
     font-size: 1.125rem;
     padding: .5rem;
+    margin-bottom: 1rem;
 }
 
 input.btn--json {
@@ -647,11 +651,16 @@ input.btn--json {
 }
 
 .devices > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: calc(50% - (.875em/2));
+    display: inline-block;
+    width: 100%;
     margin-bottom: 1rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .devices > div {
+        width: calc(50% - (.875em/2));
+    }
 }
 
 .devices > div:nth-of-type(-n+4) {
@@ -670,11 +679,11 @@ input.btn--json {
 
 .device--nexus-5x {
     font-family: 'Roboto', sans-serif;
-    background-image: url(../img/nexus-5x.png);
+    background-image: url('../img/nexus-5x.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 100%;
-    height: 0;
+    height: auto;
     padding-bottom: 204%;
     display: inline-block;
     position: relative;
@@ -718,6 +727,10 @@ input.btn--json {
     background: #000;
     justify-content: flex-end;
     align-items: center;
+}
+
+.top-bar svg {
+    width: 20px;
 }
 
 .top-bar span {
