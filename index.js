@@ -1,20 +1,18 @@
-var express = require('express');
-var bodyParser = require('body-parser');
+var express = require( 'express' ) ;
+var nunjucks = require( 'nunjucks' ) ;
 var path = require("path");
-var app = express();
+var app = express() ;
 
 app.set('port', (process.env.PORT || 5000));
-app.set('views', path.join(__dirname, '/src'));
-app.set('view engine', 'ejs');
+nunjucks.configure('views', path.join(__dirname, '/src'), {
+    autoescape: true,
+    express: app
+});
 
 app.use(express.static(__dirname + '/src'));
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-app.use(bodyParser.json());
 
 app.get('*', function(req, res) {
-    res.render('index.ejs');
+    res.render('index.html');
 });
 
 app.listen(app.get('port'), function() {});

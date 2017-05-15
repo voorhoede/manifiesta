@@ -27,10 +27,14 @@ fieldset {
     margin: 0;
 }
 
+.create form fieldset legend {
+    padding: 1rem 0 1rem 1rem;
+}
+
 form fieldset legend {
     font-size: 1.5rem;
     font-weight: 700;
-    padding: 1rem 0 1rem 1rem;
+    padding: 1rem 0 1rem 0;
     color: #EDDD3E;
 }
 
@@ -156,6 +160,7 @@ input.field:checked ~ label.field span {
     border-radius: 0;
     outline: none;
     border: 0;
+    background: #FFF;
 }
 
 .dropdown label input[type="radio"] {
@@ -202,10 +207,12 @@ input.field:checked ~ label.field span {
 
 input,
 select,
-button {
+button,
+textarea {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+    -webkit-border-radius: 0;
 }
 
 select::-ms-expand {
@@ -319,7 +326,6 @@ textarea {
     min-height: 72vh;
     resize: none;
     border: 0;
-    border-radius: 3px;
     font-family: 'Inconsolata', monospace;
     font-size: 1.125rem;
     padding: .5rem;
