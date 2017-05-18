@@ -35,7 +35,7 @@
     </header>
     <main>
         <section class="create">
-            <form>
+            <form data-create-form>
                 <fieldset>
                     <legend>Aanmaken</legend>
                     <div class="dropdown">
@@ -59,7 +59,7 @@
                             </span>
                         </label>
                         <div class="field">
-                            <input type="url" id="websiteurl" name="" value="">
+                            <input type="url" id="websiteurl" class="not" name="" value="">
                         </div>
                     </div>
                     <div class="dropdown">
@@ -83,7 +83,7 @@
                             </span>
                         </label>
                         <div class="field">
-                            <input type="text" id="shortname" name="" value="">
+                            <input type="text" id="shortname" name="short_name" value="">
                         </div>
                     </div>
                     <div class="dropdown">
@@ -107,7 +107,7 @@
                             </span>
                         </label>
                         <div class="field">
-                            <input type="text" id="name" name="" value="">
+                            <input type="text" id="name" name="name" value="">
                         </div>
                     </div>
                     <div class="dropdown">
@@ -131,7 +131,7 @@
                             </span>
                         </label>
                         <div class="field">
-                            <input type="url" id="starturl" name="" value="">
+                            <input type="url" id="starturl" name="start_url" value="">
                         </div>
                     </div>
                     <div class="dropdown">
@@ -155,11 +155,11 @@
                             </span>
                         </label>
                         <div class="field">
-                            <select name="" id="display">
-                                <option value="">Standalone</option>
-                                <option value="">Fullscreen</option>
-                                <option value="">Minimal-ui</option>
-                                <option value="">Browser</option>
+                            <select name="display" id="display">
+                                <option value="standalone">Standalone</option>
+                                <option value="fullscreen">Fullscreen</option>
+                                <option value="minimal-ui">Minimal-ui</option>
+                                <option value="browser">Browser</option>
                             </select>
                             <div class="arrow"></div>
                         </div>
@@ -216,7 +216,7 @@
                             </span>
                         </label>
                         <div class="field">
-                            <input type="color" id="bgcolor" name="bgcolor" value="#ff0000">
+                            <input type="color" id="bgcolor" name="background_color" value="#ff0000">
                         </div>
                     </div>
                     <div class="dropdown">
@@ -240,7 +240,7 @@
                             </span>
                         </label>
                         <div class="field">
-                            <input class="input-file" id="my-file" type="file">
+                            <input class="input-file" id="my-file" name="icons" type="file" multiple>
                             <label tabindex="0" for="my-file" class="input-file-trigger">Select a file...</label>
                         </div>
                     </div>
@@ -255,7 +255,11 @@
             <form>
                 <fieldset>
                     <legend>JSON file</legend>
-                    <textarea name="manifest"></textarea>
+                    <textarea name="manifest">
+{
+   "display": "standalone,"
+}
+                    </textarea>
                     <input type="submit" class="btn preview--json" value="Werk bij">
                 </fieldset>
             </form>
