@@ -177,7 +177,7 @@ function jsonToScreens(event) {
    websitePhone.querySelector("[data-browser-screen]").appendChild(createIframe)
    websitePhone.querySelector(".chrome-header input").value = Json.websiteUrl
    websitePhone.querySelector("span img").setAttribute("src", imageFiles[0])
-   websitePhone.querySelector("h3").innerHTML = Json.name
+   websitePhone.querySelector("h3").innerHTML = Json["short_name"]
    websitePhone.querySelector("p").innerHTML = Json.name
    // websitePhone.querySelector(".notification p span").innerHTML = Json.websiteUrl
 
@@ -192,6 +192,40 @@ function jsonToScreens(event) {
 
    homeIconContainer.appendChild(homeIconImage)
    homeIconContainer.appendChild(homeIconP)
+   homeScreenPhone.querySelector("[data-browser-screen]").innerHTML = ""
    homeScreenPhone.querySelector("[data-browser-screen]").appendChild(homeIconContainer)
-   console.log(homeScreenPhone);
+
+   // Splash Screen
+   let splashScreen = splashScreenPhone.querySelector("[data-browser-screen]"),
+   splashBG = document.createElement("div"),
+   splashIMG = document.createElement("img"),
+   splashP = document.createElement("p")
+
+   splashScreen.innerHTML = ""
+   splashP.innerHTML = Json.name
+   splashIMG.setAttribute("src", imageFiles[0])
+   splashBG.appendChild(splashIMG)
+   splashBG.appendChild(splashP)
+   splashBG.classList.add("splashBG")
+   splashBG.style.backgroundColor = Json["background_color"]
+   splashScreen.appendChild(splashBG)
+
+
+   // PWA
+   let PWAIframe = document.createElement("iframe")
+
+   PWAIframe.setAttribute("src", Json.websiteUrl)
+
+   pwaPhone.querySelector("[data-browser-screen]").innerHTML = ""
+   pwaPhone.classList.add("in-use")
+   pwaPhone.querySelector("[data-browser-screen]").appendChild(PWAIframe)
+
+    let scrollDiv = document.createElement("div");
+    scrollDiv.classList.add("scrollbar-measure");
+    document.body.appendChild(scrollDiv);
+    let scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+    console.log(scrollbarWidth); // Mac:  15
+    document.body.removeChild(scrollDiv);
+
+    PWAIframe.style.width = "calc(100% + "+scrollbarWidth+"px)"
 }

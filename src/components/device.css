@@ -186,6 +186,37 @@ rect {
    text-align: left;
 }
 
+.notification .exit {
+    position:absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+}
+
+.notification .exit::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #7d7d7d;
+    transform: rotate(45deg);
+    transform-origin: center;
+}
+
+.notification .exit::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #7d7d7d;
+    transform: rotate(-45deg);
+    transform-origin: center;
+}
+
 .notification span {
    width: 1.5rem;
    height: 5rem;
@@ -222,13 +253,19 @@ rect {
    text-align: right;
 }
 
-.notification .notification--buttons button:first-child {
-   background-color: #3486f7;
-   color: #fff;
-   text-transform: uppercase;
-   border: none;
-   margin-right: 5px;
-   font-size: .9rem;
+.notification .notification--buttons button {
+    display: inline-block;
+    position: relative;
+    width: 190px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
 .home-icon-container {
@@ -249,4 +286,31 @@ rect {
    font-size: .6rem;
    font-family: arial;
    font-weight: bold;
+}
+
+.no-chrome iframe html {
+    width: 100vw;
+    overflow: hidden;
+}
+
+.scrollbar-measure {
+	width: 100px;
+	height: 100px;
+	overflow: scroll;
+	position: absolute;
+	top: -9999px;
+}
+
+.splashBG {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.splashBG img {
+    width: 50%;
+    height: auto;
 }
