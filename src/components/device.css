@@ -27,6 +27,10 @@
     margin-top: 5.1%;
 }
 
+.device__viewport--nexus-5x.in-use {
+   background: transparent;
+}
+
 .top-bar,
 .action-bar {
     display: flex;
@@ -111,4 +115,138 @@ rect {
     height: 15px;
     width: 15px;
     stroke-linejoin: round;
+}
+
+.device--nexus-5x.web .device__viewport--nexus-5x {
+   margin-top: 0;
+   height: 82.6%;
+}
+
+.device--nexus-5x.web .chrome-header {
+   width: 100%;
+   height: 8%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 2px 10px;
+   box-sizing: border-box;
+   margin-top: 5.1%;
+   background-color: #f2f2f2;
+}
+
+.device--nexus-5x.web .chrome-header input {
+   pointer-events: none;
+   border: 1px solid #e0e0e0;
+   width: calc(100% - 3.7250rem);
+   height: 70%;
+   border-radius: 2px;
+   margin-right: .3em;
+}
+
+.device--nexus-5x.web .chrome-header .chrome-header_windows {
+   border: #7d7d7d 2px solid;
+   border-radius: 2px;
+   background: transparent;
+   width: 1.5625rem;
+   height: 1.5625rem;
+   line-height: 0;
+   margin-right: .3em;
+}
+
+.device--nexus-5x.web .chrome-header .chrome-header_settings {
+   background: transparent;
+   border: #7d7d7d 2px solid;
+   border-radius: 2px;
+   width: 1.5625rem;
+   height: 1.5625rem;
+   line-height: 0;
+   padding: 0;
+}
+
+.device--nexus-5x.web .chrome-header .chrome-header_settings span {
+   display: block;
+   width: 3px;
+   height: 3px;
+   border-radius: 50%;
+   margin: 0 auto 3px;
+   background-color: #7d7d7d;
+}
+
+.device--nexus-5x.web .chrome-header .chrome-header_settings span:last-child {
+   margin-bottom: 0;
+}
+
+
+.notification {
+   position: absolute;
+   bottom: 7%;
+   width: 100%;
+   background: #fff;
+   padding: 15px 10px;
+   text-align: left;
+}
+
+.notification span {
+   width: 1.5rem;
+   height: 5rem;
+   vertical-align: top;
+   display: inline-block;
+   float: left;
+}
+
+.notification span img {
+   width: 100%;
+   height: auto;
+}
+
+.notification h3 {
+   width: calc(90% - 1.5rem);
+   display: inline-block;
+   margin-top: 0;
+   margin-bottom: .7rem;
+   margin-left: .3rem;
+}
+
+.notification p {
+   vertical-align: top;
+   display: inline-block;
+   width: calc(90% - 1.5rem);
+   font-size: 1rem;
+   margin-top: 0;
+   margin-bottom: 15px;
+   font-family: arial;
+   margin-left: .3rem;
+}
+
+.notification .notification--buttons {
+   text-align: right;
+}
+
+.notification .notification--buttons button:first-child {
+   background-color: #3486f7;
+   color: #fff;
+   text-transform: uppercase;
+   border: none;
+   margin-right: 5px;
+   font-size: .9rem;
+}
+
+.home-icon-container {
+   width: 75px;
+   margin: 5px;
+   cursor: pointer;
+}
+
+.home-icon-container img {
+   width: 50px;
+   height: auto;
+   margin-top: 5px;
+}
+
+.home-icon-container p {
+   color: #fff;
+   margin: 0;
+   font-size: .6rem;
+   font-family: arial;
+   font-weight: bold;
 }

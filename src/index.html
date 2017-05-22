@@ -25,15 +25,16 @@
         <nav class="app-header-menu">
             <ul>
                 <li>
-                    <a href="#">Json</a>
+                    <a class="active" href="#json">Json</a>
                 </li>
                 <li>
-                    <a href="#">Preview</a>
+                    <a href="#preview">Preview</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
+      <div id="json" class="show-element">
         <section class="create">
             <form data-create-form>
                 <fieldset>
@@ -59,7 +60,7 @@
                             </span>
                         </label>
                         <div class="field">
-                            <input type="url" id="websiteurl" class="not" name="" value="">
+                            <input type="url" id="websiteurl" name="websiteUrl" value="https://www.voorhoede.nl">
                         </div>
                     </div>
                     <div class="dropdown">
@@ -251,28 +252,30 @@
                 </fieldset>
             </form>
         </section>
-        <section id="json" class="json">
+        <section class="json">
             <form>
                 <fieldset>
                     <legend>JSON file</legend>
                     <textarea name="manifest">
 {
-   "display": "standalone,"
+   "display":"standalone",
+   "websiteUrl":"https://www.voorhoede.nl"
 }
                     </textarea>
                     <input type="submit" class="btn preview--json" value="Werk bij">
                 </fieldset>
             </form>
         </section>
-        <section class="preview">
+        </div>
+        <section id="preview" class="preview">
             <div class="btn-container">
-                <button class="btn" type="">Static</button>
-                <button class="btn" type="">Flow</button>
+                <button class="btn active" data-target="static">Static</button>
+                <button class="btn" data-target="flow">Flow</button>
             </div>
-            <div class="devices static">
-                <div>
+            <div class="devices static device-show">
+                <div data-website>
                     <h1>Website</h1>
-                    <div class="device--nexus-5x">
+                    <div class="device--nexus-5x web">
                         <div class="content">
                             <div class="top-bar">
                                 <svg viewbox="0 0 20 20">
@@ -292,7 +295,24 @@
                                 </svg>
                                 <span class="time"></span>
                             </div>
+                            <div class="chrome-header">
+                              <input type="text" name="weburl" value="https://www.voorhoede.nl">
+                              <button class="chrome-header_windows">1</button>
+                              <button class="chrome-header_settings">
+                                 <span></span>
+                                 <span></span>
+                                 <span></span>
+                              </button>
+                            </div>
                             <div class="device__viewport device__viewport--nexus-5x browser-screen" data-browser-screen>
+                            </div>
+                            <div class="notification">
+                              <span><img src="" alt=""></span>
+                              <h3></h3>
+                              <p></p>
+                              <div class="notification--buttons">
+                                 <button>Add to home screen</button>
+                              </div>
                             </div>
                             <div class="action-bar">
                                 <svg viewbox="5 5 30 30">
@@ -308,7 +328,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div data-homescreen>
                     <h1>Home screen</h1>
                     <div class="device--nexus-5x">
                         <div class="content">
@@ -346,7 +366,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div data-splash-screen>
                     <h1>Splash screen</h1>
                     <div class="device--nexus-5x">
                         <div class="content">
@@ -384,7 +404,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div data-pwa>
                     <h1>PWA</h1>
                     <div class="device--nexus-5x">
                         <div class="content">
@@ -424,7 +444,7 @@
                 </div>
             </div>
             <div class="devices flow">
-                <div>
+                <div data-flow>
                     <h1>Flow</h1>
                     <div class="device--nexus-5x">
                         <div class="content">

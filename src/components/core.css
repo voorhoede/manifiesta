@@ -53,19 +53,28 @@ label {
 }
 
 main {
-    display: flex;
-    flex-direction: column;
     width: 100%;
     max-width: 75rem;
     margin: 0 auto;
 }
 
+main > div {
+   display: flex;
+   flex-direction: column;
+}
+
 @media (min-width: 768px) {
-    main {
+    main > div {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
     }
+}
+
+main > div:not(.show-element),
+.preview:not(.show-element),
+.devices:not(.device-show) {
+   display: none;
 }
 
 section {

@@ -205,6 +205,10 @@ input.field:checked ~ label.field span {
     padding: 0;
 }
 
+.dropdown input[type="color"] {
+   width: 100%;
+}
+
 input,
 select,
 button,
@@ -257,7 +261,8 @@ button:last-of-type {
     color: #12353C;
 }
 
-.btn:hover {
+.btn:hover,
+.btn.active {
     color: #12353C;
     background-color: #e3d015;
     -webkit-transition: background-color 250ms ease;
@@ -307,7 +312,8 @@ input.input-file {
 .reset:focus,
 .reset:hover,
 .app-header-menu ul li a:focus,
-.app-header-menu ul li a:hover {
+.app-header-menu ul li a:hover,
+.app-header-menu ul li a.active {
     color: #0CAFCD;
     border-bottom: 1px solid #0CAFCD;
 }
