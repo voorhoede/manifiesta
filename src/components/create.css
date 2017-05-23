@@ -32,6 +32,7 @@ fieldset {
 }
 
 form fieldset legend {
+    font-family: 'Raleway', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     padding: 1rem 0 1rem 0;
@@ -135,6 +136,8 @@ input.field:checked ~ label.field span {
     display: block;
     margin: .5rem 1rem 0 0;
     opacity: 1;
+    -webkit-box-shadow: 0 2px 5px 2px rgba(0, 0, 0, .25);
+    box-shadow: 0 2px 5px 2px rgba(0, 0, 0, .25);
 }
 
 .tooltip p {
@@ -206,7 +209,7 @@ input.field:checked ~ label.field span {
 }
 
 .dropdown input[type="color"] {
-   width: 100%;
+    width: 100%;
 }
 
 input,
