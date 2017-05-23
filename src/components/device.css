@@ -1,316 +1,326 @@
 .device--nexus-5x {
-    font-family: 'Roboto', sans-serif;
-    background-image: url('../assets/img/nexus-5x.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 100%;
-    height: auto;
-    padding-bottom: 204%;
-    display: inline-block;
-    position: relative;
+  font-family: 'Roboto', sans-serif;
+  background-image: url('../assets/img/nexus-5x.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: auto;
+  padding-bottom: 204%;
+  display: inline-block;
+  position: relative;
 }
 
 .content {
-    position: absolute;
-    top: 9%;
-    left: 3.8%;
-    width: 91.5%;
-    height: 80%;
-    overflow: hidden;
+  position: absolute;
+  top: 9%;
+  left: 3.8%;
+  width: 91.5%;
+  height: 80%;
+  overflow: hidden;
 }
 
 .device__viewport--nexus-5x {
-    background-image: url(../assets/img/android-background.jpg);
-    background-size: cover;
-    width: 100%;
-    height: 90.5%;
-    margin-top: 5.1%;
+  background-image: url(../assets/img/bg.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 90.5%;
+  margin-top: 5.1%;
 }
 
 .device__viewport--nexus-5x.in-use {
-   background: transparent;
+  background: transparent;
 }
 
 .top-bar,
 .action-bar {
-    display: flex;
+  display: flex;
 }
 
 .top-bar svg,
 .action-bar svg,
 .top-bar svg path {
-    height: 100%;
-    fill: #FFF;
-    opacity: 1;
+  height: 100%;
+  fill: #FFF;
+  opacity: 1;
 }
 
 .top-bar {
-    position: absolute;
-    z-index: 1;
-    height: 3%;
-    width: 100%;
-    background: #000;
-    justify-content: flex-end;
-    align-items: center;
+  position: absolute;
+  z-index: 1;
+  height: 3%;
+  width: 100%;
+  background: #000;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .top-bar svg {
-    width: 20px;
+  width: 20px;
 }
 
 .top-bar span {
-    height: 100%;
-    font-size: .55rem;
-    color: #FFF;
-    margin-right: .2rem;
+  height: 100%;
+  font-size: .55rem;
+  color: #FFF;
+  margin-right: .2rem;
 }
 
 @media (min-width: 768px) {
-    .top-bar span {
-        height: auto;
-        font-size: .8rem;
-    }
+  .top-bar span {
+      height: auto;
+      font-size: .8rem;
+  }
 }
 
 .top-bar svg:nth-of-type(1) path:nth-of-type(1) {
-    fill-opacity: .3;
+  fill-opacity: .3;
 }
 
 .top-bar svg:nth-of-type(1) path:nth-of-type(2) {
-    fill: none;
+  fill: none;
 }
 
 .top-bar svg:nth-of-type(2) path:nth-of-type(1) {
-    fill-opacity: .3;
+  fill-opacity: .3;
 }
 
 .top-bar svg:nth-of-type(2) path:nth-of-type(3) {
-    fill: none;
+  fill: none;
 }
 
 .top-bar svg:nth-of-type(3) path:nth-of-type(1) {
-    fill: none;
+  fill: none;
 }
 
 .top-bar svg:nth-of-type(3) path:nth-of-type(2) {
-    fill-opacity: .3;
+  fill-opacity: .3;
 }
 
 .action-bar {
-    position: absolute;
-    bottom: 0;
-    z-index: 1;
-    height: 7%;
-    width: 100%;
-    background: #000;
-    justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  height: 7%;
+  width: 100%;
+  background: #000;
+  justify-content: space-around;
+}
+
+.action-bar button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 polygon,
 circle,
 rect {
-    fill: none;
-    stroke-width: 1px;
-    stroke: #FFF;
-    height: 15px;
-    width: 15px;
-    stroke-linejoin: round;
+  fill: none;
+  stroke-width: 1px;
+  stroke: #FFF;
+  height: 15px;
+  width: 15px;
+  stroke-linejoin: round;
 }
 
 .device--nexus-5x.web .device__viewport--nexus-5x {
-   margin-top: 0;
-   height: 82.6%;
+  margin-top: 0;
+  height: 82.6%;
 }
 
 .device--nexus-5x.web .chrome-header {
-   width: 100%;
-   height: 8%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding: 2px 10px;
-   box-sizing: border-box;
-   margin-top: 5.1%;
-   background-color: #f2f2f2;
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  height: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 10px;
+  box-sizing: border-box;
+  margin-top: 5.1%;
+  background-color: #f2f2f2;
 }
 
 .device--nexus-5x.web .chrome-header input {
-   pointer-events: none;
-   border: 1px solid #e0e0e0;
-   width: calc(100% - 3.7250rem);
-   height: 70%;
-   border-radius: 2px;
-   margin-right: .3em;
+  pointer-events: none;
+  border: 1px solid #e0e0e0;
+  width: calc(100% - 3.7250rem);
+  height: 70%;
+  border-radius: 2px;
+  margin-right: .3em;
+  padding-left: .5rem;
 }
 
 .device--nexus-5x.web .chrome-header .chrome-header_windows {
-   border: #7d7d7d 2px solid;
-   border-radius: 2px;
-   background: transparent;
-   width: 1.5625rem;
-   height: 1.5625rem;
-   line-height: 0;
-   margin-right: .3em;
+  border: #7d7d7d 2px solid;
+  border-radius: 2px;
+  background: transparent;
+  width: 1.5625rem;
+  height: 1.5625rem;
+  line-height: 0;
+  margin-right: .3em;
 }
 
 .device--nexus-5x.web .chrome-header .chrome-header_settings {
-   background: transparent;
-   border: #7d7d7d 2px solid;
-   border-radius: 2px;
-   width: 1.5625rem;
-   height: 1.5625rem;
-   line-height: 0;
-   padding: 0;
+  background: transparent;
+  border: #7d7d7d 2px solid;
+  border-radius: 2px;
+  width: 1.5625rem;
+  height: 1.5625rem;
+  line-height: 0;
+  padding: 0;
 }
 
 .device--nexus-5x.web .chrome-header .chrome-header_settings span {
-   display: block;
-   width: 3px;
-   height: 3px;
-   border-radius: 50%;
-   margin: 0 auto 3px;
-   background-color: #7d7d7d;
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  margin: 0 auto 3px;
+  background-color: #7d7d7d;
 }
 
 .device--nexus-5x.web .chrome-header .chrome-header_settings span:last-child {
-   margin-bottom: 0;
+  margin-bottom: 0;
 }
 
-
 .notification {
-   position: absolute;
-   bottom: 7%;
-   width: 100%;
-   background: #fff;
-   padding: 15px 10px;
-   text-align: left;
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  bottom: 7%;
+  width: 100%;
+  background: #FFF;
+  padding: 15px;
+  text-align: left;
+  -webkit-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, .25);
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, .25);
 }
 
 .notification .exit {
-    position:absolute;
-    right: 1rem;
-    top: 1rem;
-    width: 1rem;
-    height: 1rem;
-    cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  top: 1.6rem;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
 }
 
 .notification .exit::before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #7d7d7d;
-    transform: rotate(45deg);
-    transform-origin: center;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #7d7d7d;
+  transform: rotate(45deg);
+  transform-origin: center;
 }
 
 .notification .exit::after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #7d7d7d;
-    transform: rotate(-45deg);
-    transform-origin: center;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #7d7d7d;
+  transform: rotate(-45deg);
+  transform-origin: center;
 }
 
 .notification span {
-   width: 1.5rem;
-   height: 5rem;
-   vertical-align: top;
-   display: inline-block;
-   float: left;
+  width: 2.5rem;
+  vertical-align: top;
+  display: inline-block;
+  float: left;
+  margin-top: .4rem;
 }
 
 .notification span img {
-   width: 100%;
-   height: auto;
+  width: 100%;
+  height: auto;
 }
 
-.notification h3 {
-   width: calc(90% - 1.5rem);
-   display: inline-block;
-   margin-top: 0;
-   margin-bottom: .7rem;
-   margin-left: .3rem;
+.notification h4 {
+  color: #333333;
+  display: inline-block;
+  margin: 0 .3rem 0 1rem;
 }
 
 .notification p {
-   vertical-align: top;
-   display: inline-block;
-   width: calc(90% - 1.5rem);
-   font-size: 1rem;
-   margin-top: 0;
-   margin-bottom: 15px;
-   font-family: arial;
-   margin-left: .3rem;
+  vertical-align: top;
+  color: #828282;
+  display: inline-block;
+  width: calc(90% - 1.5rem);
+  font-size: 0.9rem;
+  margin: 0 0 15px 1rem;
 }
 
 .notification .notification--buttons {
-   text-align: right;
+  text-align: right;
 }
 
 .notification .notification--buttons button {
-    display: inline-block;
-    position: relative;
-    width: 190px;
-    height: 32px;
-    line-height: 32px;
-    border-radius: 2px;
-    font-size: 0.9rem;
-    background-color: #4285f4;
-    color: #fff;
-    border: none;
-    text-transform: uppercase;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  font-weight: 600;
+  display: inline-block;
+  position: relative;
+  width: 190px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 2px;
+  font-size: 0.9rem;
+  background-color: #4285f4;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
 }
 
 .home-icon-container {
-   width: 75px;
-   margin: 5px;
-   cursor: pointer;
+  width: 75px;
+  margin: 5px;
+  cursor: pointer;
 }
 
 .home-icon-container img {
-   width: 50px;
-   height: auto;
-   margin-top: 5px;
+  width: 50px;
+  height: auto;
+  margin-top: 5px;
 }
 
 .home-icon-container p {
-   color: #fff;
-   margin: 0;
-   font-size: .6rem;
-   font-family: arial;
-   font-weight: bold;
+  color: #fff;
+  margin: 0;
+  font-size: .6rem;
+  font-family: arial;
+  font-weight: bold;
 }
 
 .no-chrome iframe html {
-    width: 100vw;
-    overflow: hidden;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .scrollbar-measure {
-	width: 100px;
-	height: 100px;
-	overflow: scroll;
-	position: absolute;
-	top: -9999px;
+  width: 100px;
+  height: 100px;
+  overflow: scroll;
+  position: absolute;
+  top: -9999px;
 }
 
 .splashBG {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .splashBG img {
-    width: 50%;
-    height: auto;
+  width: 50%;
+  height: auto;
 }
