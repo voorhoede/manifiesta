@@ -35,238 +35,237 @@
         </nav>
     </header>
     <main>
-      <div id="json" class="show-element">
-        <section class="create">
-            <form data-create-form>
-                <fieldset>
-                    <legend>Aanmaken</legend>
-                    <div class="dropdown">
-                        <span>
+        <div id="json" class="show-element">
+            <section class="create">
+                <form data-create-form>
+                    <fieldset>
+                        <legend>Aanmaken</legend>
+                        <div class="dropdown">
+                            <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path d="M0 0h24v24H0z" fill="none"/>
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
                             </svg>
                             <div class="tooltip">
-                                <p>Hierin komt de volledige naam van de extensie te staan. Voorbeeld: ‘De Voorhoede Front-end Developers’.</p>
+                                <p>Hierin komt de url van de website in te staan. Deze url wordt ingeladen in de iframes.</p>
                             </div>
                         </span>
-                        <label for="websiteurl">Website url</label>
-                        <input class="field" id="field-url" type="checkbox" name="tabs">
-                        <label class="field" for="field-url">
-                            <span class="arrow">
+                            <label for="websiteurl">Website url</label>
+                            <input class="field" id="field-url" type="checkbox" name="tabs">
+                            <label class="field" for="field-url">
+                                <span class="arrow">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                     <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
                                     <path d="M0-.75h24v24H0z" fill="none"/>
                                 </svg>
                             </span>
-                        </label>
-                        <div class="field">
-                            <input type="url" id="websiteurl" name="websiteUrl" value="https://www.voorhoede.nl">
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                            </svg>
-                            <div class="tooltip">
-                                <p>Hierin komt de volledige naam van de extensie te staan. Voorbeeld: ‘De Voorhoede Front-end Developers’.</p>
-                            </div>
-                        </span>
-                        <label for="shortname">Short name</label>
-                        <input class="field" id="field-shname" type="checkbox" name="tabs">
-                        <label class="field" for="field-shname">
-                            <span class="arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                    <path d="M0-.75h24v24H0z" fill="none"/>
-                                </svg>
-                            </span>
-                        </label>
-                        <div class="field">
-                            <input type="text" id="shortname" name="short_name" value="">
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                            </svg>
-                            <div class="tooltip">
-                                <p>Hierin komt de volledige naam van de extensie te staan. Voorbeeld: ‘De Voorhoede Front-end Developers’.</p>
-                            </div>
-                        </span>
-                        <label for="name">Name</label>
-                        <input class="field" id="field-name" type="checkbox" name="tabs">
-                        <label class="field" for="field-name">
-                            <span class="arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                    <path d="M0-.75h24v24H0z" fill="none"/>
-                                </svg>
-                            </span>
-                        </label>
-                        <div class="field">
-                            <input type="text" id="name" name="name" value="">
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                            </svg>
-                            <div class="tooltip">
-                                <p>Hierin komt de volledige naam van de extensie te staan. Voorbeeld: ‘De Voorhoede Front-end Developers’.</p>
-                            </div>
-                        </span>
-                        <label for="starturl">Start url</label>
-                        <input class="field" id="field-starturl" type="checkbox" name="tabs">
-                        <label class="field" for="field-starturl">
-                            <span class="arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                    <path d="M0-.75h24v24H0z" fill="none"/>
-                                </svg>
-                            </span>
-                        </label>
-                        <div class="field">
-                            <input type="url" id="starturl" name="start_url" value="">
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                            </svg>
-                            <div class="tooltip">
-                                <p>Hierin komt de volledige naam van de extensie te staan. Voorbeeld: ‘De Voorhoede Front-end Developers’.</p>
-                            </div>
-                        </span>
-                        <label for="display">Display</label>
-                        <input class="field" id="field-display" type="checkbox" name="tabs">
-                        <label class="field" for="field-display">
-                            <span class="arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                    <path d="M0-.75h24v24H0z" fill="none"/>
-                                </svg>
-                            </span>
-                        </label>
-                        <div class="field">
-                            <select name="display" id="display">
-                                <option value="standalone">Standalone</option>
-                                <option value="fullscreen">Fullscreen</option>
-                                <option value="minimal-ui">Minimal-ui</option>
-                                <option value="browser">Browser</option>
-                            </select>
-                            <div class="arrow"></div>
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                            </svg>
-                            <div class="tooltip">
-                                <p>Hierin komt de volledige naam van de extensie te staan. Voorbeeld: ‘De Voorhoede Front-end Developers’.</p>
-                            </div>
-                        </span>
-                        <label>Orientation</label>
-                        <input class="field" id="field-orientation" type="checkbox" name="tabs">
-                        <label class="field" for="field-orientation">
-                            <span class="arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                    <path d="M0-.75h24v24H0z" fill="none"/>
-                                </svg>
-                            </span>
-                        </label>
-                        <div class="field">
-                            <label for="landscape">Landscape
-                                <input type="radio" id="landscape" name="orientation" value="landscape">
-                                <div class="radio"></div>
                             </label>
-                            <label for="portrait">Portrait
-                                <input type="radio" id="portrait" name="orientation" value="portrait">
-                                <div class="radio"></div>
+                            <div class="field">
+                                <input type="url" id="websiteurl" name="websiteUrl">
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                            </svg>
+                            <div class="tooltip">
+                                <p>Hierin komt de naam van de prompt te staan. Bijvoorbeeld: ‘De Voorhoede’.</p>
+                            </div>
+                        </span>
+                            <label for="shortname">Short name</label>
+                            <input class="field" id="field-shname" type="checkbox" name="tabs">
+                            <label class="field" for="field-shname">
+                                <span class="arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+                                    <path d="M0-.75h24v24H0z" fill="none"/>
+                                </svg>
+                            </span>
                             </label>
+                            <div class="field">
+                                <input type="text" id="shortname" name="short_name" value="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="dropdown">
-                        <span>
+                        <div class="dropdown">
+                            <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path d="M0 0h24v24H0z" fill="none"/>
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
                             </svg>
                             <div class="tooltip">
-                                <p>Hierin komt de volledige naam van de extensie te staan. Voorbeeld: ‘De Voorhoede Front-end Developers’.</p>
+                                <p>Hierin komt de beschrijving van te staan. Voorbeeld: ‘De Voorhoede Front-end Developers’.</p>
                             </div>
                         </span>
-                        <label for="bgcolor">Background color</label>
-                        <input class="field" id="field-bgcolor" type="checkbox" name="tabs">
-                        <label class="field" for="field-bgcolor">
-                            <span class="arrow">
+                            <label for="description">Description</label>
+                            <input class="field" id="field-description" type="checkbox" name="tabs">
+                            <label class="field" for="field-description">
+                                <span class="arrow">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                     <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
                                     <path d="M0-.75h24v24H0z" fill="none"/>
                                 </svg>
                             </span>
-                        </label>
-                        <div class="field">
-                            <input type="color" id="bgcolor" name="background_color" value="#ff0000">
+                            </label>
+                            <div class="field">
+                                <input type="text" id="description" name="description" value="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="dropdown">
-                        <span>
+                        <div class="dropdown">
+                            <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path d="M0 0h24v24H0z" fill="none"/>
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
                             </svg>
                             <div class="tooltip">
-                                <p>Hierin komt de volledige naam van de extensie te staan. Voorbeeld: ‘De Voorhoede Front-end Developers’.</p>
+                                <p>Hier komt de start url te staan van de website. Bijvoorbeeld: /page.html</p>
                             </div>
                         </span>
-                        <label>Icon(s)</label>
-                        <input class="field" id="field-icons" type="checkbox" name="tabs">
-                        <label class="field" for="field-icons">
-                            <span class="arrow">
+                            <label for="starturl">Start url</label>
+                            <input class="field" id="field-starturl" type="checkbox" name="tabs">
+                            <label class="field" for="field-starturl">
+                                <span class="arrow">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                     <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
                                     <path d="M0-.75h24v24H0z" fill="none"/>
                                 </svg>
                             </span>
-                        </label>
-                        <div class="field">
-                            <input class="input-file" id="my-file" name="icons" type="file" >
-                            <label tabindex="0" for="my-file" class="input-file-trigger">Select a file...</label>
+                            </label>
+                            <div class="field">
+                                <input type="url" id="starturl" name="start_url" value="">
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <input type="submit" class="btn" value="Preview">
-                        <input type="submit" class="reset" value="Reset">
-                    </div>
-                </fieldset>
-            </form>
-        </section>
-        <section class="json">
-            <form>
-                <fieldset>
-                    <legend>JSON file</legend>
-                    <textarea name="manifest">
-{
-   "display":"standalone",
-   "websiteUrl":"https://www.voorhoede.nl"
+                        <div class="dropdown">
+                            <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                            </svg>
+                            <div class="tooltip">
+                                <p>Hier kan je het scherm aanpassen van de device. Dus met of zonder de chrome om de website heen.</p>
+                            </div>
+                        </span>
+                            <label for="display">Display</label>
+                            <input class="field" id="field-display" type="checkbox" name="tabs">
+                            <label class="field" for="field-display">
+                                <span class="arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+                                    <path d="M0-.75h24v24H0z" fill="none"/>
+                                </svg>
+                            </span>
+                            </label>
+                            <div class="field">
+                                <select name="display" id="display">
+                                    <option value="standalone">Standalone</option>
+                                    <option value="fullscreen">Fullscreen</option>
+                                    <option value="minimal-ui">Minimal-ui</option>
+                                    <option value="browser">Browser</option>
+                                </select>
+                                <div class="arrow"></div>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                            </svg>
+                            <div class="tooltip">
+                                <p>HHier kan je de positie van de device aanpassen. Je kan de device staand of liggend laten zien.</p>
+                            </div>
+                        </span>
+                            <label>Orientation</label>
+                            <input class="field" id="field-orientation" type="checkbox" name="tabs">
+                            <label class="field" for="field-orientation">
+                                <span class="arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+                                    <path d="M0-.75h24v24H0z" fill="none"/>
+                                </svg>
+                            </span>
+                            </label>
+                            <div class="field">
+                                <label for="landscape">Landscape
+                                    <input type="radio" id="landscape" name="orientation" value="landscape">
+                                    <div class="radio"></div>
+                                </label>
+                                <label for="portrait">Portrait
+                                    <input type="radio" id="portrait" name="orientation" value="portrait">
+                                    <div class="radio"></div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                            </svg>
+                            <div class="tooltip">
+                                <p>Hiermee pas je de achtergrondkleur van de ‘splash’ pagina aan.</p>
+                            </div>
+                        </span>
+                            <label for="bgcolor">Background color</label>
+                            <input class="field" id="field-bgcolor" type="checkbox" name="tabs">
+                            <label class="field" for="field-bgcolor">
+                                <span class="arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+                                    <path d="M0-.75h24v24H0z" fill="none"/>
+                                </svg>
+                            </span>
+                            </label>
+                            <div class="field">
+                                <input type="color" id="bgcolor" name="background_color" value="#ff0000">
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                            </svg>
+                            <div class="tooltip">
+                                <p>Hiermee upload je icon(s), die weegegeven worden op de prompt, de homepagina en de splash’ pagina.</p>
+                            </div>
+                        </span>
+                            <label>Icon(s)</label>
+                            <input class="field" id="field-icons" type="checkbox" name="tabs">
+                            <label class="field" for="field-icons">
+                                <span class="arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+                                    <path d="M0-.75h24v24H0z" fill="none"/>
+                                </svg>
+                            </span>
+                            </label>
+                            <div class="field">
+                                <input class="input-file" id="my-file" name="icons" type="file">
+                                <label tabindex="0" for="my-file" class="input-file-trigger">Select a file...</label>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="submit" class="btn" value="Preview">
+                            <input type="submit" class="reset" value="Reset">
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+            <section class="json">
+                <form>
+                    <fieldset>
+                        <legend>JSON file</legend>
+                        <textarea name="manifest">
+{ 
+    "display":"standalone", 
 }
-                    </textarea>
-                    <input type="submit" class="btn preview--json" value="Werk bij">
-                </fieldset>
-            </form>
-        </section>
+                        </textarea>
+                        <input type="submit" class="btn preview--json" value="Werk bij">
+                    </fieldset>
+                </form>
+            </section>
         </div>
         <section id="preview" class="preview">
             <div class="btn-container">
@@ -289,7 +288,7 @@
                                     <path d="M1 16h11V5z" />
                                     <path d="M0 0h18v18H0z" />
                                 </svg>
-                                <svg viewbox="0 0 20 20">
+                                <svg class="battery" viewbox="0 0 20 20">
                                     <path d="M0 0h18v18H0z" />
                                     <path d="M13 4c0-.55-.45-1-1-1h-1.5V1.5h-3V3H6c-.55 0-1 .45-1 1v8.5h8V4z" />
                                     <path d="M5 12.5V15c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.5H5z" />
@@ -297,20 +296,20 @@
                                 <span class="time"></span>
                             </div>
                             <div class="chrome-header">
-                              <input type="text" name="weburl" value="https://www.voorhoede.nl">
-                              <button class="chrome-header_windows">1</button>
-                              <button class="chrome-header_settings">
-                                 <span></span>
-                                 <span></span>
-                                 <span></span>
-                              </button>
+                                <input type="text" name="weburl" value="https://www.voorhoede.nl">
+                                <button class="chrome-header_windows">1</button>
+                                <button class="chrome-header_settings">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
                             </div>
                             <div class="device__viewport device__viewport--nexus-5x browser-screen" data-browser-screen>
                             </div>
                             <div class="notification">
                                 <div class="exit"></div>
                                 <span><img src="" alt=""></span>
-                                <h3></h3>
+                                <h4></h4>
                                 <p></p>
                                 <div class="notification--buttons">
                                     <button>Add to home screen</button>
@@ -345,7 +344,7 @@
                                     <path d="M1 16h11V5z" />
                                     <path d="M0 0h18v18H0z" />
                                 </svg>
-                                <svg viewbox="0 0 20 20">
+                                <svg class="battery" viewbox="0 0 20 20">
                                     <path d="M0 0h18v18H0z" />
                                     <path d="M13 4c0-.55-.45-1-1-1h-1.5V1.5h-3V3H6c-.55 0-1 .45-1 1v8.5h8V4z" />
                                     <path d="M5 12.5V15c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.5H5z" />
@@ -383,7 +382,7 @@
                                     <path d="M1 16h11V5z" />
                                     <path d="M0 0h18v18H0z" />
                                 </svg>
-                                <svg viewbox="0 0 20 20">
+                                <svg class="battery" viewbox="0 0 20 20">
                                     <path d="M0 0h18v18H0z" />
                                     <path d="M13 4c0-.55-.45-1-1-1h-1.5V1.5h-3V3H6c-.55 0-1 .45-1 1v8.5h8V4z" />
                                     <path d="M5 12.5V15c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.5H5z" />
@@ -421,7 +420,7 @@
                                     <path d="M1 16h11V5z" />
                                     <path d="M0 0h18v18H0z" />
                                 </svg>
-                                <svg viewbox="0 0 20 20">
+                                <svg class="battery" viewbox="0 0 20 20">
                                     <path d="M0 0h18v18H0z" />
                                     <path d="M13 4c0-.55-.45-1-1-1h-1.5V1.5h-3V3H6c-.55 0-1 .45-1 1v8.5h8V4z" />
                                     <path d="M5 12.5V15c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.5H5z" />
@@ -461,7 +460,7 @@
                                     <path d="M1 16h11V5z" />
                                     <path d="M0 0h18v18H0z" />
                                 </svg>
-                                <svg viewbox="0 0 20 20">
+                                <svg class="battery" viewbox="0 0 20 20">
                                     <path d="M0 0h18v18H0z" />
                                     <path d="M13 4c0-.55-.45-1-1-1h-1.5V1.5h-3V3H6c-.55 0-1 .45-1 1v8.5h8V4z" />
                                     <path d="M5 12.5V15c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.5H5z" />
@@ -471,15 +470,21 @@
                             <div class="device__viewport device__viewport--nexus-5x browser-screen" data-browser-screen>
                             </div>
                             <div class="action-bar">
-                                <svg viewbox="5 5 30 30">
-                                    <polygon points="26.5,12.5 26.5,27.5 13.5,20" rx="15" ry="15"></polygon>
-                                </svg>
-                                <svg viewbox="5 5 30 30">
-                                    <circle cx="20" cy="20" r="7.5"></circle>
-                                </svg>
-                                <svg viewbox="5 5 30 30">
-                                    <rect x="12.5" y="12.5" height="15" width="15"></rect>
-                                </svg>
+                                <button>
+                                    <svg viewbox="5 5 30 30">
+                                        <polygon points="26.5,12.5 26.5,27.5 13.5,20" rx="15" ry="15"></polygon>
+                                    </svg>
+                                </button>
+                                <button>
+                                    <svg viewbox="5 5 30 30">
+                                        <circle cx="20" cy="20" r="7.5"></circle>
+                                    </svg>
+                                </button>
+                                <button>
+                                    <svg viewbox="5 5 30 30">
+                                        <rect x="12.5" y="12.5" height="15" width="15"></rect>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                     </div>
