@@ -81,32 +81,4 @@ section {
     width: 100%;
 }
 
-@media (min-width: 768px) {
-    section {
-        max-width: calc(70% - (2em/2));
-    }
-}
 
-@media (min-width: 768px) {
-    section.preview {
-        max-width: calc(80% - (2em/2));
-    }
-}
-
-@media (max-width: 768px) {
-    section.preview {
-        max-width: 75%;
-    }
-}
-
-@media (max-width: 640px) {
-    section.preview {
-        max-width: 70%;
-    }
-}
-
-@media (max-width: 480px) {
-    section.preview {
-        max-width: 100%;
-    }
-}
