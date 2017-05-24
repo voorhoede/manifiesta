@@ -35,6 +35,55 @@ function startTime(time) {
     }, 60000);
 }
 
+navigator.getBattery().then(function(battery) {
+    function updateAllBatteryInfo() {
+        updateChargeInfo();
+        updateLevelInfo();
+        updateChargingInfo();
+        updateDischargingInfo();
+    }
+    updateAllBatteryInfo();
+
+    battery.addEventListener('chargingchange', function() {
+        updateChargeInfo();
+    });
+
+    // function updateChargeInfo() {
+    //     console.log("Battery charging? " + (battery.charging ? "Yes" : "No"));
+    // }
+
+    battery.addEventListener('levelchange', function() {
+        updateLevelInfo();
+    });
+
+    // function updateLevelInfo() {
+    //     console.log("Battery level: " + battery.level * 100 + "%");
+    // }
+
+    battery.addEventListener('chargingtimechange', function() {
+        updateChargingInfo();
+    });
+
+    // function updateChargingInfo() {
+    //     console.log("Battery charging time: " + battery.chargingTime + " seconds");
+    // }
+
+    battery.addEventListener('dischargingtimechange', function() {
+        updateDischargingInfo();
+    });
+
+    // function updateDischargingInfo() {
+    //     console.log("Battery discharging time: " + battery.dischargingTime + " seconds");
+    // }
+
+    var battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery || navigator.msBattery;
+
+    if (battery) {
+        // battery API supported
+    }
+
+});
+
 
 for (var i = 0; i < createFormItems.length; i++) {
     createFormItems[i].addEventListener("change", updateJsonObject)
@@ -47,21 +96,8 @@ function updateJsonObject() {
         addIconsToJsonObject(this)
     } else {
         json[this.getAttribute("name")] = this.value
-        jsonTextarea.value = makeMyJsonPretty(JSON.stringify(json))
+        jsonTextarea.value = JSON.stringify(json, null, 4)
     }
-}
-
-function makeMyJsonPretty(json) {
-    let newJson = json.replace(/{/g, "{\n   ")
-    newJson = newJson.replace(/}/g, "\n}")
-    newJson = newJson.replace(/[\[']+/g, "[\n   ")
-    newJson = newJson.replace(/\}\]/g, "   }\n   ]")
-    newJson = newJson.replace(/},/g, "   },")
-    newJson = newJson.replace(/,/g, ",\n   ")
-    newJson = newJson.replace(/"src/g, '\u0020\u0020\u0020"src')
-    newJson = newJson.replace(/"type/g, '\u0020\u0020\u0020"type')
-    newJson = newJson.replace(/"sizes/g, '\u0020\u0020\u0020"sizes')
-    return newJson
 }
 
 function addIconsToJsonObject(el) {
@@ -71,11 +107,7 @@ function addIconsToJsonObject(el) {
 
     addIcons(arr, i, el.files, function(result) {
         json['icons'] = result
-        jsonTextarea.value = makeMyJsonPretty(JSON.stringify(json))
-        console.log(imageFiles);
-        console.log(jsonTextarea);
-        console.log(jsonTextarea.innerHTML);
-        console.log(makeMyJsonPretty(JSON.stringify(json)));
+        jsonTextarea.value = JSON.stringify(json, null, 4)
     })
 }
 
@@ -168,7 +200,7 @@ function jsonToScreens(event) {
     websitePhone.querySelector(".chrome-header input").value = Json.websiteUrl
     websitePhone.querySelector("span img").setAttribute("src", imageFiles[0])
     websitePhone.querySelector("h4").innerHTML = Json["short_name"]
-    websitePhone.querySelector("p").innerHTML = Json["description"]
+    websitePhone.querySelector("p").innerHTML = Json["name"]
 
     // Home screen
     let homeIconContainer = document.createElement("div"),
