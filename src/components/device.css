@@ -8,6 +8,7 @@
   padding-bottom: 204%;
   display: inline-block;
   position: relative;
+  transform: scale(0.9);
 }
 
 .content {
@@ -60,7 +61,7 @@
 
 .top-bar span {
   height: 100%;
-  font-size: .55rem;
+  font-size: .75rem;
   color: #FFF;
   margin-right: .2rem;
 }
@@ -68,7 +69,6 @@
 @media (min-width: 768px) {
   .top-bar span {
       height: auto;
-      font-size: .8rem;
   }
 }
 
@@ -287,15 +287,15 @@ rect {
 .home-icon-container img {
   width: 50px;
   height: auto;
-  margin-top: 5px;
+  margin-top: 15px;
 }
 
 .home-icon-container p {
   color: #fff;
   margin: 0;
   font-size: .6rem;
-  font-family: arial;
   font-weight: bold;
+  text-shadow: 1px 1px rgba(0, 0, 0, .75);
 }
 
 .no-chrome iframe html {
