@@ -1,13 +1,21 @@
 .preview {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .preview{
+        flex-direction: row;
+    }
 }
 
 .preview div.btn-container {
-    margin-top: 1rem;
     display: flex;
     justify-content: center;
+}
+
+.preview > div{
+    width: 100%;
 }
 
 .devices {
@@ -27,7 +35,6 @@
 .devices > div {
     display: inline-block;
     width: 100%;
-    margin-bottom: 1rem;
     text-align: center;
 }
 
@@ -35,14 +42,6 @@
     .devices > div {
         width: calc(50% - (.875em/2));
     }
-}
-
-.devices > div:nth-of-type(-n+4) {
-    margin: 0;
-}
-
-.devices > div:nth-of-type(-n+3) {
-    margin-bottom: 1rem;
 }
 
 @media (min-width: 768px) {
