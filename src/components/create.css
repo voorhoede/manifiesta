@@ -324,6 +324,13 @@ input.input-file {
 .json {
     -webkit-flex: 1;
     background-color: #12353C;
+    margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+    .json {
+        margin: 0;
+    }
 }
 
 .json form {
