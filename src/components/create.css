@@ -1,11 +1,6 @@
-.create {
-    margin-bottom: 5rem;
-}
-
-@media (min-width: 768px) {
+ @media (min-width: 768px) {
     .create {
         max-width: 30%;
-        margin: 0;
     }
 }
 
@@ -216,10 +211,10 @@ input,
 select,
 button,
 textarea {
-    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     -webkit-border-radius: 0;
+    border-radius: 0;
 }
 
 select::-ms-expand {
@@ -323,6 +318,7 @@ input.input-file {
 
 .json {
     -webkit-flex: 1;
+    flex: 1;
     background-color: #12353C;
     margin-left: 1rem;
 }

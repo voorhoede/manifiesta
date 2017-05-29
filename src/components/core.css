@@ -53,9 +53,17 @@ label {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 75rem;
     margin: 1rem auto;
+}
+
+@media (min-width: 768px) {
+    main {
+        flex-direction: row;
+    }
 }
 
 main > div {
@@ -68,6 +76,7 @@ main > div {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
+        width: 100%;
     }
 }
 
@@ -80,5 +89,3 @@ main > div:not(.show-element),
 section {
     width: 100%;
 }
-
-
