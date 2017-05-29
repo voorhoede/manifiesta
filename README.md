@@ -9,8 +9,6 @@ Manifiesta and can be installed via [npm](https://npmjs.org/):
 npm install
 ```
 
-Alternatively you can simply [download a copy](releases/).
-
 To start just simply type:
 
 ```bash
