@@ -35,7 +35,6 @@
         </nav>
     </header>
     <main>
-        <div id="json" class="show-element">
             <section class="create">
                 <form data-create-form>
                     <fieldset>
@@ -51,7 +50,7 @@
                             </div>
                         </span>
                             <label for="websiteurl">Website url</label>
-                            <input class="field" id="field-url" type="checkbox" name="tabs">
+                            <input class="field" id="field-url" type="checkbox">
                             <label class="field" for="field-url">
                                 <span class="arrow">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -75,7 +74,7 @@
                             </div>
                         </span>
                             <label for="shortname">Short name</label>
-                            <input class="field" id="field-shname" type="checkbox" name="tabs">
+                            <input class="field" id="field-shname" type="checkbox">
                             <label class="field" for="field-shname">
                                 <span class="arrow">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -99,7 +98,7 @@
                             </div>
                         </span>
                             <label for="name">Name</label>
-                            <input class="field" id="field-name" type="checkbox" name="tabs">
+                            <input class="field" id="field-name" type="checkbox">
                             <label class="field" for="field-name">
                                 <span class="arrow">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -123,7 +122,7 @@
                             </div>
                         </span>
                             <label for="starturl">Start url</label>
-                            <input class="field" id="field-starturl" type="checkbox" name="tabs">
+                            <input class="field" id="field-starturl" type="checkbox">
                             <label class="field" for="field-starturl">
                                 <span class="arrow">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -147,7 +146,7 @@
                             </div>
                         </span>
                             <label for="display">Display</label>
-                            <input class="field" id="field-display" type="checkbox" name="tabs">
+                            <input class="field" id="field-display" type="checkbox">
                             <label class="field" for="field-display">
                                 <span class="arrow">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -177,7 +176,7 @@
                             </div>
                         </span>
                             <label>Orientation</label>
-                            <input class="field" id="field-orientation" type="checkbox" name="tabs">
+                            <input class="field" id="field-orientation" type="checkbox">
                             <label class="field" for="field-orientation">
                                 <span class="arrow">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -208,7 +207,7 @@
                             </div>
                         </span>
                             <label for="bgcolor">Background color</label>
-                            <input class="field" id="field-bgcolor" type="checkbox" name="tabs">
+                            <input type="checkbox" class="field" id="field-bgcolor">
                             <label class="field" for="field-bgcolor">
                                 <span class="arrow">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -218,6 +217,7 @@
                             </span>
                             </label>
                             <div class="field">
+                                <input type="text" class="field" id="field-bgcolor">
                                 <input type="color" id="bgcolor" name="background_color" value="#ff0000">
                             </div>
                         </div>
@@ -232,7 +232,7 @@
                             </div>
                         </span>
                             <label>Icon(s)</label>
-                            <input class="field" id="field-icons" type="checkbox" name="tabs">
+                            <input class="field" id="field-icons" type="checkbox">
                             <label class="field" for="field-icons">
                                 <span class="arrow">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -253,244 +253,26 @@
                     </fieldset>
                 </form>
             </section>
+            <div id="json" class="show-element">
             <section class="json">
                 <form>
                     <fieldset>
                         <legend>JSON file</legend>
                         <textarea name="manifest">
-{ 
-    "display":"standalone", 
-}
-                        </textarea>
+{
+    "display":"standalone",
+}</textarea>
                         <input type="submit" class="btn preview--json" value="Werk bij">
                     </fieldset>
                 </form>
             </section>
         </div>
         <section id="preview" class="preview">
-        <section class="create">
-                <form data-create-form>
-                    <fieldset>
-                        <legend>Aanmaken</legend>
-                        <div class="dropdown">
-                            <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                            </svg>
-                            <div class="tooltip">
-                                <p>Hierin komt de url van de website in te staan. Deze url wordt ingeladen in de iframes.</p>
-                            </div>
-                        </span>
-                            <label for="websiteurl">Website url</label>
-                            <input class="field" id="field-url" type="checkbox" name="tabs">
-                            <label class="field" for="field-url">
-                                <span class="arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                    <path d="M0-.75h24v24H0z" fill="none"/>
-                                </svg>
-                            </span>
-                            </label>
-                            <div class="field">
-                                <input type="url" id="websiteurl" name="websiteUrl">
-                            </div>
-                        </div>
-                        <div class="dropdown">
-                            <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                            </svg>
-                            <div class="tooltip">
-                                <p>Hierin komt de naam van de prompt te staan. Bijvoorbeeld: ‘De Voorhoede’.</p>
-                            </div>
-                        </span>
-                            <label for="shortname">Short name</label>
-                            <input class="field" id="field-shname" type="checkbox" name="tabs">
-                            <label class="field" for="field-shname">
-                                <span class="arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                    <path d="M0-.75h24v24H0z" fill="none"/>
-                                </svg>
-                            </span>
-                            </label>
-                            <div class="field">
-                                <input type="text" id="shortname" name="short_name" value="">
-                            </div>
-                        </div>
-                        <div class="dropdown">
-                            <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                            </svg>
-                            <div class="tooltip">
-                                <p>Hierin komt de beschrijving van te staan. Voorbeeld: ‘De Voorhoede Front-end Developers’.</p>
-                            </div>
-                        </span>
-                            <label for="name">Name</label>
-                            <input class="field" id="field-name" type="checkbox" name="tabs">
-                            <label class="field" for="field-name">
-                                <span class="arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                    <path d="M0-.75h24v24H0z" fill="none"/>
-                                </svg>
-                            </span>
-                            </label>
-                            <div class="field">
-                                <input type="text" id="name" name="name" value="">
-                            </div>
-                        </div>
-                        <div class="dropdown">
-                            <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                            </svg>
-                            <div class="tooltip">
-                                <p>Hier komt de start url te staan van de website. Bijvoorbeeld: /page.html</p>
-                            </div>
-                        </span>
-                            <label for="starturl">Start url</label>
-                            <input class="field" id="field-starturl" type="checkbox" name="tabs">
-                            <label class="field" for="field-starturl">
-                                <span class="arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                    <path d="M0-.75h24v24H0z" fill="none"/>
-                                </svg>
-                            </span>
-                            </label>
-                            <div class="field">
-                                <input type="url" id="starturl" name="start_url" value="">
-                            </div>
-                        </div>
-                        <div class="dropdown">
-                            <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                            </svg>
-                            <div class="tooltip">
-                                <p>Hier kan je het scherm aanpassen van de device. Dus met of zonder de chrome om de website heen.</p>
-                            </div>
-                        </span>
-                            <label for="display">Display</label>
-                            <input class="field" id="field-display" type="checkbox" name="tabs">
-                            <label class="field" for="field-display">
-                                <span class="arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                    <path d="M0-.75h24v24H0z" fill="none"/>
-                                </svg>
-                            </span>
-                            </label>
-                            <div class="field">
-                                <select name="display" id="display">
-                                    <option value="standalone">Standalone</option>
-                                    <option value="fullscreen">Fullscreen</option>
-                                    <option value="minimal-ui">Minimal-ui</option>
-                                    <option value="browser">Browser</option>
-                                </select>
-                                <div class="arrow"></div>
-                            </div>
-                        </div>
-                        <div class="dropdown">
-                            <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                            </svg>
-                            <div class="tooltip">
-                                <p>HHier kan je de positie van de device aanpassen. Je kan de device staand of liggend laten zien.</p>
-                            </div>
-                        </span>
-                            <label>Orientation</label>
-                            <input class="field" id="field-orientation" type="checkbox" name="tabs">
-                            <label class="field" for="field-orientation">
-                                <span class="arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                    <path d="M0-.75h24v24H0z" fill="none"/>
-                                </svg>
-                            </span>
-                            </label>
-                            <div class="field">
-                                <label for="landscape">Landscape
-                                    <input type="radio" id="landscape" name="orientation" value="landscape">
-                                    <div class="radio"></div>
-                                </label>
-                                <label for="portrait">Portrait
-                                    <input type="radio" id="portrait" name="orientation" value="portrait">
-                                    <div class="radio"></div>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="dropdown">
-                            <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                            </svg>
-                            <div class="tooltip">
-                                <p>Hiermee pas je de achtergrondkleur van de ‘splash’ pagina aan.</p>
-                            </div>
-                        </span>
-                            <label for="bgcolor">Background color</label>
-                            <input class="field" id="field-bgcolor" type="checkbox" name="tabs">
-                            <label class="field" for="field-bgcolor">
-                                <span class="arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                    <path d="M0-.75h24v24H0z" fill="none"/>
-                                </svg>
-                            </span>
-                            </label>
-                            <div class="field">
-                                <input type="color" id="bgcolor" name="background_color" value="#ff0000">
-                            </div>
-                        </div>
-                        <div class="dropdown">
-                            <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                            </svg>
-                            <div class="tooltip">
-                                <p>Hiermee upload je icon(s), die weegegeven worden op de prompt, de homepagina en de splash’ pagina.</p>
-                            </div>
-                        </span>
-                            <label>Icon(s)</label>
-                            <input class="field" id="field-icons" type="checkbox" name="tabs">
-                            <label class="field" for="field-icons">
-                                <span class="arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                    <path d="M0-.75h24v24H0z" fill="none"/>
-                                </svg>
-                            </span>
-                            </label>
-                            <div class="field">
-                                <input class="input-file" id="my-file" name="icons" type="file">
-                                <label tabindex="0" for="my-file" class="input-file-trigger">Select a file...</label>
-                            </div>
-                        </div>
-                        <div>
-                            <input type="submit" class="btn" value="Preview">
-                            <input type="submit" class="reset" value="Reset">
-                        </div>
-                    </fieldset>
-                </form>
-            </section>
             <div>
             <div class="btn-container">
                 <button class="btn active" data-target="static">Static</button>
                 <button class="btn" data-target="flow">Flow</button>
             </div>
-            <div>
             <div class="devices static device-show">
                 <div data-website>
                     <h1>Website</h1>
@@ -662,7 +444,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
             <div class="devices flow">
                 <div data-flow>
