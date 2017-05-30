@@ -1,0 +1,88 @@
+.notification {
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  bottom: 7%;
+  width: 100%;
+  background: #FFF;
+  padding: 15px;
+  text-align: left;
+  -webkit-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, .25);
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, .25);
+}
+
+.notification .exit {
+  position: absolute;
+  right: 1rem;
+  top: 1.6rem;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+.notification .exit::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #7D7D7D;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+.notification .exit::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #7D7D7D;
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+
+.notification span {
+  width: 2.5rem;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.notification span img {
+  width: 100%;
+  height: auto;
+}
+
+.notification h4 {
+  color: #333333;
+  display: inline-block;
+  margin: 0 .3rem 0 1rem;
+}
+
+.notification p {
+  vertical-align: top;
+  color: #828282;
+  display: inline-block;
+  width: calc(90% - 1.5rem);
+  font-size: 0.9rem;
+  margin: -20px 0px 15px 3.8rem;
+}
+
+.notification .notification--buttons {
+  text-align: right;
+}
+
+.notification .notification--buttons button {
+  font-weight: 600;
+  display: inline-block;
+  position: relative;
+  width: 190px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 2px;
+  font-size: 0.9rem;
+  background-color: #4285f4;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  margin: 0;
+}
