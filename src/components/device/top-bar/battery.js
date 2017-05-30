@@ -5,11 +5,11 @@ window.onload = function () {
     // update battery status info
     function updateBatteryStatus(battery) {
 
-        var batteryString = Math.round(battery.level * 100) + '%';
+        let batteryString = Math.round(battery.level * 100) + '%';
 
         // update graphic etc
         document.querySelector('.batterylevel').style.transform = 'scaleY(' + battery.level + ')';
-        var chargeSymbolOpacity = (battery.charging) ? 1 : 0;
+        let chargeSymbolOpacity = (battery.charging) ? 1 : 0;
         document.querySelector('.chargingsymbol').style.opacity = chargeSymbolOpacity;
     }
 
@@ -38,7 +38,7 @@ window.onload = function () {
     }
 
     // old navigator.battery method (Firefox only?)
-    var battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery || navigator.msBattery;
+    let battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery || navigator.msBattery;
     if (battery) {
 
         updateBatteryStatus(battery);
