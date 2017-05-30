@@ -1,7 +1,7 @@
-var express = require( 'express' ) ;
-var nunjucks = require( 'nunjucks' ) ;
-var path = require("path");
-var app = express() ;
+const express = require('express'),
+    nunjucks = require('nunjucks'),
+    path = require('path'),
+    app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -12,8 +12,8 @@ nunjucks.configure('src', {
 
 app.use(express.static(__dirname + '/src'));
 
-app.get('*', function(req, res) {
+app.get('*', function (req, res) {
     res.render('index.html');
 });
 
-app.listen(app.get('port'), function() {});
+app.listen(app.get('port'), function () {});
