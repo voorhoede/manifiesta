@@ -2,14 +2,29 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Manifiesta, manifest generator</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="assets/main.css">
+    <meta name="description" content="Wij zijn De Voorhoede, front-end developers. We bouwen front-end oplossingen waarmee je jaren vooruit kunt.">
+    <meta name="keywords" content="front-end, front end, development, developer, web,
+    front-end, developers, programmeurs, web, HTML, CSS, JS, JavaScript, team, Amsterdam
+    ">
+    <link rel="manifest" href="/assets/manifest-5a8b3ad6fc.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#12353C">
+    <link rel="mask-icon" href="/assets/img/logo-monochrome-trans.svg" color="#12353C">
+    <link rel="icon" type="image/png" href="/assets/img/logo.png" sizes="16x16">
+    <link rel="apple-touch-icon" href="/assets/img/logo.png">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="www.voorhoede.nl">
+    <meta property="og:title" content="Manifiesta, manifest generator.">
+    <meta property="og:description" content="De Voorhoede manifiesta, manifest generator.">
+    <meta property="og:image" content="https://www.voorhoede.nl/assets/images/logo.jpg">
+    <meta name="twitter:card" content=" summary ">
+    <meta name="twitter:site" content="@devoorhoede">
+    <link rel="stylesheet" href="/assets/main.css">
 </head>
 
 <body>
@@ -38,7 +53,7 @@
         <section class="create">
             <form data-create-form>
                 <fieldset>
-                    <legend>Aanmaken</legend>
+                    <legend>Create</legend>
                     <div class="dropdown">
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -46,7 +61,7 @@
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
                             </svg>
                             <div class="tooltip">
-                                <p>Hierin komt de url van de website in te staan. Deze url wordt ingeladen in de iframes.</p>
+                                <p>Here comes the url of the website. This url is being loaded inside the iframes.</p>
                             </div>
                         </span>
                         <label for="websiteurl">Website url</label>
@@ -70,10 +85,10 @@
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
                             </svg>
                             <div class="tooltip">
-                                <p>Hierin komt de naam van de prompt te staan. Bijvoorbeeld: ‘De Voorhoede’.</p>
+                                <p>Here comes the name of the PWA product. For example: 'De Voorhoede'.</p>
                             </div>
                         </span>
-                        <label for="shortname">Short name</label>
+                        <label for="shortname">Short name (description)</label>
                         <input class="field" id="field-shname" type="checkbox">
                         <label class="field" for="field-shname">
                                 <span class="arrow">
@@ -94,7 +109,7 @@
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
                             </svg>
                             <div class="tooltip">
-                                <p>Hierin komt de beschrijving van te staan. Voorbeeld: ‘De Voorhoede Front-end Developers’.</p>
+                                <p>Here comes a short description to add extra information to the PWA product name. For example: 'De Voorhoede Front-end Developers'.</p>
                             </div>
                         </span>
                         <label for="name">Name</label>
@@ -118,7 +133,7 @@
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
                             </svg>
                             <div class="tooltip">
-                                <p>Hier komt de start url te staan van de website. Bijvoorbeeld: /page.html</p>
+                                <p>Here comes the start url of the specific page you want to show. For example: /page.html</p>
                             </div>
                         </span>
                         <label for="starturl">Start url</label>
@@ -142,7 +157,7 @@
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
                             </svg>
                             <div class="tooltip">
-                                <p>Hier kan je het scherm aanpassen van de device. Dus met of zonder de chrome om de website heen.</p>
+                                <p>Here you can remove the chrome of the browser.</p>
                             </div>
                         </span>
                         <label for="display">Display</label>
@@ -172,7 +187,7 @@
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
                             </svg>
                             <div class="tooltip">
-                                <p>HHier kan je de positie van de device aanpassen. Je kan de device staand of liggend laten zien.</p>
+                                <p>Here you can change the position of the device. You can show the device on portrait or landscape.</p>
                             </div>
                         </span>
                         <label>Orientation</label>
@@ -203,7 +218,7 @@
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
                             </svg>
                             <div class="tooltip">
-                                <p>Hiermee pas je de achtergrondkleur van de ‘splash’ pagina aan.</p>
+                                <p>Here you can change the background color of the 'splash' page.</p>
                             </div>
                         </span>
                         <label for="bgcolor">Background color</label>
@@ -228,7 +243,7 @@
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
                             </svg>
                             <div class="tooltip">
-                                <p>Hiermee upload je icon(s), die weergegeven worden op de prompt, de homepagina en de 'splash' pagina.</p>
+                                <p>Here you can upload a logo or icon that wil be displaying on all screens.</p>
                             </div>
                         </span>
                         <label>Icon(s)</label>
