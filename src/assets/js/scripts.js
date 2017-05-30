@@ -17,7 +17,7 @@ let json = {
     },
     imageFiles = []
 
-for (var i = time.length - 1; i >= 0; i--) {
+for (let i = time.length - 1; i >= 0; i--) {
     startTime(time[i]);
 }
 
@@ -26,64 +26,79 @@ function checkTime(i) {
 }
 
 function startTime(time) {
-    var today = new Date(),
+    let today = new Date(),
         h = checkTime(today.getHours()),
         m = checkTime(today.getMinutes());
     time.innerHTML = h + ":" + m;
-    setTimeout(function() {
+    setTimeout(function () {
         startTime(time);
     }, 60000);
 }
 
-navigator.getBattery().then(function(battery) {
-    function updateAllBatteryInfo() {
-        updateChargeInfo();
-        updateLevelInfo();
-        updateChargingInfo();
-        updateDischargingInfo();
+window.onload = function () {
+
+    // update battery status info
+    function updateBatteryStatus(battery) {
+
+        var batteryString = Math.round(battery.level * 100) + '%';
+
+        // update graphic etc
+        document.querySelector('.batterylevel').style.transform = 'scaleY(' + battery.level + ')';
+        var chargeSymbolOpacity = (battery.charging) ? 1 : 0;
+        document.querySelector('.chargingsymbol').style.opacity = chargeSymbolOpacity;
+
     }
-    updateAllBatteryInfo();
 
-    battery.addEventListener('chargingchange', function() {
-        updateChargeInfo();
-    });
+    // new getBattery() method (Chrome, Opera)
+    if ('getBattery' in navigator) {
+        navigator.getBattery().then(function (battery) {
 
-    // function updateChargeInfo() {
-    //     console.log("Battery charging? " + (battery.charging ? "Yes" : "No"));
-    // }
+            updateBatteryStatus(battery);
 
-    battery.addEventListener('levelchange', function() {
-        updateLevelInfo();
-    });
+            battery.onchargingchange = function () {
+                updateBatteryStatus(battery);
+            };
 
-    // function updateLevelInfo() {
-    //     console.log("Battery level: " + battery.level * 100 + "%");
-    // }
+            battery.onlevelchange = function () {
+                updateBatteryStatus(battery);
+            };
 
-    battery.addEventListener('chargingtimechange', function() {
-        updateChargingInfo();
-    });
+            battery.onchargingtimechange = function () {
+                updateBatteryStatus(battery);
+            };
 
-    // function updateChargingInfo() {
-    //     console.log("Battery charging time: " + battery.chargingTime + " seconds");
-    // }
+            battery.ondischargingtimechange = function () {
+                updateBatteryStatus(battery);
+            };
 
-    battery.addEventListener('dischargingtimechange', function() {
-        updateDischargingInfo();
-    });
+        });
+    }
 
-    // function updateDischargingInfo() {
-    //     console.log("Battery discharging time: " + battery.dischargingTime + " seconds");
-    // }
-
+    // old navigator.battery method (Firefox only?)
     var battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery || navigator.msBattery;
-
     if (battery) {
-        // battery API supported
+
+        updateBatteryStatus(battery);
+
+        battery.onchargingchange = function () {
+            updateBatteryStatus(battery);
+        };
+
+        battery.onlevelchange = function () {
+            updateBatteryStatus(battery);
+        };
+
+        battery.onchargingtimechange = function () {
+            updateBatteryStatus(battery);
+        };
+
+        battery.ondischargingtimechange = function () {
+            updateBatteryStatus(battery);
+        };
+
     }
 
-});
-
+};
 
 for (var i = 0; i < createFormItems.length; i++) {
     createFormItems[i].addEventListener("change", updateJsonObject)
@@ -105,7 +120,7 @@ function addIconsToJsonObject(el) {
         l = el.files.length,
         i = 0
 
-    addIcons(arr, i, el.files, function(result) {
+    addIcons(arr, i, el.files, function (result) {
         json['icons'] = result
         jsonTextarea.value = JSON.stringify(json, null, 4)
     })
@@ -118,12 +133,12 @@ function addIcons(arr, i, files, cb) {
 
     fr.readAsDataURL(files[i]);
 
-    fr.onload = function() {
+    fr.onload = function () {
         let img = new Image
 
         img.src = fr.result
 
-        img.onload = function() {
+        img.onload = function () {
             arr.push({
                 src: files[i].name,
                 type: files[i].type,
@@ -158,7 +173,7 @@ function updateJsonInput() {
 }
 
 for (var i = 0; i < menuItems.length; i++) {
-    menuItems[i].addEventListener("click", function(e) {
+    menuItems[i].addEventListener("click", function (e) {
         e.preventDefault()
 
         document.querySelectorAll(".show-element")[0].classList.remove("show-element")
@@ -171,7 +186,7 @@ for (var i = 0; i < menuItems.length; i++) {
 }
 
 for (var i = 0; i < screensMenu.length; i++) {
-    screensMenu[i].addEventListener("click", function() {
+    screensMenu[i].addEventListener("click", function () {
         document.querySelectorAll(".device-show")[0].classList.remove("device-show")
         document.querySelector(".preview .btn-container .btn.active").classList.remove("active")
 
@@ -179,11 +194,6 @@ for (var i = 0; i < screensMenu.length; i++) {
         document.querySelector("." + this.getAttribute("data-target")).classList.add("device-show");
     })
 }
-
-// if (bgColorInput.type != "color") {
-//    // IF WE EVER WANT A IE11 FALLBACK FOR COLORPICKER
-//    // EDGE WORKS
-// }
 
 jsonForm.addEventListener("submit", jsonToScreens)
 
@@ -230,7 +240,6 @@ function jsonToScreens(event) {
     splashBG.classList.add("splashBG")
     splashBG.style.backgroundColor = Json["background_color"]
     splashScreen.appendChild(splashBG)
-
 
     // PWA
     let PWAIframe = document.createElement("iframe")
