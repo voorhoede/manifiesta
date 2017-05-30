@@ -5,15 +5,8 @@
  }
 
  .create form {
-     padding: 0rem 1rem;
      background-color: #12353C;
      color: #FFF;
- }
-
- @media (min-width: 768px) {
-     .create form {
-         padding: 0;
-     }
  }
 
  fieldset {

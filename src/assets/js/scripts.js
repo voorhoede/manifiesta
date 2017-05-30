@@ -46,7 +46,6 @@ window.onload = function () {
         document.querySelector('.batterylevel').style.transform = 'scaleY(' + battery.level + ')';
         var chargeSymbolOpacity = (battery.charging) ? 1 : 0;
         document.querySelector('.chargingsymbol').style.opacity = chargeSymbolOpacity;
-
     }
 
     // new getBattery() method (Chrome, Opera)
@@ -70,7 +69,6 @@ window.onload = function () {
             battery.ondischargingtimechange = function () {
                 updateBatteryStatus(battery);
             };
-
         });
     }
 
@@ -95,9 +93,7 @@ window.onload = function () {
         battery.ondischargingtimechange = function () {
             updateBatteryStatus(battery);
         };
-
     }
-
 };
 
 for (var i = 0; i < createFormItems.length; i++) {

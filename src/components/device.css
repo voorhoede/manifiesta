@@ -55,17 +55,6 @@
   align-items: center;
 }
 
-.chargingsymbol {
-  opacity: 0;
-  transition: opacity 300ms ease-in;
-}
-
-.batterylevel {
-  transform-origin: 83px 277px;
-  transform: scaleY(0); 
-  transition: transform 300ms ease-in;
-}
-
 .top-bar span {
   font-size: .75rem;
   color: #FFF;
@@ -106,6 +95,17 @@
   margin: 0;
   display: flex;
   justify-content: center;
+}
+
+.chargingsymbol {
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+}
+
+.batterylevel {
+  transform-origin: 83px 277px;
+  transform: scaleY(0);
+  transition: transform 300ms ease-in;
 }
 
 polygon,

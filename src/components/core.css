@@ -66,13 +66,13 @@ main {
     }
 }
 
-main > div {
+main>div {
     display: flex;
     flex-direction: column;
 }
 
 @media (min-width: 768px) {
-    main > div {
+    main>div {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -80,13 +80,15 @@ main > div {
     }
 }
 
-main > div:not(.show-element),
+main>div:not(.show-element),
 .preview:not(.show-element),
 .devices:not(.device-show) {
     display: none;
 }
+
 @media (max-width: 768px) {
-    #json, #preview{
+    #json,
+    #preview {
         margin-top: 1rem;
     }
 }
