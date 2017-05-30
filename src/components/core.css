@@ -96,3 +96,14 @@ main>div:not(.show-element),
 section {
     width: 100%;
 }
+
+polygon,
+circle,
+rect {
+  fill: none;
+  stroke-width: 1px;
+  stroke: #FFF;
+  height: 15px;
+  width: 15px;
+  stroke-linejoin: round;
+}
