@@ -7,7 +7,7 @@ let json = {
     },
     imageFiles = []
 
-var (var i = 0; i < createFormItems.length; i++) {
+let i = 0; i < createFormItems.length; i++; {
     createFormItems[i].addEventListener("change", updateJsonObject)
 }
 
