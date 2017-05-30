@@ -5,7 +5,7 @@ const screensMenu = document.querySelectorAll(".preview .btn-container .btn"),
     splashScreenPhone = document.querySelector("[data-splash-screen]"),
     pwaPhone = document.querySelector("[data-pwa]");
 
-for (var i = 0; i < screensMenu.length; i++) {
+for (let i = 0; i < screensMenu.length; i++) {
     screensMenu[i].addEventListener("click", function () {
         document.querySelectorAll(".device-show")[0].classList.remove("device-show")
         document.querySelector(".preview .btn-container .btn.active").classList.remove("active")
