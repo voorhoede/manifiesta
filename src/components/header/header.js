@@ -9,6 +9,5 @@ for (var i = 0; i < menuItems.length; i++) {
 
         this.classList.add("active")
         document.querySelector(e.target.hash).classList.add("show-element");
-
     })
 }
