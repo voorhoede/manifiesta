@@ -85,6 +85,11 @@ main > div:not(.show-element),
 .devices:not(.device-show) {
     display: none;
 }
+@media (max-width: 768px) {
+    #json, #preview{
+        margin-top: 1rem;
+    }
+}
 
 section {
     width: 100%;
