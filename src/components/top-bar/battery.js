@@ -1,6 +1,10 @@
-const battery = document.querySelectorAll(".battery");
+const batteryAll = document.querySelectorAll(".battery");
 
-window.onload = function () {
+for (let i = 0; i < batteryAll.length; i++) {
+    batteryDevice(batteryAll[i])
+}
+
+function batteryDevice(batteryEl) {
 
     // update battery status info
     function updateBatteryStatus(battery) {
@@ -8,9 +12,9 @@ window.onload = function () {
         let batteryString = Math.round(battery.level * 100) + '%';
 
         // update graphic etc
-        document.querySelector('.batterylevel').style.transform = 'scaleY(' + battery.level + ')';
+        batteryEl.querySelector('.batterylevel').style.transform = 'scaleY(' + battery.level + ')';
         let chargeSymbolOpacity = (battery.charging) ? 1 : 0;
-        document.querySelector('.chargingsymbol').style.opacity = chargeSymbolOpacity;
+        batteryEl.querySelector('.chargingsymbol').style.opacity = chargeSymbolOpacity;
     }
 
     // new getBattery() method (Chrome, Opera)
@@ -59,4 +63,4 @@ window.onload = function () {
             updateBatteryStatus(battery);
         };
     }
-};
+}
