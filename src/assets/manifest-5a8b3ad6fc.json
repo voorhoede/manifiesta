@@ -1,6 +1,6 @@
 {
-  "short_name": "De Voorhoede",
-  "name": "De Voorhoede \n Front-end Developers",
+  "short_name": "De Voorhoede, manifiesta",
+  "name": "Manifiesta, manifest generator.",
   "start_url": "/?homescreen=true",
   "display": "standalone",
   "orientation": "portrait",
