@@ -10,7 +10,7 @@ nunjucks.configure('src', {
     express: app
 });
 
-app.use(express.static(__dirname + '/src'));
+app.use(express.static(__dirname + '/static'));
 
 app.get('*', function (req, res) {
     res.render('index.html');
