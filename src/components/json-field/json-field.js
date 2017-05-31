@@ -1,13 +1,12 @@
 const jsonTextarea = document.querySelector(".json textarea"),
     createFormItems = createForm.querySelectorAll(".dropdown input:not(.field):not(.not), .dropdown select"),
     jsonForm = document.querySelector(".json form");
-
 let json = {
         display: "standalone",
     },
     imageFiles = []
 
-let i = 0; i < createFormItems.length; i++; {
+for (let i = 0; i < createFormItems.length; i++) {
     createFormItems[i].addEventListener("change", updateJsonObject)
 }
 
