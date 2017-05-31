@@ -6,15 +6,34 @@
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.4.0",
+    "gulp-concat":"2.6.1",
+    "gulp-if": "^2.0.2",
+    "gulp-less": "^3.3.0",
     "gulp-nunjucks": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify":"2.0.0",
+    "npm-run-all":"4.0.2",
     "nodemon": "^1.11.0",
     "nunjucks": "^3.0.0"
   },
   "devDependencies": {
-    "gulp-nunjucks-render": "^2.2.1"
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-nunjucks-render": "^2.2.1",
+    "gulp-watch": "^4.3.11"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "run-s build:*",
+    "build:assets": "node tasks/copy-assets.js",
+    "build:js": "node tasks/build-js.js",
+    "build:css": "node tasks/build-css.js",
+    "watch": "npm-run-all --parallel watch:*",
+    "watch:assets": "chokidar 'src/assets/**/*' --command 'npm run build:assets'",
+    "watch:css": "chokidar 'src/**/*.less' --command 'npm run build:css'",
+    "watch:js": "chokidar 'src/**/*.js' --command 'npm run build:js'",
     "start": "nodemon index.js"
   },
   "repository": {
