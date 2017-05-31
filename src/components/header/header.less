@@ -1,0 +1,134 @@
+.app-header {
+    font-family: sans-serif;
+    letter-spacing: -.005rem;
+    padding: 1rem .875rem;
+    background-color: #EDDD3E;
+}
+
+.app-header:after,
+.app-header:before {
+    display: table;
+    content: "";
+}
+
+.app-header:after {
+    clear: both;
+}
+
+.app-header a {
+    border-bottom: 0;
+}
+
+.app-header-identify {
+    float: left;
+}
+
+@media @xs {
+    .app-header {
+        display: table;
+        width: 100%;
+    }
+}
+
+@media @m {
+    .app-header {
+        padding: 1rem calc(~"43.7% - 512px" ~"+ 2rem");
+    }
+}
+
+.app-logo-container {
+    display: inline-block;
+    vertical-align: middle;
+    width: 2.7rem;
+}
+
+@media @xs {
+    .app-logo-container {
+        width: 3rem;
+    }
+}
+
+.app-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.app-header-titles {
+    display: inline-block;
+    margin-left: .5rem;
+    font-size: .9rem;
+    vertical-align: middle;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0;
+}
+
+@media (max-width: 799px) {
+    .app-header-titles {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+}
+
+.app-header-title,
+.app-header-tagline {
+    margin: 0;
+    padding: 0;
+}
+
+.app-header-title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+@media @xs {
+    .app-header {
+        display: table;
+        width: 100%;
+    }
+}
+
+.app-header-menu {
+    float: right;
+    text-align: right;
+    padding-top: .8rem;
+    font-size: .9rem;
+}
+
+@media @xs {
+    .app-header-menu {
+        font-size: 1rem;
+        display: table-cell;
+        float: none;
+        vertical-align: middle;
+        width: auto;
+    }
+}
+
+.app-header-menu ul {
+    display: block;
+    padding-left: 0;
+    list-style: none;
+    margin: 0 0 .5rem;
+}
+
+.app-header-menu ul li {
+    display: inline;
+    margin-left: .375rem;
+}
+
+.app-header-menu ul li:first-child {
+    margin-left: 0;
+}
+
+.app-header-menu ul li a {
+    text-transform: uppercase;
+}
