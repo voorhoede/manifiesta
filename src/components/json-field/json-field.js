@@ -1,8 +1,10 @@
 const jsonTextarea = document.querySelector(".json textarea"),
     createFormItems = createForm.querySelectorAll(".dropdown input:not(.field):not(.not), .dropdown select"),
+    colorPicker = document.querySelectorAll(".color-text, .color-picker"),
     jsonForm = document.querySelector(".json form");
+
 let json = {
-        display: "standalone",
+
     },
     imageFiles = []
 
@@ -10,16 +12,32 @@ for (let i = 0; i < createFormItems.length; i++) {
     createFormItems[i].addEventListener("change", updateJsonObject)
 }
 
+for (let i = 0; i < colorPicker.length; i++ ) {
+    console.log(colorPicker[i])
+    colorPicker[i].addEventListener("change", function(e) {
+        colorPickerFunc(colorPicker[i], i)
+    })
+}
+
 jsonTextarea.addEventListener("change", updateJsonInput)
 
-function updateJsonObject() {
-    if (this.getAttribute("type") == "file") {
-        addIconsToJsonObject(this)
+function updateJsonObject(e, that = this) {
+    if (that.getAttribute("type") == "file") {
+        addIconsToJsonObject(that)
     } else {
-        json[this.getAttribute("name")] = this.value
+        json[that.getAttribute("name")] = that.value
         jsonTextarea.value = JSON.stringify(json, null, 4)
     }
 }
+
+function colorPickerFunc(el, i) {
+    let otherEl = colorPicker[i == 1 ? 0 : 1]
+
+    otherEl.value = el.value
+
+    updateJsonObject("", el)
+}
+
 
 function addIconsToJsonObject(el) {
     let arr = [],
@@ -69,12 +87,6 @@ function updateJsonInput() {
     for (let item in obj) {
         if (document.querySelector("[name='" + item + "']").getAttribute("type") != "text" && document.querySelector("[name='" + item + "']").getAttribute("type") != "color")
             obj[item] = obj[item].toLowerCase()
-
-        if (document.querySelector("[name='" + item + "']").getAttribute("type") == "radio")
-            document.querySelector("[name='" + item + "'][value='" + obj[item] + "']").checked = true
-
-        if (document.querySelector("[name='" + item + "']").getAttribute("type") != "radio")
-            document.querySelector("[name='" + item + "']").value = obj[item]
     }
 }
 

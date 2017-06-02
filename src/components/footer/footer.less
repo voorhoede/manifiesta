@@ -1,7 +1,14 @@
 footer {
     position: relative;
-    font-family: 'Noto', Georgia, serif;
+    color: #fff;
+    font-family: Noto,Georgia,sans-serif;
     letter-spacing: 0;
-    background-color: #12353C;
-    padding: 3rem calc(49.9% - 512px + 2rem);
+    background-color: #12353c;
+    padding: 1rem .875rem;
+}
+
+@media @m {
+    footer {
+        padding: 1rem calc(~"43.7% - 512px" ~"+ 2rem");
+    }
 }

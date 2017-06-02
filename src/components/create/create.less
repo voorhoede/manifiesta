@@ -7,24 +7,22 @@
  .create form {
      background-color: #12353C;
      color: #FFF;
+     legend {
+         padding: 1rem 0 1rem 1rem;
+     }
  }
 
  fieldset {
      border: 0;
      padding: 0;
      margin: 0;
- }
-
- .create form fieldset legend {
-     padding: 1rem 0 1rem 1rem;
- }
-
- form fieldset legend {
-     font-family: 'Raleway', sans-serif;
-     font-size: 1.5rem;
-     font-weight: 700;
-     padding: 1rem 0 1rem 0;
-     color: #EDDD3E;
+     legend {
+         font-family: @font-heading;
+         font-size: 1.5rem;
+         font-weight: 700;
+         padding: 1rem 0 1rem 0;
+         color: #EDDD3E;
+     }
  }
 
  .dropdown {
@@ -45,37 +43,45 @@
      border-radius: 3px;
      color: #12353C;
      display: inline-block;
+      ::before {
+         content: "";
+         display: block;
+         position: absolute;
+         left: 5px;
+         bottom: 100%;
+         width: 0;
+         height: 0;
+         border: 7px solid transparent;
+         border-bottom-color: #D8D8D8;
+     }
  }
 
- .tooltip:before {
-     content: "";
-     display: block;
-     position: absolute;
-     left: 5px;
-     bottom: 100%;
-     width: 0;
-     height: 0;
-     border: 7px solid transparent;
-     border-bottom-color: #D8D8D8;
- }
-
- .dropdown .tooltip {
-     display: none;
-     opacity: 0;
- }
-
- .dropdown span {
-     cursor: pointer;
- }
-
- .dropdown .arrow {
-     float: right;
+ .dropdown {
+     .tooltip {
+         display: none;
+         opacity: 0;
+     }
+     span {
+         cursor: pointer;
+     }
+     .arrow {
+         float: right;
+     }
  }
 
  svg {
      fill: #FFF;
      opacity: .8;
      vertical-align: middle;
+ }
+
+ .field {
+     input.color {
+         position: relative;
+         opacity: 1;
+         z-index: 1;
+         width: 90%;
+     }
  }
 
  input.field {
@@ -90,6 +96,8 @@
  }
 
  div.field {
+     display: flex;
+     justify-content: space-between;
      position: relative;
      max-height: 10rem;
      width: 100%;
@@ -134,7 +142,7 @@
 
  .create form fieldset legend,
  .dropdown label {
-     font-family: 'Raleway', sans-serif;
+     font-family: @font-heading;
  }
 
  .dropdown label {
@@ -143,7 +151,7 @@
 
  .dropdown input,
  .dropdown select {
-     font-family: 'Noto', 'Georgia', serif;
+     font-family: @font-body;
      font-size: .9rem;
      display: block;
      width: 100%;
@@ -179,7 +187,7 @@
      height: 6px;
      width: 6px;
      border-radius: 50%;
-     background: #fff;
+     background: #FFF;
  }
 
  .dropdown label input:checked~.radio {
@@ -197,7 +205,20 @@
  }
 
  .dropdown input[type="color"] {
-     width: 100%;
+     height: 2rem;
+     width: 10%;
+     margin-left: 1rem;
+     -webkit-appearance: none;
+     border: solid 1px #12353C;
+     cursor: pointer
+ }
+
+ input[type="color"]::-webkit-color-swatch-wrapper {
+     padding: 0;
+ }
+
+ input[type="color"]::-webkit-color-swatch {
+     border: none;
  }
 
  input,
@@ -231,7 +252,7 @@
      display: inline-block;
      outline: 0;
      font-size: 1.125rem;
-     font-family: 'Raleway', sans-serif;
+     font-family: @font-heading;
      font-weight: 400;
      margin: 0 2rem 0 0;
  }
@@ -246,7 +267,7 @@
  .btn:hover,
  .btn.active {
      color: #12353C;
-     background-color: #e3d015;
+     background-color: #E3D015;
      -webkit-transition: background-color 250ms ease;
      transition: background-color 250ms ease;
      border: 0;
@@ -322,7 +343,7 @@
      min-height: 72vh;
      resize: none;
      border: 0;
-     font-family: 'Inconsolata', monospace;
+     font-family: @font-json;
      font-size: 1.125rem;
      padding: .5rem;
      margin-bottom: 1rem;
