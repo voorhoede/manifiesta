@@ -1,16 +1,19 @@
-# Manifiesta
-Configure and preview your Progressive Web App Manifest.
+# manifiesta
 
-## Install
+> Configure and preview your Progressive Web App Manifest.
 
-Manifiesta and can be installed via [npm](https://npmjs.org/):
+## Build Setup
 
-```bash
+``` bash
+# install dependencies
 npm install
-```
 
-To start just simply type:
+# serve with hot reload at localhost:8080
+npm run dev
 
-```bash
-npm start
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
 ```

@@ -1,0 +1,13 @@
+@import '../../main.scss';
+
+.app {
+  display: flex;
+}
+
+.input-container {
+  flex-basis: 30%;
+}
+
+.output-container {
+  flex-basis: 70%;
+}
