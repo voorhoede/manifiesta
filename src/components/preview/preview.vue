@@ -5,25 +5,19 @@
       <iframe :src="manifest.url" title="iframe example 1" width="100%" height="100%">
         <p>Your browser does not support iframes.</p>
       </iframe>
-    </phone>
-    <phone>
-
-    </phone>
-    <phone>
-
-    </phone>
-    <phone>
-
+      <push-notification :url="manifest.url" :iconUrl="manifest.icons[0].src" :shortName="manifest.short_name"></push-notification>
     </phone>
   </div>
 </template>
 
 <script>
   import Phone from '@/components/phone/phone'
+  import PushNotification from '@/components/push-notification/push-notification'
 
   export default {
     components: {
-      Phone
+      Phone,
+      PushNotification
     },
     props: {
       manifest: {

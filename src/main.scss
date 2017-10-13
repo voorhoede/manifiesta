@@ -1,2 +1,15 @@
 @import './styles/reset.scss';
 @import './styles/variables.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: $font-color-default;
+}
