@@ -1,56 +1,56 @@
 @import '../../main.scss';
 
-$push-notification-padding: 14px;
+$pwa-prompt-padding: 14px;
 
-.push-notification {
+.pwa-prompt {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   background: white;
   box-shadow: 0px -2px  6px rgba(0, 0, 0, 0.3);
-  padding: $push-notification-padding;
+  padding: $pwa-prompt-padding;
   transform: translateY(120%);
   transition: .5s;
 }
 
-.push-notification.is-open {
+.pwa-prompt.is-open {
   transform: translateY(0);
 }
 
-.push-notification-content {
+.pwa-prompt-content {
   margin-bottom: 16px;
 }
 
-.push-notification-image {
+.pwa-prompt-image {
   display: inline-block;
   width: 36px;
 }
 
-.push-notification-image img {
+.pwa-prompt-image img {
   display: block;
   width: 100%;
 }
 
-.push-notification-information {
+.pwa-prompt-information {
   display: inline-block;
   vertical-align: top;
   padding-left: 7px;
 }
 
-.push-notification-title {
+.pwa-prompt-title {
   margin-bottom: 8px;
 }
 
-.push-notification-url {
+.pwa-prompt-url {
   font-size: 12px;
   font-weight: 300;
 }
 
-.push-notification-close {
+.pwa-prompt-close {
   position: absolute;
-  top: $push-notification-padding;
-  right: $push-notification-padding;
+  top: $pwa-prompt-padding;
+  right: $pwa-prompt-padding;
   width: 11px;
   height: 11px;
   border: 0;
@@ -59,35 +59,35 @@ $push-notification-padding: 14px;
   line-height: 1;
 }
 
-.push-notification-close svg {
+.pwa-prompt-close svg {
   width: 100%;
   height: 100%;
 }
 
-.push-notification-close path {
+.pwa-prompt-close path {
   fill: $font-color-grey;
 }
 
-.push-notification-close {
+.pwa-prompt-close {
   color: $font-color-grey;
 }
 
-.push-notification-label {
+.pwa-prompt-label {
   font-size: 0;
   height: 1px;
   overflow: hidden;
   display: block;
 }
 
-.push-notification-add {
+.pwa-prompt-add {
   float: right;
-  background: $push-notification-button-color;
+  background: $pwa-prompt-button-color;
   text-transform: uppercase;
   color: white;
   border: 0;
   padding: 8px 16px;
 }
 
-.push-notification-add[disabled] {
+.pwa-prompt-add[disabled] {
   background: $button-color-disabled
 }

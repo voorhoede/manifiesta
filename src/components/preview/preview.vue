@@ -5,19 +5,19 @@
       <iframe :src="manifest.url" title="iframe example 1" width="100%" height="100%">
         <p>Your browser does not support iframes.</p>
       </iframe>
-      <push-notification :url="manifest.url" :iconUrl="manifest.icons[0].src" :shortName="manifest.short_name"></push-notification>
+      <pwa-prompt :url="manifest.url" :iconUrl="manifest.icons[0].src" :shortName="manifest.short_name"></pwa-prompt>
     </phone>
   </div>
 </template>
 
 <script>
   import Phone from '../phone/phone'
-  import PushNotification from '../push-notification/push-notification'
+  import PwaPrompt from '../pwa-prompt/pwa-prompt'
 
   export default {
     components: {
       Phone,
-      PushNotification
+      PwaPrompt
     },
     props: {
       manifest: {

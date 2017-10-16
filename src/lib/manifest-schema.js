@@ -1,7 +1,5 @@
 import languageTags from './language-tags'
 
-console.log(languageTags)
-
 export default {
   type: 'object',
   properties: {
