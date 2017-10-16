@@ -3,9 +3,10 @@
 </template>
 
 <script>
+  import dummyData from './dummy-data.json'
   import debounce from '@/lib/debounce'
   import { codemirror } from 'vue-codemirror'
-  import dummyData from './dummy-data.json'
+  require('../../lib/codemirror/lint-json')
 
   export default {
     components: {
@@ -21,14 +22,15 @@
       return {
         editorCode: JSON.stringify(dummyData, null, '\t'),
         editorOptions: {
-          indentUnit: 4,
-          indentWithTabs: true,
-          line: true,
-          lineNumbers: true,
-          lineWrapping: false,
-          mode: 'application/json',
-          smartIndent: true,
-          tabSize: 4
+          mode: {
+            name: 'javascript',
+            json: true
+          },
+          theme: 'eclipse',
+          lineNumbers: false,
+          tabSize: 2,
+          lint: true,
+          gutters: ['CodeMirror-lint-markers']
         }
       }
     },
