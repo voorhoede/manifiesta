@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import getTime from '../../lib/getTime'
+  import getTime from '../../lib/get-time'
 
   export default {
     data () {
