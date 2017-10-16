@@ -10,9 +10,11 @@
 
 <script>
   import { codemirror } from 'vue-codemirror'
-  import dummyData from './dummy-data.json'
   import Settings from '@/components/settings/settings'
   import Preview from '@/components/preview/preview'
+  import debounce from '@/lib/debounce'
+
+  import dummyData from './dummy-data.json'
 
   export default {
     components: {
@@ -37,15 +39,16 @@
       }
     },
     watch: {
-      editorCode: function (val) {
+      editorCode: debounce(function (val) {
         this.setManifest(val)
-      }
+      }, 2000)
     },
     created () {
       this.setManifest(this.editorCode)
     },
     methods: {
       setManifest: function (val) {
+        console.log('henk')
         try {
           this.manifest = JSON.parse(val)
         } catch (e) {}
