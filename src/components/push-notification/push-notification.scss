@@ -79,11 +79,15 @@ $push-notification-padding: 14px;
   display: block;
 }
 
-.push-notification-open {
+.push-notification-add {
   float: right;
   background: $push-notification-button-color;
   text-transform: uppercase;
   color: white;
   border: 0;
   padding: 8px 16px;
+}
+
+.push-notification-add[disabled] {
+  background: $button-color-disabled
 }

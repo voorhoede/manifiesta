@@ -8,13 +8,20 @@
         <h2 class="push-notification-title">{{ shortName }}</h2>
         <p class="push-notification-url">{{ removeHost }}</p>
       </div>
-      <button class="push-notification-close">
+      <button class="push-notification-close" aria-label="Close push notification" @click="close">
         <svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 0 14 14" width="14">
           <path d="M14 1.4L12.6 0 7 5.6 1.4 0 0 1.4 5.6 7 0 12.6 1.4 14 7 8.4l5.6 5.6 1.4-1.4L8.4 7 14 1.4z" fill-rule="evenodd"/>
         </svg>
       </button>
     </div>
-    <button type="button" class="push-notification-open">Toevoegen</button>
+    <button
+      type="button"
+      class="push-notification-add"
+      :disabled="loading"
+      @click="add"
+    >
+        {{buttonText}}
+    </button>
   </div>
 </template>
 
@@ -35,19 +42,41 @@
     },
     data () {
       return {
-        isOpen: false
+        isOpen: false,
+        isAdded: false,
+        loading: false
       }
     },
     computed: {
       removeHost () {
         return this.url.replace(/^(https?:\/\/)?(www\.)?/, '')
+      },
+      buttonText () {
+        return (this.isAdded) ? 'Openen' : 'Toevoegen'
       }
     },
     created () {
-      const self = this
-      setTimeout(function () {
-        self.isOpen = true
+      setTimeout(() => {
+        this.isOpen = true
       }, 2000)
+    },
+    methods: {
+      close: function () {
+        this.isOpen = false
+      },
+      add: function () {
+        if (!this.isAdded) {
+          const randomTime = Math.round(Math.random() * (3000)) + 500
+          this.loading = true
+
+          setTimeout(() => {
+            this.loading = false
+            this.isAdded = true
+          }, randomTime)
+        }
+
+        // Add functionality for the flow, to go to the splash screen
+      }
     }
   }
 </script>
