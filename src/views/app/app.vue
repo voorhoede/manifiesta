@@ -9,9 +9,9 @@
 </template>
 
 <script>
-  import CodeEditor from '@/components/code-editor/code-editor'
-  import Settings from '@/components/settings/settings'
-  import Preview from '@/components/preview/preview'
+  import CodeEditor from '../../components/code-editor/code-editor'
+  import Settings from '../../components/settings/settings'
+  import Preview from '../../components/preview/preview'
 
   export default {
     components: {

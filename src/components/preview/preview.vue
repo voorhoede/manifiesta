@@ -11,8 +11,8 @@
 </template>
 
 <script>
-  import Phone from '@/components/phone/phone'
-  import PushNotification from '@/components/push-notification/push-notification'
+  import Phone from '../phone/phone'
+  import PushNotification from '../push-notification/push-notification'
 
   export default {
     components: {
