@@ -6,7 +6,7 @@
   import dummyData from './dummy-data.json'
   import debounce from '../../lib/debounce'
   import { codemirror } from 'vue-codemirror'
-  require('../../lib/codemirror/lint-json')
+  require('../../lib/codemirror-lint-manifest')
 
   export default {
     components: {
