@@ -1,5 +1,8 @@
 <template>
-  <codemirror v-model="editorCode" :options="editorOptions"></codemirror>
+  <div class="manifest-editor">
+    <h1>Manifest</h1>
+    <codemirror v-model="editorCode" :options="editorOptions"></codemirror>
+  </div>
 </template>
 
 <script>
@@ -44,3 +47,5 @@
     }
   }
 </script>
+
+<style src="./manifest-editor.scss" lang="scss"></style>

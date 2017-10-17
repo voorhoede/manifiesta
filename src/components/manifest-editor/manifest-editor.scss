@@ -1,0 +1,12 @@
+@import '../../main.scss';
+
+.manifest-editor {
+  position: relative;
+}
+
+.CodeMirror {
+  position: absolute;
+  height: calc(100% - 16px);
+  width: 100%;
+  border: 1px solid $manifest-border-color;
+}
