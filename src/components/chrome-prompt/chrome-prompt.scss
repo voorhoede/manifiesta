@@ -1,56 +1,56 @@
 @import '../../main.scss';
 
-$pwa-prompt-padding: 14px;
+$chrome-prompt-padding: 14px;
 
-.pwa-prompt {
+.chrome-prompt {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   background: white;
   box-shadow: 0px -2px  6px rgba(0, 0, 0, 0.3);
-  padding: $pwa-prompt-padding;
+  padding: $chrome-prompt-padding;
   transform: translateY(120%);
   transition: .5s;
 }
 
-.pwa-prompt.is-open {
+.chrome-prompt.is-open {
   transform: translateY(0);
 }
 
-.pwa-prompt-content {
+.chrome-prompt-content {
   margin-bottom: 16px;
 }
 
-.pwa-prompt-image {
+.chrome-prompt-image {
   display: inline-block;
   width: 36px;
 }
 
-.pwa-prompt-image img {
+.chrome-prompt-image img {
   display: block;
   width: 100%;
 }
 
-.pwa-prompt-information {
+.chrome-prompt-information {
   display: inline-block;
   vertical-align: top;
   padding-left: 7px;
 }
 
-.pwa-prompt-title {
+.chrome-prompt-title {
   margin-bottom: 8px;
 }
 
-.pwa-prompt-url {
+.chrome-prompt-url {
   font-size: 12px;
   font-weight: 300;
 }
 
-.pwa-prompt-close {
+.chrome-prompt-close {
   position: absolute;
-  top: $pwa-prompt-padding;
-  right: $pwa-prompt-padding;
+  top: $chrome-prompt-padding;
+  right: $chrome-prompt-padding;
   width: 11px;
   height: 11px;
   border: 0;
@@ -59,35 +59,35 @@ $pwa-prompt-padding: 14px;
   line-height: 1;
 }
 
-.pwa-prompt-close svg {
+.chrome-prompt-close svg {
   width: 100%;
   height: 100%;
 }
 
-.pwa-prompt-close path {
+.chrome-prompt-close path {
   fill: $font-color-grey;
 }
 
-.pwa-prompt-close {
+.chrome-prompt-close {
   color: $font-color-grey;
 }
 
-.pwa-prompt-label {
+.chrome-prompt-label {
   font-size: 0;
   height: 1px;
   overflow: hidden;
   display: block;
 }
 
-.pwa-prompt-add {
+.chrome-prompt-add {
   float: right;
-  background: $pwa-prompt-button-color;
+  background: $chrome-prompt-button-color;
   text-transform: uppercase;
   color: white;
   border: 0;
   padding: 8px 16px;
 }
 
-.pwa-prompt-add[disabled] {
+.chrome-prompt-add[disabled] {
   background: $button-color-disabled
 }
