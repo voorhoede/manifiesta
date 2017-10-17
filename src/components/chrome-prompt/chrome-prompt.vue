@@ -2,11 +2,11 @@
   <div class="chrome-prompt" :class="{ 'is-open': isOpen}">
     <div class="chrome-prompt-content">
       <div class="chrome-prompt-image">
-        <img :src="url + iconUrl" />
+        <img :src="manifest.url + manifest.icons[0].src" />
       </div>
       <div class="chrome-prompt-information">
-        <h2 class="chrome-prompt-title">{{ shortName }}</h2>
-        <p class="chrome-prompt-url">{{ removeHost }}</p>
+        <h2 class="chrome-prompt-title">{{ manifest.short_name }}</h2>
+        <p class="chrome-prompt-url">{{ hostname }}</p>
       </div>
       <button class="chrome-prompt-close" aria-label="Close push notification" @click="close">
         <svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 0 14 14" width="14">
@@ -28,15 +28,8 @@
 <script>
   export default {
     props: {
-      iconUrl: {
-        type: String
-      },
-      shortName: {
-        type: String,
-        required: true
-      },
-      url: {
-        type: String,
+      manifest: {
+        type: Object,
         required: true
       }
     },
@@ -48,11 +41,11 @@
       }
     },
     computed: {
-      removeHost () {
-        return this.url.replace(/^(https?:\/\/)?(www\.)?/, '')
+      hostname () {
+        return new URL(this.manifest.url).hostname
       },
       buttonText () {
-        return (this.isAdded) ? 'Openen' : 'Toevoegen'
+        return (this.isAdded) ? 'Open' : 'Add'
       }
     },
     created () {

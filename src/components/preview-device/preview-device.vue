@@ -1,7 +1,7 @@
 <template>
-  <div class="phone">
-    <span class="phone-time">{{time}}</span>
-    <div class="phone-content">
+  <div class="preview-device">
+    <span class="preview-device-time">{{time}}</span>
+    <div class="preview-device-content">
       <slot></slot>
     </div>
   </div>
@@ -19,4 +19,4 @@
   }
 </script>
 
-<style src="./phone.scss" lang="scss"></style>
+<style src="./preview-device.scss" lang="scss"></style>

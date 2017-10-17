@@ -1,23 +1,31 @@
 <template>
-  <div>
-    <h1>Preview</h1>
-    <phone>
-      <iframe :src="manifest.url" title="iframe example 1" width="100%" height="100%">
-        <p>Your browser does not support iframes.</p>
-      </iframe>
-      <chrome-prompt :url="manifest.url" :iconUrl="manifest.icons[0].src" :shortName="manifest.short_name"></chrome-prompt>
-    </phone>
+  <div class="preview">
+    <preview-controls></preview-controls>
+    <preview-device>
+      <chrome-nav></chrome-nav>
+      <chrome-prompt :manifest="manifest"></chrome-prompt>
+      <browser-viewport :manifest="manifest"></browser-viewport>
+    </preview-device>
+    <preview-errors></preview-errors>
   </div>
 </template>
 
 <script>
-  import Phone from '../phone/phone'
+  import BrowserViewport from '../browser-viewport/browser-viewport'
   import ChromePrompt from '../chrome-prompt/chrome-prompt'
+  import ChromeNav from '../chrome-nav/chrome-nav'
+  import PreviewControls from '../preview-controls/preview-controls'
+  import PreviewDevice from '../preview-device/preview-device'
+  import PreviewErrors from '../preview-errors/preview-errors'
 
   export default {
     components: {
-      Phone,
-      ChromePrompt
+      BrowserViewport,
+      ChromePrompt,
+      ChromeNav,
+      PreviewControls,
+      PreviewDevice,
+      PreviewErrors
     },
     props: {
       manifest: {

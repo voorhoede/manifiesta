@@ -1,34 +1,26 @@
 <template>
   <div class="app">
-    <div class="input-container">
-      <settings></settings>
-      <manifest-editor :setManifest="setManifest"></manifest-editor>
-    </div>
-    <preview class="output-container" :manifest="manifest"></preview>
+    <app-header></app-header>
+    <editor></editor>
+    <preview :manifest="manifest"></preview>
   </div>
 </template>
 
 <script>
-  import ManifestEditor from '../../components/manifest-editor/manifest-editor'
-  import Settings from '../../components/settings/settings'
-  import Preview from '../../components/preview/preview'
+  import AppHeader from '../app-header/app-header'
+  import Editor from '../editor/editor'
+  import Preview from '../preview/preview'
+  import dummyData from '../manifest-editor/dummy-data.json'
 
   export default {
     components: {
-      ManifestEditor,
-      Settings,
+      AppHeader,
+      Editor,
       Preview
     },
     data () {
       return {
-        manifest: {}
-      }
-    },
-    methods: {
-      setManifest: function (val) {
-        try {
-          this.manifest = JSON.parse(val)
-        } catch (e) {}
+        manifest: dummyData
       }
     }
   }

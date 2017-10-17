@@ -1,7 +1,7 @@
 <template>
   <div class="manifest-editor">
     <h1>Manifest</h1>
-    <codemirror v-model="editorCode" :options="editorOptions"></codemirror>
+    <codemirror v-model="code" :options="options"></codemirror>
   </div>
 </template>
 
@@ -23,8 +23,8 @@
     },
     data () {
       return {
-        editorCode: JSON.stringify(dummyData, null, '\t'),
-        editorOptions: {
+        code: JSON.stringify(dummyData, null, '\t'),
+        options: {
           mode: {
             name: 'javascript',
             json: true
@@ -38,14 +38,12 @@
       }
     },
     watch: {
-      editorCode: debounce(function (val) {
+      code: debounce(function (val) {
         this.setManifest(val)
       }, 250)
     },
     created () {
-      this.setManifest(this.editorCode)
+      this.setManifest(this.code)
     }
   }
 </script>
-
-<style src="./manifest-editor.scss" lang="scss"></style>
