@@ -1,8 +1,10 @@
 <template>
   <div class="app">
-    <app-header></app-header>
-    <editor></editor>
-    <preview :manifest="manifest"></preview>
+    <v-app>
+      <editor :isOpen="editorIsOpen"></editor>
+      <app-header :toggleEditor="toggleEditor"></app-header>
+      <preview :manifest="manifest"></preview>
+    </v-app>
   </div>
 </template>
 
@@ -20,7 +22,13 @@
     },
     data () {
       return {
-        manifest: dummyData
+        manifest: dummyData,
+        editorIsOpen: true
+      }
+    },
+    methods: {
+      toggleEditor () {
+        this.editorIsOpen = !this.editorIsOpen
       }
     }
   }

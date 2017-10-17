@@ -1,9 +1,9 @@
 <template>
-  <div class="editor">
-    <settings></settings>
-    <manifest-editor :setManifest="setManifest"></manifest-editor>
-    <manifest-errors></manifest-errors>
-  </div>
+    <v-navigation-drawer app v-model="isOpen" clipped persistent absolute width="450">
+      <settings></settings>
+      <manifest-editor :setManifest="setManifest"></manifest-editor>
+      <manifest-errors></manifest-errors>
+    </v-navigation-drawer>
 </template>
 
 <script>
@@ -16,6 +16,12 @@
       Settings,
       ManifestEditor,
       ManifestErrors
+    },
+    props: {
+      isOpen: {
+        type: Boolean,
+        required: true
+      }
     },
     data () {
       return {

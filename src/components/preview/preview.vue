@@ -1,13 +1,15 @@
 <template>
-  <div class="preview">
-    <preview-controls></preview-controls>
-    <preview-device>
-      <chrome-nav></chrome-nav>
-      <chrome-prompt :manifest="manifest"></chrome-prompt>
-      <browser-viewport :manifest="manifest"></browser-viewport>
-    </preview-device>
-    <preview-errors></preview-errors>
-  </div>
+  <main>
+    <v-content>
+      <preview-controls></preview-controls>
+      <preview-device>
+        <chrome-nav></chrome-nav>
+        <chrome-prompt :manifest="manifest"></chrome-prompt>
+        <browser-viewport :manifest="manifest"></browser-viewport>
+      </preview-device>
+      <preview-errors></preview-errors>
+    </v-content>
+  </main>
 </template>
 
 <script>

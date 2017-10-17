@@ -14,14 +14,9 @@
         </svg>
       </button>
     </div>
-    <button
-      type="button"
-      class="chrome-prompt-add"
-      :disabled="loading"
-      @click="add"
-    >
+    <v-btn type="button" class="chrome-prompt-add" color="primary" :disabled="loading" @click="add" ripple>
         {{buttonText}}
-    </button>
+    </v-btn>
   </div>
 </template>
 
