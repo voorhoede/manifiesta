@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer app v-model="isOpen" clipped persistent absolute width="450">
+    <v-navigation-drawer app v-model="isOpen" clipped persistent absolute width="425" class="editor">
       <settings></settings>
       <manifest-editor :setManifest="setManifest"></manifest-editor>
       <manifest-errors></manifest-errors>
@@ -37,3 +37,5 @@
     }
   }
 </script>
+
+<style src="./editor.scss" lang="scss"></style>
