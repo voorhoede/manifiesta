@@ -12,12 +12,12 @@
 
 <script>
   import Phone from '../phone/phone'
-  import PwaPrompt from '../chrome-prompt/chrome-prompt'
+  import ChromePrompt from '../chrome-prompt/chrome-prompt'
 
   export default {
     components: {
       Phone,
-      PwaPrompt
+      ChromePrompt
     },
     props: {
       manifest: {
