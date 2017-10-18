@@ -1,8 +1,8 @@
 <template>
-    <v-navigation-drawer app v-model="isOpen" clipped persistent absolute width="450" class="editor">
-      <manifest-editor></manifest-editor>
-      <manifest-errors></manifest-errors>
-    </v-navigation-drawer>
+  <v-navigation-drawer app v-model="isOpen" clipped persistent absolute width="450" class="editor">
+    <manifest-editor></manifest-editor>
+    <manifest-errors></manifest-errors>
+  </v-navigation-drawer>
 </template>
 
 <script>
