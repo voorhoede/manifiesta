@@ -1,6 +1,6 @@
 <template>
   <v-navigation-drawer app v-model="isOpen" clipped persistent absolute width="450" class="editor">
-    <fetch-url></fetch-url>
+    <fetch-manifest></fetch-manifest>
     <template v-if="manifestStore.data">
       <manifest-editor></manifest-editor>
       <manifest-errors></manifest-errors>
@@ -10,13 +10,13 @@
 
 <script>
   import {manifestStore} from '../../lib/manifest-store'
-  import FetchUrl from '../fetch-url/fetch-url'
+  import FetchManifest from '../fetch-manifest/fetch-manifest'
   import ManifestEditor from '../manifest-editor/manifest-editor'
   import ManifestErrors from '../manifest-errors/manifest-errors'
 
   export default {
     components: {
-      FetchUrl,
+      FetchManifest,
       ManifestEditor,
       ManifestErrors
     },

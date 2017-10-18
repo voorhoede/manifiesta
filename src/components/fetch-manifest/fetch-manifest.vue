@@ -1,7 +1,7 @@
 <template>
-  <v-form v-model="urlValid" @submit.prevent="submit">
+  <v-form v-model="urlValid" @submit.prevent="handleSubmit" class="fetch-manifest">
     <v-text-field label="URL" v-model="url" :rules="urlErrors" required></v-text-field>
-    <v-btn :disabled="!urlValid" @click.prevent="submit">Fetch manifest</v-btn>
+    <v-btn :disabled="disabled" @click.prevent="handleSubmit">Fetch manifest</v-btn>
   </v-form>
 </template>
 
@@ -23,23 +23,36 @@
             }
           }
         ],
-        urlValid: false
+        urlValid: false,
+        isFetching: false
+      }
+    },
+    computed: {
+      disabled () {
+        return !this.urlValid || this.isFetching
       }
     },
     methods: {
-      submit () {
+      handleSubmit () {
         manifestStore.setUrl(this.url)
         this.fetchManifest()
       },
       fetchManifest () {
+        this.isFetching = true
         manifestStore.setData({})
-        fetch(`http://localhost:3000/?url=${this.url}`)
+        fetch(`https://fetch-manifest.now.sh/?url=${this.url}`)
           .then(response => response.json())
           .then(response => {
+            this.isFetching = false
             manifestStore.setData(response.manifest)
           })
-          .catch(error => { console.error(error) })
+          .catch(error => {
+            this.isFetching = false
+            console.error(error)
+          })
       }
     }
   }
 </script>
+
+<style src="./fetch-manifest.scss" lang="scss"></style>

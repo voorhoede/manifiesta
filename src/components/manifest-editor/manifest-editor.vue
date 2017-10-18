@@ -34,9 +34,7 @@
         get () {
           return JSON.stringify(manifestStore.data, null, '\t')
         },
-        set: debounce((value) => {
-          manifestStore.setData(value)
-        }, 250)
+        set: debounce(value => manifestStore.setData(value), 250)
       }
     }
   }
