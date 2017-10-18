@@ -3,8 +3,7 @@
     <v-content>
       <preview-controls></preview-controls>
       <preview-device>
-        <chrome-nav></chrome-nav>
-        <chrome-prompt></chrome-prompt>
+        <chrome-display></chrome-display>
         <browser-viewport></browser-viewport>
       </preview-device>
       <preview-errors></preview-errors>
@@ -14,8 +13,7 @@
 
 <script>
   import BrowserViewport from '../browser-viewport/browser-viewport'
-  import ChromePrompt from '../chrome-prompt/chrome-prompt'
-  import ChromeNav from '../chrome-nav/chrome-nav'
+  import ChromeDisplay from '../chrome-display/chrome-display'
   import PreviewControls from '../preview-controls/preview-controls'
   import PreviewDevice from '../preview-device/preview-device'
   import PreviewErrors from '../preview-errors/preview-errors'
@@ -23,8 +21,7 @@
   export default {
     components: {
       BrowserViewport,
-      ChromePrompt,
-      ChromeNav,
+      ChromeDisplay,
       PreviewControls,
       PreviewDevice,
       PreviewErrors

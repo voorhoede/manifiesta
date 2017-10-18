@@ -1,16 +1,22 @@
 <template>
   <v-navigation-drawer app v-model="isOpen" clipped persistent absolute width="450" class="editor">
-    <manifest-editor></manifest-editor>
-    <manifest-errors></manifest-errors>
+    <fetch-url></fetch-url>
+    <template v-if="manifestStore.data">
+      <manifest-editor></manifest-editor>
+      <manifest-errors></manifest-errors>
+    </template>
   </v-navigation-drawer>
 </template>
 
 <script>
+  import {manifestStore} from '../../lib/manifest-store'
+  import FetchUrl from '../fetch-url/fetch-url'
   import ManifestEditor from '../manifest-editor/manifest-editor'
   import ManifestErrors from '../manifest-errors/manifest-errors'
 
   export default {
     components: {
+      FetchUrl,
       ManifestEditor,
       ManifestErrors
     },
@@ -18,6 +24,11 @@
       isOpen: {
         type: Boolean,
         required: true
+      }
+    },
+    data () {
+      return {
+        manifestStore
       }
     }
   }

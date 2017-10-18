@@ -26,7 +26,6 @@
   export default {
     data () {
       return {
-        manifestStore,
         isOpen: false,
         isAdded: false,
         loading: false
@@ -34,13 +33,13 @@
     },
     computed: {
       hostname () {
-        return new URL(this.manifestStore.data.url).hostname
+        return new URL(manifestStore.url).hostname
       },
       promptTitle () {
-        return this.manifestStore.data.short_name
+        return manifestStore.data.short_name
       },
       imageUrl () {
-        return this.manifestStore.data.url + this.manifestStore.data.icons[0].src
+        return manifestStore.url + manifestStore.data.icons[0].src
       },
       buttonText () {
         return (this.isAdded) ? 'Open' : 'Add'
