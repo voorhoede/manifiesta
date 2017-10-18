@@ -3,12 +3,13 @@
     <v-app>
       <editor :isOpen="editorIsOpen"></editor>
       <app-header :toggleEditor="toggleEditor"></app-header>
-      <preview></preview>
+      <preview v-if="manifestStore.url"></preview>
     </v-app>
   </div>
 </template>
 
 <script>
+  import {manifestStore} from '../../lib/manifest-store'
   import AppHeader from '../app-header/app-header'
   import Editor from '../editor/editor'
   import Preview from '../preview/preview'
@@ -21,6 +22,7 @@
     },
     data () {
       return {
+        manifestStore,
         editorIsOpen: true
       }
     },

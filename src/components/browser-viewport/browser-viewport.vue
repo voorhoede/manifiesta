@@ -8,14 +8,9 @@
   import {manifestStore} from '../../lib/manifest-store'
 
   export default {
-    data () {
-      return {
-        manifestStore
-      }
-    },
     computed: {
       siteUrl () {
-        return this.manifestStore.data.url
+        return manifestStore.url
       }
     }
   }

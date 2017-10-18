@@ -5,9 +5,9 @@
 </template>
 
 <script>
-  import {manifestStore} from '../../lib/manifest-store'
   import debounce from '../../lib/debounce'
-  import { codemirror } from 'vue-codemirror'
+  import {manifestStore} from '../../lib/manifest-store'
+  import {codemirror} from 'vue-codemirror'
   require('../../lib/codemirror-lint-manifest')
 
   export default {
@@ -16,7 +16,6 @@
     },
     data () {
       return {
-        code: JSON.stringify(manifestStore.data, null, '\t'),
         options: {
           mode: {
             name: 'javascript',
@@ -30,10 +29,13 @@
         }
       }
     },
-    watch: {
-      code: debounce(function (val) {
-        manifestStore.set(val)
-      }, 250)
+    computed: {
+      code: {
+        get () {
+          return JSON.stringify(manifestStore.data, null, '\t')
+        },
+        set: debounce(value => manifestStore.setData(value), 250)
+      }
     }
   }
 </script>
