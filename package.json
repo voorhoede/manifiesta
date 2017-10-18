@@ -2,18 +2,22 @@
   "name": "manifiesta",
   "version": "1.0.0",
   "description": "Configure and preview your Progressive Web App Manifest.",
-  "author": "Casper Boutens <casper@voorhoede.nl>",
+  "homepage": "https://voorhoede.github.io/manfiesta/",
+  "license": "MIT",
+  "author": "De Voorhoede",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "npm run dev",
     "build": "node build/build.js",
-    "lint": "eslint --ext .js,.vue src"
+    "lint": "eslint --ext .js,.vue src",
+    "test": "npm run lint"
   },
   "dependencies": {
     "json-lint": "0.1.0",
     "jsonschema": "1.2.0",
     "vue": "^2.4.2",
+    "vue-codemirror": "3.1.6",
     "vuetify": "0.16.7"
   },
   "devDependencies": {
@@ -55,7 +59,6 @@
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
     "url-loader": "^0.5.8",
-    "vue-codemirror": "3.1.6",
     "vue-loader": "^13.0.4",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.4.2",
