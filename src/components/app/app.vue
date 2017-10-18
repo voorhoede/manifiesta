@@ -3,7 +3,7 @@
     <v-app>
       <editor :isOpen="editorIsOpen"></editor>
       <app-header :toggleEditor="toggleEditor"></app-header>
-      <preview :manifest="manifest"></preview>
+      <preview></preview>
     </v-app>
   </div>
 </template>
@@ -12,7 +12,6 @@
   import AppHeader from '../app-header/app-header'
   import Editor from '../editor/editor'
   import Preview from '../preview/preview'
-  import dummyData from '../manifest-editor/dummy-data.json'
 
   export default {
     components: {
@@ -22,7 +21,6 @@
     },
     data () {
       return {
-        manifest: dummyData,
         editorIsOpen: true
       }
     },

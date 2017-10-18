@@ -4,8 +4,8 @@
       <preview-controls></preview-controls>
       <preview-device>
         <chrome-nav></chrome-nav>
-        <chrome-prompt :manifest="manifest"></chrome-prompt>
-        <browser-viewport :manifest="manifest"></browser-viewport>
+        <chrome-prompt></chrome-prompt>
+        <browser-viewport></browser-viewport>
       </preview-device>
       <preview-errors></preview-errors>
     </v-content>
@@ -28,12 +28,6 @@
       PreviewControls,
       PreviewDevice,
       PreviewErrors
-    },
-    props: {
-      manifest: {
-        type: Object,
-        required: true
-      }
     }
   }
 </script>

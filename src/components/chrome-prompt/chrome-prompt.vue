@@ -2,10 +2,10 @@
   <div class="chrome-prompt" :class="{ 'is-open': isOpen}">
     <div class="chrome-prompt-content">
       <div class="chrome-prompt-image">
-        <img :src="manifest.url + manifest.icons[0].src" />
+        <img :src="imageUrl" />
       </div>
       <div class="chrome-prompt-information">
-        <h2 class="chrome-prompt-title">{{ manifest.short_name }}</h2>
+        <h2 class="chrome-prompt-title">{{ promptTitle }}</h2>
         <p class="chrome-prompt-url">{{ hostname }}</p>
       </div>
       <button class="chrome-prompt-close" aria-label="Close push notification" @click="close">
@@ -21,15 +21,12 @@
 </template>
 
 <script>
+  import {manifestStore} from '../../lib/manifest-store'
+
   export default {
-    props: {
-      manifest: {
-        type: Object,
-        required: true
-      }
-    },
     data () {
       return {
+        manifestStore,
         isOpen: false,
         isAdded: false,
         loading: false
@@ -37,7 +34,13 @@
     },
     computed: {
       hostname () {
-        return new URL(this.manifest.url).hostname
+        return new URL(this.manifestStore.data.url).hostname
+      },
+      promptTitle () {
+        return this.manifestStore.data.short_name
+      },
+      imageUrl () {
+        return this.manifestStore.data.url + this.manifestStore.data.icons[0].src
       },
       buttonText () {
         return (this.isAdded) ? 'Open' : 'Add'

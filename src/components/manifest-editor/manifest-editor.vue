@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import dummyData from './dummy-data.json'
+  import {manifestStore} from '../../lib/manifest-store'
   import debounce from '../../lib/debounce'
   import { codemirror } from 'vue-codemirror'
   require('../../lib/codemirror-lint-manifest')
@@ -14,15 +14,9 @@
     components: {
       codemirror
     },
-    props: {
-      setManifest: {
-        type: Function,
-        required: true
-      }
-    },
     data () {
       return {
-        code: JSON.stringify(dummyData, null, '\t'),
+        code: JSON.stringify(manifestStore.data, null, '\t'),
         options: {
           mode: {
             name: 'javascript',
@@ -38,11 +32,8 @@
     },
     watch: {
       code: debounce(function (val) {
-        this.setManifest(val)
+        manifestStore.set(val)
       }, 250)
-    },
-    created () {
-      this.setManifest(this.code)
     }
   }
 </script>
