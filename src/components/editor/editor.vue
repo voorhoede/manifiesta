@@ -22,3 +22,5 @@
     }
   }
 </script>
+
+<style src="./editor.scss" lang="scss"></style>
