@@ -1,7 +1,10 @@
 <template>
   <v-form v-model="urlValid" @submit.prevent="handleSubmit" class="fetch-manifest">
     <v-text-field label="URL" v-model="tempUrl" :rules="urlErrors" required></v-text-field>
-    <v-btn :disabled="disabled" @click.prevent="handleSubmit">Fetch manifest</v-btn>
+    <v-btn :disabled="disabled" @click.prevent="handleSubmit">
+      <template v-if="isFetching">Fetching ... </template>
+      <template v-else>Fetch manifest</template>
+    </v-btn>
   </v-form>
 </template>
 
@@ -21,6 +24,14 @@
       setUrl: {
         type: Function,
         required: true
+      },
+      isFetching: {
+        type: Boolean,
+        required: true
+      },
+      setIsFetching: {
+        type: Function,
+        required: true
       }
     },
     data () {
@@ -35,8 +46,7 @@
             }
           }
         ],
-        urlValid: false,
-        isFetching: false
+        urlValid: false
       }
     },
     computed: {
@@ -50,16 +60,16 @@
         this.fetchManifest()
       },
       fetchManifest () {
-        this.isFetching = true
+        this.setIsFetching(true)
         this.setManifest({})
         fetch(`https://fetch-manifest.now.sh/?url=${this.tempUrl}`)
           .then(response => response.json())
           .then(response => {
-            this.isFetching = false
+            this.setIsFetching(false)
             this.setManifest(response.manifest)
           })
           .catch(error => {
-            this.isFetching = false
+            this.setIsFetching(false)
             console.error(error)
           })
       }
