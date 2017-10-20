@@ -1,19 +1,31 @@
 <template>
   <v-form v-model="urlValid" @submit.prevent="handleSubmit" class="fetch-manifest">
-    <v-text-field label="URL" v-model="url" :rules="urlErrors" required></v-text-field>
+    <v-text-field label="URL" v-model="tempUrl" :rules="urlErrors" required></v-text-field>
     <v-btn :disabled="disabled" @click.prevent="handleSubmit">Fetch manifest</v-btn>
   </v-form>
 </template>
 
 <script>
-  import {manifestStore} from '../../lib/manifest-store'
-
   const invalidUrlError = 'Invalid url'
 
   export default {
+    props: {
+      setManifest: {
+        type: Function,
+        required: true
+      },
+      url: {
+        type: String,
+        required: true
+      },
+      setUrl: {
+        type: Function,
+        required: true
+      }
+    },
     data () {
       return {
-        url: manifestStore.url,
+        tempUrl: '',
         urlErrors: [
           (value) => {
             try {
@@ -34,17 +46,17 @@
     },
     methods: {
       handleSubmit () {
-        manifestStore.setUrl(this.url)
+        this.setUrl(this.tempUrl)
         this.fetchManifest()
       },
       fetchManifest () {
         this.isFetching = true
-        manifestStore.setData({})
-        fetch(`https://fetch-manifest.now.sh/?url=${this.url}`)
+        this.setManifest({})
+        fetch(`https://fetch-manifest.now.sh/?url=${this.tempUrl}`)
           .then(response => response.json())
           .then(response => {
             this.isFetching = false
-            manifestStore.setData(response.manifest)
+            this.setManifest(response.manifest)
           })
           .catch(error => {
             this.isFetching = false

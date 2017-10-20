@@ -6,13 +6,22 @@
 
 <script>
   import debounce from '../../lib/debounce'
-  import {manifestStore} from '../../lib/manifest-store'
   import {codemirror} from 'vue-codemirror'
   require('../../lib/codemirror-lint-manifest')
 
   export default {
     components: {
       codemirror
+    },
+    props: {
+      manifest: {
+        type: Object,
+        required: true
+      },
+      setManifest: {
+        type: Function,
+        required: true
+      }
     },
     data () {
       return {
@@ -32,9 +41,11 @@
     computed: {
       code: {
         get () {
-          return JSON.stringify(manifestStore.data, null, '\t')
+          return JSON.stringify(this.manifest, null, '\t')
         },
-        set: debounce(value => manifestStore.setData(value), 250)
+        set: debounce(function (value) {
+          this.setManifest(value)
+        }, 250)
       }
     }
   }

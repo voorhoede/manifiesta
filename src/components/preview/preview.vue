@@ -3,8 +3,8 @@
     <v-content>
       <preview-controls></preview-controls>
       <preview-device>
-        <chrome-display></chrome-display>
-        <browser-viewport></browser-viewport>
+        <chrome-display v-if="manifest" :manifest="manifest" :url="url"></chrome-display>
+        <browser-viewport :url="url"></browser-viewport>
       </preview-device>
       <preview-errors></preview-errors>
     </v-content>
@@ -25,6 +25,16 @@
       PreviewControls,
       PreviewDevice,
       PreviewErrors
+    },
+    props: {
+      manifest: {
+        type: Object,
+        required: true
+      },
+      url: {
+        type: String,
+        required: true
+      }
     }
   }
 </script>
