@@ -1,5 +1,5 @@
 <template>
-  <div class="preview-device">
+  <div class="preview-device chrome">
     <span class="preview-device-time">{{time}}</span>
     <div class="preview-device-content">
       <slot></slot>

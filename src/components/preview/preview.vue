@@ -1,12 +1,14 @@
 <template>
-  <main>
+  <main class="preview">
     <v-content>
-      <preview-controls></preview-controls>
-      <preview-device>
-        <chrome-display v-if="manifest" :manifest="manifest" :url="url"></chrome-display>
-        <browser-viewport :url="url"></browser-viewport>
-      </preview-device>
-      <preview-errors></preview-errors>
+      <div class="chrome">
+        <preview-controls></preview-controls>
+        <preview-device>
+          <chrome-display v-if="manifest" :manifest="manifest" :url="url" :criteria="criteria" :setCriteria="setCriteria" :criteriaIsMet="criteriaIsMet"></chrome-display>
+          <browser-viewport :url="url"></browser-viewport>
+        </preview-device>
+        <preview-criteria :criteria="criteria" :criteriaIsMet="criteriaIsMet"></preview-criteria>
+      </div>
     </v-content>
   </main>
 </template>
@@ -16,7 +18,7 @@
   import ChromeDisplay from '../chrome-display/chrome-display'
   import PreviewControls from '../preview-controls/preview-controls'
   import PreviewDevice from '../preview-device/preview-device'
-  import PreviewErrors from '../preview-errors/preview-errors'
+  import PreviewCriteria from '../preview-criteria/preview-criteria'
 
   export default {
     components: {
@@ -24,7 +26,7 @@
       ChromeDisplay,
       PreviewControls,
       PreviewDevice,
-      PreviewErrors
+      PreviewCriteria
     },
     props: {
       manifest: {
@@ -35,6 +37,27 @@
         type: String,
         required: true
       }
+    },
+    data () {
+      return {
+        criteria: {}
+      }
+    },
+    computed: {
+      criteriaIsMet () {
+        if (Object.keys(this.criteria).length > 0) {
+          return Object.values(this.criteria).filter(value => !value).length === 0
+        }
+
+        return false
+      }
+    },
+    methods: {
+      setCriteria (value) {
+        this.criteria = value
+      }
     }
   }
 </script>
+
+<style src="./preview.scss" lang="scss"></style>

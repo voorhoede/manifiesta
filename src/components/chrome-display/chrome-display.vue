@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isValid">
+  <div v-if="criteriaIsMet">
     <chrome-nav></chrome-nav>
     <chrome-prompt :manifest="manifest" :url="url"></chrome-prompt>
   </div>
@@ -22,21 +22,38 @@
       url: {
         type: String,
         required: true
+      },
+      criteria: {
+        type: Object,
+        required: true
+      },
+      setCriteria: {
+        type: Function,
+        required: true
+      },
+      criteriaIsMet: {
+        type: Boolean,
+        required: true
       }
     },
-    computed: {
-      critiria () {
+    created () {
+      this.setCriteria(this.checkCriteria())
+    },
+    watch: {
+      manifest () {
+        this.setCriteria(this.checkCriteria())
+      }
+    },
+    methods: {
+      checkCriteria () {
         return {
           'Served over HTTPS.': true,
           'Has a Service Worker.': true,
-          'Has a `name`.': !!this.manifest.name,
-          'Has a `short_name`.': !!this.manifest.short_name,
-          'Has a `start_url` that loads.': !!this.manifest.start_url,
+          'Has a `name`.': this.manifest.name || false,
+          'Has a `short_name`.': this.manifest.short_name || false,
+          'Has a `start_url` that loads.': this.manifest.start_url || false,
           'Has a PNG icon of 192x192 or larger.': true
         }
-      },
-      isValid () {
-        return Object.values(this.critiria).filter(value => !value).length === 0
       }
     }
   }

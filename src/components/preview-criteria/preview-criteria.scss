@@ -1,0 +1,36 @@
+@import '../../main.scss';
+
+.preview-criteria {
+  background: white;
+  border: 1px solid $manifest-border-color;
+  padding: 16px;
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  li {
+    position: relative;
+    margin-bottom: 8px;
+    padding-left: 16px;
+  }
+
+  li:last-of-type {
+    margin-bottom: 16px;
+  }
+
+  .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1em;
+  }
+
+  .icon.met {
+    color: #4caf50;
+  }
+
+  .icon.unmet {
+    color: #ff5252;
+  }
+}

@@ -1,0 +1,13 @@
+@import '../../main.scss';
+
+.preview {
+  padding: 16px;
+
+  .preview-device {
+    margin-bottom: 16px;
+  }
+
+  .chrome {
+    width: $chrome-device-width;
+  }
+}

@@ -1,46 +1,45 @@
-$preview-device-scale: 1;
-$preview-device-width: 452px;
-$preview-device-height: 918px;
-$preview-device-case-top: 88px;
-$preview-device-case-right: 22px;
-$preview-device-case-bottom: 146px;
-$preview-device-case-left: 18px;
-$preview-device-status-bar: 24px;
-$preview-device-status-padding-top: 6px;
-$preview-device-status-padding-right: 8px;
-$preview-device-url: '/static/images/nexus-5x.png';
+@import '../../main.scss';
 
 .preview-device {
   position: relative;
-  background-image: url($preview-device-url);
   background-size: cover;
-  width: $preview-device-width;
-  height: $preview-device-height;
-  transform: scale($preview-device-scale);
   transform-origin: top left;
+}
+
+.preview-device.chrome {
+  background-image: url($chrome-device-url);
+  width: $chrome-device-width;
+  height: $chrome-device-height;
+  transform: scale($chrome-device-scale);
 }
 
 .preview-device-time {
   position: absolute;
-  top: $preview-device-case-top;
-  right: $preview-device-case-right;
-  padding-top: $preview-device-status-padding-top;
-  padding-right: $preview-device-status-padding-right;
+}
+
+.chrome .preview-device-time {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 600;
   color: white;
   background: black;
+  top: $chrome-device-case-top;
+  right: $chrome-device-case-right;
+  padding-top: $chrome-device-status-padding-top;
+  padding-right: $chrome-device-status-padding-right;
 }
 
 .preview-device-content {
   position: absolute;
-  top: $preview-device-case-top + $preview-device-status-bar;
-  left: $preview-device-case-left;
-  width: calc(100% - #{$preview-device-case-left + $preview-device-case-right});
-  height: calc(100% - #{$preview-device-case-top + $preview-device-status-bar + $preview-device-case-bottom});
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+}
+
+.chrome .preview-device-content {
+  top: $chrome-device-case-top + $chrome-device-status-bar;
+  left: $chrome-device-case-left;
+  width: calc(100% - #{$chrome-device-case-left + $chrome-device-case-right});
+  height: calc(100% - #{$chrome-device-case-top + $chrome-device-status-bar + $chrome-device-case-bottom});
 }
