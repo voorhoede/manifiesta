@@ -1,7 +1,7 @@
 @import '../../main.scss';
 
 .preview-criteria {
-  background: white;
+  background: $color-white;
   border: 1px solid $manifest-border-color;
   padding: 16px;
 }
@@ -29,11 +29,11 @@
 
 .preview-criteria__item--pass:before {
   content: '\2713';
-  color: #4caf50;
+  color: $color-green;
 }
 
 .preview-criteria__item--fail:before {
   content: '\2717';
-  color: #ff5252;
+  color: $color-red;
 }
 

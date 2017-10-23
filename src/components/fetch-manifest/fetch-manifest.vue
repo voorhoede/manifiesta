@@ -25,11 +25,7 @@
     },
     data () {
       return {
-<<<<<<< HEAD
-        tempUrl: 'https://voorhoede.nl',
-=======
         fetchUrl: '',
->>>>>>> master
         urlErrors: [
           (value) => {
             try {
