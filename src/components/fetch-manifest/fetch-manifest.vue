@@ -66,7 +66,7 @@
       fetchManifest () {
         this.setIsFetching(true)
         this.setManifest({})
-        fetch(`https://fetch-manifest.now.sh/?url=${this.fetchUrl}`)
+        fetch(`${process.env.FETCH_MANIFEST_API}?url=${this.fetchUrl}`)
           .then(response => response.json())
           .then(response => {
             if (response.errors) {
