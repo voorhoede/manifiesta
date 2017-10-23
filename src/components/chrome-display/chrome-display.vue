@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isValid">
+  <div>
     <chrome-nav></chrome-nav>
     <chrome-prompt :manifest="manifest" :url="url"></chrome-prompt>
   </div>
@@ -22,12 +22,6 @@
       url: {
         type: String,
         required: true
-      }
-    },
-    computed: {
-      isValid () {
-        const {manifest} = this
-        return manifest.name && manifest.short_name && manifest.start_url && manifest.icons
       }
     }
   }

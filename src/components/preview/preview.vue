@@ -1,30 +1,35 @@
 <template>
-  <main>
+  <main class="preview">
     <v-content>
       <preview-controls></preview-controls>
-      <preview-device>
-        <chrome-display v-if="manifest" :manifest="manifest" :url="url"></chrome-display>
-        <browser-viewport :url="url"></browser-viewport>
-      </preview-device>
-      <preview-errors></preview-errors>
+      <div class="preview__column">
+        <preview-device device="nexus-5x">
+          <chrome-nav></chrome-nav>
+          <chrome-prompt v-if="Object.keys(manifest).length" :manifest="manifest" :url="url"></chrome-prompt>
+          <browser-viewport :url="url"></browser-viewport>
+        </preview-device>
+        <preview-criteria :manifest="manifest" :url="url"></preview-criteria>
+      </div>
     </v-content>
   </main>
 </template>
 
 <script>
   import BrowserViewport from '../browser-viewport/browser-viewport'
-  import ChromeDisplay from '../chrome-display/chrome-display'
+  import ChromePrompt from '../chrome-prompt/chrome-prompt'
+  import ChromeNav from '../chrome-nav/chrome-nav'
   import PreviewControls from '../preview-controls/preview-controls'
   import PreviewDevice from '../preview-device/preview-device'
-  import PreviewErrors from '../preview-errors/preview-errors'
+  import PreviewCriteria from '../preview-criteria/preview-criteria'
 
   export default {
     components: {
       BrowserViewport,
-      ChromeDisplay,
+      ChromePrompt,
+      ChromeNav,
       PreviewControls,
       PreviewDevice,
-      PreviewErrors
+      PreviewCriteria
     },
     props: {
       manifest: {
@@ -38,3 +43,5 @@
     }
   }
 </script>
+
+<style src="./preview.scss" lang="scss"></style>

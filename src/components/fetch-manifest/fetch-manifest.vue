@@ -72,7 +72,6 @@
             if (response.errors) {
               return Promise.reject(response.errors[0].message)
             }
-
             return response
           })
           .then(({manifest}) => {

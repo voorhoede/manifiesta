@@ -60,10 +60,12 @@
     },
     computed: {
       manifestIsEmpty () {
-        return Object.keys(this.manifest).length === 0
+        return !Object.keys(this.manifest).length
       },
       noManifestAfterSearch () {
-        return !this.isFetching && !this.firstFetch && this.manifestIsEmpty
+        const {isFetching, firstFetch, manifestIsEmpty} = this
+        console.log(!isFetching && !firstFetch && manifestIsEmpty)
+        return !isFetching && !firstFetch && manifestIsEmpty
       }
     },
     methods: {
