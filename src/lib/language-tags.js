@@ -1,4 +1,4 @@
-const languageTags = {
+export default {
   'af': 'Afrikaans',
   'af-ZA': 'Afrikaans (South Africa)',
   'ar': 'Arabic',
@@ -232,5 +232,3 @@ const languageTags = {
   'zu': 'Zulu',
   'zu-ZA': 'Zulu (South Africa)'
 }
-
-export default Object.keys(languageTags)

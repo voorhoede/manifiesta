@@ -31,7 +31,7 @@ export default {
     // https://www.w3.org/TR/appmanifest/#lang-member
     lang: {
       type: 'string',
-      enum: languageTags
+      enum: Object.keys(languageTags)
     },
     // https://www.w3.org/TR/appmanifest/#description-member
     description: {
