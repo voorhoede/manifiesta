@@ -4,33 +4,36 @@
   background: white;
   border: 1px solid $manifest-border-color;
   padding: 16px;
-
-  p {
-    margin-bottom: 16px;
-  }
-
-  li {
-    position: relative;
-    margin-bottom: 8px;
-    padding-left: 16px;
-  }
-
-  li:last-of-type {
-    margin-bottom: 16px;
-  }
-
-  .icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 1em;
-  }
-
-  .icon.met {
-    color: #4caf50;
-  }
-
-  .icon.unmet {
-    color: #ff5252;
-  }
 }
+
+.preview-criteria__title {
+  margin-bottom: 16px;
+}
+
+.preview-criteria__list {
+  padding-bottom: 8px;
+}
+
+.preview-criteria__item {
+  position: relative;
+  margin-bottom: 8px;
+  padding-left: 16px;
+}
+
+.preview-criteria__item:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1em;
+}
+
+.preview-criteria__item--pass:before {
+  content: '\2713';
+  color: #4caf50;
+}
+
+.preview-criteria__item--fail:before {
+  content: '\2717';
+  color: #ff5252;
+}
+

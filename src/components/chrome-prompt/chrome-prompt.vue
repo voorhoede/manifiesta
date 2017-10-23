@@ -1,5 +1,5 @@
 <template>
-  <div class="chrome-prompt" :class="{ 'is-open': isOpen}">
+  <div v-if="meetsAllCriteria" class="chrome-prompt" :class="{ 'is-open': isOpen}">
     <div class="chrome-prompt-content">
       <div class="chrome-prompt-image">
         <img :src="imageUrl" />
@@ -21,6 +21,8 @@
 </template>
 
 <script>
+  import listCriteria from '../../lib/chrome-prompt-criteria'
+
   export default {
     props: {
       manifest: {
@@ -40,6 +42,10 @@
       }
     },
     computed: {
+      meetsAllCriteria () {
+        const criteria = listCriteria({url: this.url, hasSw: true, manifest: this.manifest})
+        return Object.keys(criteria).every(Boolean)
+      },
       hostname () {
         return new URL(this.url).hostname
       },
@@ -56,7 +62,7 @@
     created () {
       setTimeout(() => {
         this.isOpen = true
-      }, 2000)
+      }, 5000)
     },
     methods: {
       close: function () {

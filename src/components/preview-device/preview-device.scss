@@ -1,4 +1,14 @@
-@import '../../main.scss';
+$nexus-5x-scale: 1;
+$nexus-5x-width: 452px;
+$nexus-5x-height: 918px;
+$nexus-5x-case-top: 88px;
+$nexus-5x-case-right: 22px;
+$nexus-5x-case-bottom: 146px;
+$nexus-5x-case-left: 18px;
+$nexus-5x-status-bar: 24px;
+$nexus-5x-status-padding-top: 6px;
+$nexus-5x-status-padding-right: 8px;
+$nexus-5x-url: '/static/images/nexus-5x.png';
 
 .preview-device {
   position: relative;
@@ -6,27 +16,27 @@
   transform-origin: top left;
 }
 
-.preview-device.chrome {
-  background-image: url($chrome-device-url);
-  width: $chrome-device-width;
-  height: $chrome-device-height;
-  transform: scale($chrome-device-scale);
+.preview-device--nexus-5x {
+  background-image: url($nexus-5x-url);
+  width: $nexus-5x-width;
+  height: $nexus-5x-height;
+  transform: scale($nexus-5x-scale);
 }
 
 .preview-device-time {
   position: absolute;
 }
 
-.chrome .preview-device-time {
+.preview-device--nexus-5x .preview-device-time {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 600;
   color: white;
   background: black;
-  top: $chrome-device-case-top;
-  right: $chrome-device-case-right;
-  padding-top: $chrome-device-status-padding-top;
-  padding-right: $chrome-device-status-padding-right;
+  top: $nexus-5x-case-top;
+  right: $nexus-5x-case-right;
+  padding-top: $nexus-5x-status-padding-top;
+  padding-right: $nexus-5x-status-padding-right;
 }
 
 .preview-device-content {
@@ -37,9 +47,9 @@
   overflow: hidden;
 }
 
-.chrome .preview-device-content {
-  top: $chrome-device-case-top + $chrome-device-status-bar;
-  left: $chrome-device-case-left;
-  width: calc(100% - #{$chrome-device-case-left + $chrome-device-case-right});
-  height: calc(100% - #{$chrome-device-case-top + $chrome-device-status-bar + $chrome-device-case-bottom});
+.preview-device--nexus-5x .preview-device-content {
+  top: $nexus-5x-case-top + $nexus-5x-status-bar;
+  left: $nexus-5x-case-left;
+  width: calc(100% - #{$nexus-5x-case-left + $nexus-5x-case-right});
+  height: calc(100% - #{$nexus-5x-case-top + $nexus-5x-status-bar + $nexus-5x-case-bottom});
 }

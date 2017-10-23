@@ -1,38 +1,34 @@
 <template>
-  <div class="preview-criteria">
-    <p>Criteria for the Chrome install prompt:</p>
-    <ul>
-      <li v-for="(item, index) in criteriaList" :key="index" :aria-label="`Criterium ${item.title} is ${item.isMet ? 'is met.' : 'isn\'t met.'}.`">
-        <span v-if="item.isMet" class="icon met">&#10003;</span>
-        <span v-else class="icon unmet">&#10007;</span>
-        {{item.title}}
+  <section class="preview-criteria">
+    <h3 class="preview-criteria__title">Criteria for the Chrome install prompt:</h3>
+    <ul class="preview-criteria__list">
+      <li v-for="(value, text) in criteriaList" :key="text"
+      class="preview-criteria__item" :class="value ? 'preview-criteria__item--pass' : 'preview-criteria__item--fail'">
+        <span v-html="text"></span>
+        <span class="a11y-only">{{ value ? 'is met. ' : 'isn\'t met.' }}</span>
       </li>
     </ul>
-    <a href="https://developers.google.com/web/fundamentals/app-install-banners/#what_are_the_criteria">Learn more</a>
-  </div>
+    <a href="https://developers.google.com/web/fundamentals/app-install-banners/#what_are_the_criteria" target="_blank" rel="noopener">Learn more</a>
+  </section>
 </template>
 
 <script>
+  import listCriteria from '../../lib/chrome-prompt-criteria'
+
   export default {
     props: {
-      criteria: {
-        type: Object,
+      url: {
+        type: String,
         required: true
       },
-      criteriaIsMet: {
-        type: Boolean,
+      manifest: {
+        type: Object,
         required: true
       }
     },
     computed: {
       criteriaList () {
-        return Object.keys(this.criteria)
-                     .map(value => {
-                       return {
-                         title: value,
-                         isMet: this.criteria[value]
-                       }
-                     })
+        return listCriteria({url: this.url, hasSw: true, manifest: this.manifest})
       }
     }
   }

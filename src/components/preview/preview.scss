@@ -2,12 +2,8 @@
 
 .preview {
   padding: 16px;
+}
 
-  .preview-device {
-    margin-bottom: 16px;
-  }
-
-  .chrome {
-    width: $chrome-device-width;
-  }
+.preview__column {
+  display: inline-block;
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="preview-device chrome">
+  <div class="preview-device" :class="`preview-device--${device}`">
     <span class="preview-device-time">{{time}}</span>
     <div class="preview-device-content">
       <slot></slot>
@@ -11,6 +11,12 @@
   import getTime from '../../lib/get-time'
 
   export default {
+    props: {
+      device: {
+        type: String,
+        required: true
+      }
+    },
     data () {
       return {
         time: getTime()

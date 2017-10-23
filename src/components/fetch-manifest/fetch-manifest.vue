@@ -25,7 +25,7 @@
     },
     data () {
       return {
-        tempUrl: '',
+        tempUrl: 'https://voorhoede.nl',
         urlErrors: [
           (value) => {
             try {
@@ -51,7 +51,6 @@
       },
       fetchManifest () {
         this.isFetching = true
-        this.setManifest({})
         fetch(`https://fetch-manifest.now.sh/?url=${this.tempUrl}`)
           .then(response => response.json())
           .then(response => {

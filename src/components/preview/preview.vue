@@ -1,13 +1,14 @@
 <template>
   <main class="preview">
     <v-content>
-      <div class="chrome">
-        <preview-controls></preview-controls>
-        <preview-device>
-          <chrome-display v-if="manifest" :manifest="manifest" :url="url" :criteria="criteria" :setCriteria="setCriteria" :criteriaIsMet="criteriaIsMet"></chrome-display>
+      <preview-controls></preview-controls>
+      <div class="preview__column">
+        <preview-device device="nexus-5x">
+          <chrome-nav></chrome-nav>
+          <chrome-prompt :manifest="manifest" :url="url"></chrome-prompt>
           <browser-viewport :url="url"></browser-viewport>
         </preview-device>
-        <preview-criteria :criteria="criteria" :criteriaIsMet="criteriaIsMet"></preview-criteria>
+        <preview-criteria :manifest="manifest" :url="url"></preview-criteria>
       </div>
     </v-content>
   </main>
@@ -15,7 +16,8 @@
 
 <script>
   import BrowserViewport from '../browser-viewport/browser-viewport'
-  import ChromeDisplay from '../chrome-display/chrome-display'
+  import ChromePrompt from '../chrome-prompt/chrome-prompt'
+  import ChromeNav from '../chrome-nav/chrome-nav'
   import PreviewControls from '../preview-controls/preview-controls'
   import PreviewDevice from '../preview-device/preview-device'
   import PreviewCriteria from '../preview-criteria/preview-criteria'
@@ -23,7 +25,8 @@
   export default {
     components: {
       BrowserViewport,
-      ChromeDisplay,
+      ChromePrompt,
+      ChromeNav,
       PreviewControls,
       PreviewDevice,
       PreviewCriteria
@@ -36,25 +39,6 @@
       url: {
         type: String,
         required: true
-      }
-    },
-    data () {
-      return {
-        criteria: {}
-      }
-    },
-    computed: {
-      criteriaIsMet () {
-        if (Object.keys(this.criteria).length > 0) {
-          return Object.values(this.criteria).filter(value => !value).length === 0
-        }
-
-        return false
-      }
-    },
-    methods: {
-      setCriteria (value) {
-        this.criteria = value
       }
     }
   }
