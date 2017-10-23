@@ -62,7 +62,7 @@
     created () {
       setTimeout(() => {
         this.isOpen = true
-      }, 5000)
+      }, 2000)
     },
     methods: {
       close: function () {

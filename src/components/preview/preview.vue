@@ -5,7 +5,7 @@
       <div class="preview__column">
         <preview-device device="nexus-5x">
           <chrome-nav></chrome-nav>
-          <chrome-prompt :manifest="manifest" :url="url"></chrome-prompt>
+          <chrome-prompt v-if="Object.keys(manifest).length" :manifest="manifest" :url="url"></chrome-prompt>
           <browser-viewport :url="url"></browser-viewport>
         </preview-device>
         <preview-criteria :manifest="manifest" :url="url"></preview-criteria>
