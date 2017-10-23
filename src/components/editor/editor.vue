@@ -64,7 +64,6 @@
       },
       noManifestAfterSearch () {
         const {isFetching, firstFetch, manifestIsEmpty} = this
-        console.log(!isFetching && !firstFetch && manifestIsEmpty)
         return !isFetching && !firstFetch && manifestIsEmpty
       }
     },
