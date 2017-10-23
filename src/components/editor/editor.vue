@@ -1,7 +1,16 @@
 <template>
   <v-navigation-drawer app v-model="isOpen" clipped persistent absolute width="450" class="editor">
-    <fetch-manifest :setManifest="setManifest" :url="url" :setUrl="setUrl"></fetch-manifest>
-    <template v-if="!manifestEmpty">
+    <fetch-manifest :setManifest="setManifest" :url="url" :setUrl="setUrl" :isFetching="isFetching" :setIsFetching="setIsFetching" :setError="setError"></fetch-manifest>
+    <div v-if="isFetching" class="fetching">
+      <p>Searching for manifest ... </p>
+      <v-progress-linear :indeterminate="true"></v-progress-linear>
+    </div>
+    <div v-if="noManifestAfterSearch" class="no-manifest">
+      <p>No manifest found on the given url</p>
+      <v-btn color="primary" @click="setSkeleton" class="create-manifest">Create a manifest</v-btn>
+      <p class="error-message">{{error}}</p>
+    </div>
+    <template v-if="!manifestIsEmpty">
       <manifest-editor :manifest="manifest" :setManifest="setManifest"></manifest-editor>
       <manifest-errors></manifest-errors>
     </template>
@@ -9,6 +18,7 @@
 </template>
 
 <script>
+  import manifestSkeleton from '../../lib/manifest-skeleton.json'
   import FetchManifest from '../fetch-manifest/fetch-manifest'
   import ManifestEditor from '../manifest-editor/manifest-editor'
   import ManifestErrors from '../manifest-errors/manifest-errors'
@@ -41,9 +51,33 @@
         required: true
       }
     },
+    data () {
+      return {
+        firstFetch: true,
+        isFetching: false,
+        error: ''
+      }
+    },
     computed: {
-      manifestEmpty () {
-        return Object.keys(this.manifest).length === 0
+      manifestIsEmpty () {
+        return !Object.keys(this.manifest).length
+      },
+      noManifestAfterSearch () {
+        const {isFetching, firstFetch, manifestIsEmpty} = this
+        console.log(!isFetching && !firstFetch && manifestIsEmpty)
+        return !isFetching && !firstFetch && manifestIsEmpty
+      }
+    },
+    methods: {
+      setIsFetching (value) {
+        this.isFetching = value
+        this.firstFetch = false
+      },
+      setSkeleton () {
+        this.setManifest(manifestSkeleton)
+      },
+      setError (value) {
+        this.error = value
       }
     }
   }
