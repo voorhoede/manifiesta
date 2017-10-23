@@ -1,6 +1,6 @@
 <template>
   <v-form v-model="urlValid" @submit.prevent="handleSubmit" class="fetch-manifest">
-    <v-text-field label="URL" v-model="tempUrl" :rules="urlErrors" required></v-text-field>
+    <v-text-field label="URL" v-model="fetchUrl" :rules="urlErrors" required></v-text-field>
     <v-btn :disabled="disabled" @click.prevent="handleSubmit">
       <template v-if="isFetching">Fetching ... </template>
       <template v-else>Fetch manifest</template>
@@ -36,7 +36,7 @@
     },
     data () {
       return {
-        tempUrl: '',
+        fetchUrl: '',
         urlErrors: [
           (value) => {
             try {
@@ -56,13 +56,13 @@
     },
     methods: {
       handleSubmit () {
-        this.setUrl(this.tempUrl)
+        this.setUrl(this.fetchUrl)
         this.fetchManifest()
       },
       fetchManifest () {
         this.setIsFetching(true)
         this.setManifest({})
-        fetch(`https://fetch-manifest.now.sh/?url=${this.tempUrl}`)
+        fetch(`https://fetch-manifest.now.sh/?url=${this.fetchUrl}`)
           .then(response => response.json())
           .then(response => {
             this.setIsFetching(false)
