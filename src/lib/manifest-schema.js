@@ -26,7 +26,7 @@ export default {
     // https://www.w3.org/TR/appmanifest/#dir-member
     dir: {
       type: 'string',
-      enum: ['ltr', 'rtl']
+      enum: ['auto', 'ltr', 'rtl']
     },
     // https://www.w3.org/TR/appmanifest/#lang-member
     lang: {

@@ -51,7 +51,6 @@
       },
       fetchManifest () {
         this.isFetching = true
-        this.setManifest({})
         fetch(`https://fetch-manifest.now.sh/?url=${this.fetchUrl}`)
           .then(response => response.json())
           .then(response => {
