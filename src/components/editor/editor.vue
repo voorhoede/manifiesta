@@ -1,15 +1,16 @@
 <template>
   <v-navigation-drawer app v-model="isOpen" clipped persistent absolute width="450" class="editor">
-    <fetch-manifest :setManifest="setManifest" :url="url" :setUrl="setUrl" :isFetching="isFetching" :setIsFetching="setIsFetching"></fetch-manifest>
+    <fetch-manifest :setManifest="setManifest" :url="url" :setUrl="setUrl" :isFetching="isFetching" :setIsFetching="setIsFetching" :setError="setError"></fetch-manifest>
     <div v-if="isFetching" class="fetching">
       <p>Searching for manifest ... </p>
       <v-progress-linear :indeterminate="true"></v-progress-linear>
     </div>
-    <div v-if="!isFetching && !firstFetch && manifestEmpty" class="no-manifest">
+    <div v-if="noManifestAfterSearch" class="no-manifest">
       <p>No manifest found on the given url</p>
-      <v-btn color="primary" @click="setSkeleton">Create a manifest</v-btn>
+      <v-btn color="primary" @click="setSkeleton" class="create-manifest">Create a manifest</v-btn>
+      <p class="error-message">{{error}}</p>
     </div>
-    <template v-if="!manifestEmpty">
+    <template v-if="!manifestIsEmpty">
       <manifest-editor :manifest="manifest" :setManifest="setManifest"></manifest-editor>
       <manifest-errors></manifest-errors>
     </template>
@@ -53,12 +54,16 @@
     data () {
       return {
         firstFetch: true,
-        isFetching: false
+        isFetching: false,
+        error: ''
       }
     },
     computed: {
-      manifestEmpty () {
+      manifestIsEmpty () {
         return Object.keys(this.manifest).length === 0
+      },
+      noManifestAfterSearch () {
+        return !this.isFetching && !this.firstFetch && this.manifestIsEmpty
       }
     },
     methods: {
@@ -68,6 +73,9 @@
       },
       setSkeleton () {
         this.setManifest(manifestSkeleton)
+      },
+      setError (value) {
+        this.error = value
       }
     }
   }

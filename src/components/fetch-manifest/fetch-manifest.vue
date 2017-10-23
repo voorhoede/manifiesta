@@ -32,6 +32,10 @@
       setIsFetching: {
         type: Function,
         required: true
+      },
+      setError: {
+        type: Function,
+        required: true
       }
     },
     data () {
@@ -65,12 +69,19 @@
         fetch(`https://fetch-manifest.now.sh/?url=${this.fetchUrl}`)
           .then(response => response.json())
           .then(response => {
+            if (response.errors) {
+              return Promise.reject(response.errors[0].message)
+            }
+
+            return response
+          })
+          .then(({manifest}) => {
             this.setIsFetching(false)
-            this.setManifest(response.manifest)
+            this.setManifest(manifest)
           })
           .catch(error => {
             this.setIsFetching(false)
-            console.error(error)
+            this.setError(error)
           })
       }
     }
