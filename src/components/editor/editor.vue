@@ -1,6 +1,8 @@
 <template>
   <v-navigation-drawer app v-model="isOpen" clipped persistent absolute width="450" class="editor">
-    <fetch-manifest :setManifest="setManifest" :url="url" :setUrl="setUrl" :isFetching="isFetching" :setIsFetching="setIsFetching" :setError="setError"></fetch-manifest>
+    <fetch-manifest :setManifest="setManifest" :url="url"
+    :setUrl="setUrl" :isFetching="isFetching"
+    :setIsFetching="setIsFetching" :setError="setError"></fetch-manifest>
     <div v-if="isFetching" class="fetching">
       <p>Searching for manifest ... </p>
       <v-progress-linear :indeterminate="true"></v-progress-linear>
@@ -11,6 +13,9 @@
       <p class="error-message">{{error}}</p>
     </div>
     <template v-if="!manifestIsEmpty">
+      <div class="sw-checkbox">
+        <v-checkbox v-model="checkbox" label="Has a Service Worker"></v-checkbox>
+      </div>
       <manifest-editor :manifest="manifest" :setManifest="setManifest"></manifest-editor>
       <manifest-errors></manifest-errors>
     </template>
@@ -49,12 +54,17 @@
       setUrl: {
         type: Function,
         required: true
+      },
+      setHasSw: {
+        type: Function,
+        required: true
       }
     },
     data () {
       return {
         firstFetch: true,
         isFetching: false,
+        checkbox: false,
         error: ''
       }
     },
@@ -65,6 +75,11 @@
       noManifestAfterSearch () {
         const {isFetching, firstFetch, manifestIsEmpty} = this
         return !isFetching && !firstFetch && manifestIsEmpty
+      }
+    },
+    watch: {
+      checkbox () {
+        this.setHasSw(this.checkbox)
       }
     },
     methods: {

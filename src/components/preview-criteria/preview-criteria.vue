@@ -24,11 +24,15 @@
       manifest: {
         type: Object,
         required: true
+      },
+      hasSw: {
+        type: Boolean,
+        required: true
       }
     },
     computed: {
       criteriaList () {
-        return listCriteria({url: this.url, hasSw: true, manifest: this.manifest})
+        return listCriteria({url: this.url, hasSw: this.hasSw, manifest: this.manifest})
       }
     }
   }

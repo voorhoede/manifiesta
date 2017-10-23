@@ -4,6 +4,16 @@
   display: flex;
   flex-direction: column;
 
+  .sw-checkbox {
+    flex-grow: 0;
+    padding: 0 16px;
+    margin-bottom: 16px;
+  }
+
+  .sw-checkbox .input-group__details {
+    display: none;
+  }
+
   .fetching, .no-manifest {
     flex-grow: 1;
     display: flex;
