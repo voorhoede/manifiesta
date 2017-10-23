@@ -1,12 +1,11 @@
 <template>
   <div v-if="isValid">
     <chrome-nav></chrome-nav>
-    <chrome-prompt></chrome-prompt>
+    <chrome-prompt :manifest="manifest" :url="url"></chrome-prompt>
   </div>
 </template>
 
 <script>
-  import {manifestStore} from '../../lib/manifest-store'
   import ChromePrompt from '../chrome-prompt/chrome-prompt'
   import ChromeNav from '../chrome-nav/chrome-nav'
 
@@ -15,10 +14,20 @@
       ChromePrompt,
       ChromeNav
     },
+    props: {
+      manifest: {
+        type: Object,
+        required: true
+      },
+      url: {
+        type: String,
+        required: true
+      }
+    },
     computed: {
       isValid () {
-        const {data} = manifestStore
-        return data.name && data.short_name && data.start_url && data.icons
+        const {manifest} = this
+        return manifest.name && manifest.short_name && manifest.start_url && manifest.icons
       }
     }
   }

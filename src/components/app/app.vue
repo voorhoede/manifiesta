@@ -1,15 +1,14 @@
 <template>
   <div class="app">
     <v-app>
-      <editor :isOpen="editorIsOpen"></editor>
+      <editor :isOpen="editorIsOpen" :manifest="manifest" :setManifest="setManifest" :url="url" :setUrl="setUrl"></editor>
       <app-header :toggleEditor="toggleEditor"></app-header>
-      <preview v-if="manifestStore.url"></preview>
+      <preview v-if="url" :manifest="manifest" :url="url"></preview>
     </v-app>
   </div>
 </template>
 
 <script>
-  import {manifestStore} from '../../lib/manifest-store'
   import AppHeader from '../app-header/app-header'
   import Editor from '../editor/editor'
   import Preview from '../preview/preview'
@@ -22,13 +21,26 @@
     },
     data () {
       return {
-        manifestStore,
+        url: '',
+        manifest: {},
         editorIsOpen: true
       }
     },
     methods: {
       toggleEditor () {
         this.editorIsOpen = !this.editorIsOpen
+      },
+      setUrl (value) {
+        this.url = value
+      },
+      setManifest (value) {
+        if (typeof value === 'object') {
+          this.manifest = value
+        } else {
+          try {
+            this.manifest = JSON.parse(value)
+          } catch (error) {}
+        }
       }
     }
   }

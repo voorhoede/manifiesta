@@ -21,9 +21,17 @@
 </template>
 
 <script>
-  import {manifestStore} from '../../lib/manifest-store'
-
   export default {
+    props: {
+      manifest: {
+        type: Object,
+        required: true
+      },
+      url: {
+        type: String,
+        required: true
+      }
+    },
     data () {
       return {
         isOpen: false,
@@ -33,13 +41,13 @@
     },
     computed: {
       hostname () {
-        return new URL(manifestStore.url).hostname
+        return new URL(this.url).hostname
       },
       promptTitle () {
-        return manifestStore.data.short_name
+        return this.manifest.short_name
       },
       imageUrl () {
-        return manifestStore.url + manifestStore.data.icons[0].src
+        return this.url + this.manifest.icons[0].src
       },
       buttonText () {
         return (this.isAdded) ? 'Open' : 'Add'
