@@ -1,5 +1,13 @@
+let cache = {}
+
 export default ({ url, width, height }) => {
-  return fetch(`${process.env.WEBSHOT_API}?url=${url}&w=${width}&h=${height}`)
+  const endpoint = `${process.env.WEBSHOT_API}?url=${url}&w=${width}&h=${height}`
+
+  if (cache[endpoint]) {
+    return cache[endpoint]
+  }
+
+  cache[endpoint] = fetch(endpoint)
     .then(response => {
       if (response.ok) {
         return response.blob()
@@ -8,4 +16,6 @@ export default ({ url, width, height }) => {
           .then(json => Promise.reject(json.errors[0]))
       }
     })
+
+  return cache[endpoint]
 }

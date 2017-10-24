@@ -1,5 +1,13 @@
+let cache = {}
+
 export default (url) => {
-  return fetch(`${process.env.FETCH_HEADERS_API}?url=${url}`)
+  const endpoint = `${process.env.FETCH_HEADERS_API}?url=${url}`
+
+  if (cache[endpoint]) {
+    return cache[endpoint]
+  }
+
+  cache[endpoint] = fetch(endpoint)
     .then(response => response.json())
     .then(({ errors, headers = [] }) => {
       if (errors) {
@@ -8,4 +16,6 @@ export default (url) => {
         return headers
       }
     })
+
+  return cache[endpoint]
 }
