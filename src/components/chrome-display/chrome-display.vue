@@ -6,6 +6,7 @@
 </template>
 
 <script>
+  import VueTypes from 'vue-types'
   import ChromePrompt from '../chrome-prompt/chrome-prompt'
   import ChromeNav from '../chrome-nav/chrome-nav'
 
@@ -15,14 +16,8 @@
       ChromeNav
     },
     props: {
-      manifest: {
-        type: Object,
-        required: true
-      },
-      url: {
-        type: String,
-        required: true
-      }
+      manifest: VueTypes.object.isRequired,
+      url: VueTypes.string.isRequired
     }
   }
 </script>

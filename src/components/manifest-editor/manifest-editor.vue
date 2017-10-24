@@ -5,6 +5,7 @@
 </template>
 
 <script>
+  import VueTypes from 'vue-types'
   import debounce from '../../lib/debounce'
   import {codemirror} from 'vue-codemirror'
   require('../../lib/codemirror-lint-manifest')
@@ -14,14 +15,8 @@
       codemirror
     },
     props: {
-      manifest: {
-        type: Object,
-        required: true
-      },
-      setManifest: {
-        type: Function,
-        required: true
-      }
+      manifest: VueTypes.object.isRequired,
+      setManifest: VueTypes.func.isRequired
     },
     data () {
       return {

@@ -6,12 +6,11 @@
 </template>
 
 <script>
+  import VueTypes from 'vue-types'
+
   export default {
     props: {
-      toggleEditor: {
-        type: Function,
-        required: true
-      }
+      toggleEditor: VueTypes.func.isRequired
     }
   }
 </script>
