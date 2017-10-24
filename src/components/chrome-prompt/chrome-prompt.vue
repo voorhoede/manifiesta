@@ -1,11 +1,11 @@
 <template>
-  <div class="chrome-prompt" :class="{ 'is-open': isOpen}">
+  <div v-if="meetsAllCriteria" class="chrome-prompt" :class="{ 'is-open': isOpen}">
     <div class="chrome-prompt-content">
       <div class="chrome-prompt-image">
-        <img :src="manifest.url + manifest.icons[0].src" />
+        <img :src="imageUrl" />
       </div>
       <div class="chrome-prompt-information">
-        <h2 class="chrome-prompt-title">{{ manifest.short_name }}</h2>
+        <h2 class="chrome-prompt-title">{{ promptTitle }}</h2>
         <p class="chrome-prompt-url">{{ hostname }}</p>
       </div>
       <button class="chrome-prompt-close" aria-label="Close push notification" @click="close">
@@ -21,12 +21,13 @@
 </template>
 
 <script>
+  import VueTypes from 'vue-types'
+  import listCriteria from '../../lib/chrome-prompt-criteria'
+
   export default {
     props: {
-      manifest: {
-        type: Object,
-        required: true
-      }
+      manifest: VueTypes.object.isRequired,
+      url: VueTypes.string.isRequired
     },
     data () {
       return {
@@ -36,8 +37,18 @@
       }
     },
     computed: {
+      meetsAllCriteria () {
+        const criteria = listCriteria({url: this.url, hasSw: true, manifest: this.manifest})
+        return Object.keys(criteria).every(Boolean)
+      },
       hostname () {
-        return new URL(this.manifest.url).hostname
+        return new URL(this.url).hostname
+      },
+      promptTitle () {
+        return this.manifest.short_name
+      },
+      imageUrl () {
+        return this.url + this.manifest.icons[0].src
       },
       buttonText () {
         return (this.isAdded) ? 'Open' : 'Add'

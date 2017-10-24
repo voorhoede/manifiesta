@@ -1,9 +1,9 @@
 <template>
   <div class="app">
     <v-app>
-      <editor :isOpen="editorIsOpen"></editor>
+      <editor :isOpen="editorIsOpen" :manifest="manifest" :setManifest="setManifest" :url="url" :setUrl="setUrl"></editor>
       <app-header :toggleEditor="toggleEditor"></app-header>
-      <preview :manifest="manifest"></preview>
+      <preview v-if="url" :manifest="manifest" :url="url"></preview>
     </v-app>
   </div>
 </template>
@@ -12,7 +12,6 @@
   import AppHeader from '../app-header/app-header'
   import Editor from '../editor/editor'
   import Preview from '../preview/preview'
-  import dummyData from '../manifest-editor/dummy-data.json'
 
   export default {
     components: {
@@ -22,13 +21,26 @@
     },
     data () {
       return {
-        manifest: dummyData,
+        url: '',
+        manifest: {},
         editorIsOpen: true
       }
     },
     methods: {
       toggleEditor () {
         this.editorIsOpen = !this.editorIsOpen
+      },
+      setUrl (value) {
+        this.url = value
+      },
+      setManifest (value) {
+        if (typeof value === 'object') {
+          this.manifest = value
+        } else {
+          try {
+            this.manifest = JSON.parse(value)
+          } catch (error) {}
+        }
       }
     }
   }

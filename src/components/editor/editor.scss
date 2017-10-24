@@ -1,0 +1,26 @@
+@import '../../main.scss';
+
+.editor {
+  display: flex;
+  flex-direction: column;
+
+  .fetching, .no-manifest {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid $manifest-border-color;
+    border-bottom: 1px solid $manifest-border-color;
+    padding: 0 16px;
+  }
+
+  .create-manifest {
+    margin-bottom: 12px;
+  }
+
+  .error-message {
+    font-size: .8em;
+    color: $color-red;
+  }
+}

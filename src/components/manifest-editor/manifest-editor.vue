@@ -1,14 +1,13 @@
 <template>
   <div class="manifest-editor">
-    <h1>Manifest</h1>
     <codemirror v-model="code" :options="options"></codemirror>
   </div>
 </template>
 
 <script>
-  import dummyData from './dummy-data.json'
+  import VueTypes from 'vue-types'
   import debounce from '../../lib/debounce'
-  import { codemirror } from 'vue-codemirror'
+  import {codemirror} from 'vue-codemirror'
   require('../../lib/codemirror-lint-manifest')
 
   export default {
@@ -16,14 +15,11 @@
       codemirror
     },
     props: {
-      setManifest: {
-        type: Function,
-        required: true
-      }
+      manifest: VueTypes.object.isRequired,
+      setManifest: VueTypes.func.isRequired
     },
     data () {
       return {
-        code: JSON.stringify(dummyData, null, '\t'),
         options: {
           mode: {
             name: 'javascript',
@@ -37,13 +33,17 @@
         }
       }
     },
-    watch: {
-      code: debounce(function (val) {
-        this.setManifest(val)
-      }, 250)
-    },
-    created () {
-      this.setManifest(this.code)
+    computed: {
+      code: {
+        get () {
+          return JSON.stringify(this.manifest, null, '\t')
+        },
+        set: debounce(function (value) {
+          this.setManifest(value)
+        }, 250)
+      }
     }
   }
 </script>
+
+<style src="./manifest-editor.scss" lang="scss"></style>
