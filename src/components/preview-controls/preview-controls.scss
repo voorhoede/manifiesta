@@ -1,6 +1,20 @@
 .preview-controls {
+  margin-bottom: 16px;
+}
 
-  .preview-controls-slider {
+.preview-controls .input-group__details {
+  min-height: auto;
+}
 
+.preview-controls-select {
+  padding: 0;
+}
+
+.preview-controls-slider {
+  flex-grow: 1;
+  padding: 0;
+
+  .input-group__details {
+    display: none;
   }
 }
