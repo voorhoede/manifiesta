@@ -2,9 +2,9 @@ import { CodeMirror } from 'vue-codemirror'
 import { Validator } from 'jsonschema'
 import schema from './manifest-schema'
 import jsonLint from 'json-lint'
-require('codemirror/mode/javascript/javascript')
-require('codemirror/addon/lint/lint.js')
-require('codemirror/addon/lint/lint.css')
+require('../../node_modules/codemirror/mode/javascript/javascript')
+require('../../node_modules/codemirror/addon/lint/lint.js')
+require('../../node_modules/codemirror/addon/lint/lint.css')
 
 const validator = new Validator()
 const tabSize = 2
