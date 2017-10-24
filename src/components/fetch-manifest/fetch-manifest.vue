@@ -1,7 +1,7 @@
 <template>
   <v-form v-model="urlValid" @submit.prevent="handleSubmit" class="fetch-manifest">
     <v-text-field label="URL" v-model="fetchUrl" :rules="urlErrors" required></v-text-field>
-    <v-btn :disabled="disabled" @click.prevent="handleSubmit">
+    <v-btn class="fetch-manifest__button" :disabled="disabled" @click.prevent="handleSubmit">
       <template v-if="isFetching">Fetching ... </template>
       <template v-else>Fetch manifest</template>
     </v-btn>

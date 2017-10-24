@@ -14,40 +14,40 @@ $chrome-prompt-padding: 14px;
   transition: .5s;
 }
 
-.chrome-prompt.is-open {
+.chrome-prompt--is-open {
   transform: translateY(0);
 }
 
-.chrome-prompt-content {
+.chrome-prompt__content {
   margin-bottom: 16px;
 }
 
-.chrome-prompt-image {
+.chrome-prompt__image {
   display: inline-block;
   width: 36px;
 }
 
-.chrome-prompt-image img {
+.chrome-prompt__image img {
   display: block;
   width: 100%;
 }
 
-.chrome-prompt-information {
+.chrome-prompt__information {
   display: inline-block;
   vertical-align: top;
   padding-left: 7px;
 }
 
-.chrome-prompt-title {
+.chrome-prompt__title {
   margin-bottom: 8px;
 }
 
-.chrome-prompt-url {
+.chrome-prompt__url {
   font-size: 12px;
   font-weight: 300;
 }
 
-.chrome-prompt-close {
+.chrome-prompt__close {
   position: absolute;
   top: $chrome-prompt-padding;
   right: $chrome-prompt-padding;
@@ -57,29 +57,27 @@ $chrome-prompt-padding: 14px;
   padding: 0;
   background: 0;
   line-height: 1;
+  color: $font-color-grey;
 }
 
-.chrome-prompt-close svg {
+.chrome-prompt__svg {
   width: 100%;
   height: 100%;
 }
 
-.chrome-prompt-close path {
+.chrome-prompt__path {
   fill: $font-color-grey;
 }
 
-.chrome-prompt-close {
-  color: $font-color-grey;
-}
 
-.chrome-prompt-label {
+.chrome-prompt__label {
   font-size: 0;
   height: 1px;
   overflow: hidden;
   display: block;
 }
 
-.chrome-prompt-add {
+.chrome-prompt__add {
   float: right;
   background: $chrome-prompt-button-color;
   text-transform: uppercase;
@@ -88,6 +86,6 @@ $chrome-prompt-padding: 14px;
   padding: 8px 16px;
 }
 
-.chrome-prompt-add[disabled] {
+.chrome-prompt__add[disabled] {
   background: $button-color-disabled
 }

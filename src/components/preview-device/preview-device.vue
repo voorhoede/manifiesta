@@ -1,7 +1,7 @@
 <template>
   <div class="preview-device" :class="`preview-device--${device}`">
-    <span class="preview-device-time">{{time}}</span>
-    <div class="preview-device-content">
+    <span class="preview-device__time">{{time}}</span>
+    <div class="preview-device__content">
       <slot></slot>
     </div>
   </div>

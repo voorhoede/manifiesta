@@ -6,15 +6,15 @@
   min-height: auto;
 }
 
-.preview-controls-select {
+.preview-controls__select {
   padding: 0;
 }
 
-.preview-controls-slider {
+.preview-controls__slider {
   flex-grow: 1;
   padding: 0;
+}
 
-  .input-group__details {
-    display: none;
-  }
+.preview-controls__slider .input-group__details {
+  display: none;
 }

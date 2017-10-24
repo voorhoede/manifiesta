@@ -23,11 +23,11 @@ $nexus-5x-url: '/static/images/nexus-5x.png';
   transform: scale($nexus-5x-scale);
 }
 
-.preview-device-time {
+.preview-device__time {
   position: absolute;
 }
 
-.preview-device--nexus-5x .preview-device-time {
+.preview-device--nexus-5x .preview-device__time {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 600;
@@ -39,7 +39,7 @@ $nexus-5x-url: '/static/images/nexus-5x.png';
   padding-right: $nexus-5x-status-padding-right;
 }
 
-.preview-device-content {
+.preview-device__content {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -47,7 +47,7 @@ $nexus-5x-url: '/static/images/nexus-5x.png';
   overflow: hidden;
 }
 
-.preview-device--nexus-5x .preview-device-content {
+.preview-device--nexus-5x .preview-device__content {
   top: $nexus-5x-case-top + $nexus-5x-status-bar;
   left: $nexus-5x-case-left;
   width: calc(100% - #{$nexus-5x-case-left + $nexus-5x-case-right});

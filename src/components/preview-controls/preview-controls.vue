@@ -1,7 +1,7 @@
 <template>
   <v-toolbar class="preview-controls white elevation-1">
-    <v-select disabled :items="browsers" v-model="browser" class="preview-controls-select mr-4"></v-select>
-    <v-slider disabled class="preview-controls-slider mr-4" v-model="zoomLevel" :min="zoomLevelMin" :max="zoomLevelMax" :step="zoomStep" snap :label="computedZoomLevel"></v-slider>
+    <v-select disabled :items="browsers" v-model="browser" class="preview-controls__select mr-4"></v-select>
+    <v-slider disabled class="preview-controls__slider mr-4" v-model="zoomLevel" :min="zoomLevelMin" :max="zoomLevelMax" :step="zoomStep" snap :label="computedZoomLevel"></v-slider>
     <v-btn-toggle v-model="toggleView" mandatory class="mr-4">
       <v-btn flat disabled>
         <v-icon left >mdi-view-column</v-icon>

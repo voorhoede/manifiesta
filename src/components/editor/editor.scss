@@ -3,34 +3,34 @@
 .editor {
   display: flex;
   flex-direction: column;
+}
 
-  .sw-checkbox {
-    flex-grow: 0;
-    padding: 0 16px;
-    margin-bottom: 16px;
-  }
+.editor__sw-checkbox {
+  flex-grow: 0;
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
 
-  .sw-checkbox .input-group__details {
-    display: none;
-  }
+.editor__sw-checkbox .input-group__details {
+  display: none;
+}
 
-  .fetching, .no-manifest {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-top: 1px solid $manifest-border-color;
-    border-bottom: 1px solid $manifest-border-color;
-    padding: 0 16px;
-  }
+.editor__fetching, .editor__no-manifest {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid $manifest-border-color;
+  border-bottom: 1px solid $manifest-border-color;
+  padding: 0 16px;
+}
 
-  .create-manifest {
-    margin-bottom: 12px;
-  }
+.editor__create-manifest {
+  margin-bottom: 12px;
+}
 
-  .error-message {
-    font-size: .8em;
-    color: $color-red;
-  }
+.editor__error-message {
+  font-size: .8em;
+  color: $color-red;
 }

@@ -3,17 +3,17 @@
     <fetch-manifest :setManifest="setManifest" :url="url"
     :setUrl="setUrl" :isFetching="isFetching"
     :setIsFetching="setIsFetching" :setError="setError"></fetch-manifest>
-    <div v-if="isFetching" class="fetching">
+    <div v-if="isFetching" class="editor__fetching">
       <p>Searching for manifest ... </p>
       <v-progress-linear :indeterminate="true"></v-progress-linear>
     </div>
-    <div v-if="noManifestAfterSearch" class="no-manifest">
+    <div v-if="noManifestAfterSearch" class="editor__no-manifest">
       <p>No manifest found on the given url</p>
-      <v-btn color="primary" @click="setSkeleton" class="create-manifest">Create a manifest</v-btn>
-      <p class="error-message">{{error}}</p>
+      <v-btn color="primary" @click="setSkeleton" class="editor__create-manifest">Create a manifest</v-btn>
+      <p class="editor__error-message">{{error}}</p>
     </div>
     <template v-if="!manifestIsEmpty">
-      <div class="sw-checkbox">
+      <div class="editor__sw-checkbox">
         <v-checkbox v-model="checkbox" label="Has a Service Worker"></v-checkbox>
       </div>
       <manifest-editor :manifest="manifest" :setManifest="setManifest"></manifest-editor>

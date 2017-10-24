@@ -49,5 +49,3 @@
     }
   }
 </script>
-
-<style src="./app.scss" lang="scss"></style>
