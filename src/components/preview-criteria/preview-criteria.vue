@@ -13,22 +13,18 @@
 </template>
 
 <script>
+  import VueTypes from 'vue-types'
   import listCriteria from '../../lib/chrome-prompt-criteria'
 
   export default {
     props: {
-      url: {
-        type: String,
-        required: true
-      },
-      manifest: {
-        type: Object,
-        required: true
-      }
+      url: VueTypes.string.isRequired,
+      manifest: VueTypes.object.isRequired,
+      hasSw: VueTypes.bool.isRequired
     },
     computed: {
       criteriaList () {
-        return listCriteria({url: this.url, hasSw: true, manifest: this.manifest})
+        return listCriteria({url: this.url, hasSw: this.hasSw, manifest: this.manifest})
       }
     }
   }

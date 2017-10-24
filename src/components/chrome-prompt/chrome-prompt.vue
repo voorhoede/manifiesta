@@ -21,18 +21,16 @@
 </template>
 
 <script>
+  import VueTypes from 'vue-types'
   import listCriteria from '../../lib/chrome-prompt-criteria'
+
+  const delayTimer = 2000
 
   export default {
     props: {
-      manifest: {
-        type: Object,
-        required: true
-      },
-      url: {
-        type: String,
-        required: true
-      }
+      manifest: VueTypes.object.isRequired,
+      url: VueTypes.string.isRequired,
+      hasSw: VueTypes.bool.isRequired
     },
     data () {
       return {
@@ -43,8 +41,14 @@
     },
     computed: {
       meetsAllCriteria () {
-        const criteria = listCriteria({url: this.url, hasSw: true, manifest: this.manifest})
-        return Object.keys(criteria).every(Boolean)
+        const criteria = listCriteria({url: this.url, hasSw: this.hasSw, manifest: this.manifest})
+        const meetsAllCriteria = Object.values(criteria).every(Boolean)
+        if (meetsAllCriteria) {
+          return true
+        }
+
+        this.reset()
+        return false
       },
       hostname () {
         return new URL(this.url).hostname
@@ -60,9 +64,7 @@
       }
     },
     created () {
-      setTimeout(() => {
-        this.isOpen = true
-      }, 2000)
+      this.start()
     },
     methods: {
       close: function () {
@@ -80,6 +82,17 @@
         }
 
         // Add functionality for the flow, to go to the splash screen
+      },
+      reset: function () {
+        this.isOpen = false
+        this.isAdded = false
+        this.loading = false
+        this.start()
+      },
+      start: function () {
+        setTimeout(() => {
+          this.isOpen = true
+        }, delayTimer)
       }
     }
   }

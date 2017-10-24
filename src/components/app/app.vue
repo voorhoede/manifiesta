@@ -1,9 +1,9 @@
 <template>
   <div class="app">
     <v-app>
-      <editor :isOpen="editorIsOpen" :manifest="manifest" :setManifest="setManifest" :url="url" :setUrl="setUrl"></editor>
+      <editor :isOpen="editorIsOpen" :manifest="manifest" :setManifest="setManifest" :url="url" :setUrl="setUrl" :setHasSw="setHasSw"></editor>
       <app-header :toggleEditor="toggleEditor"></app-header>
-      <preview v-if="url" :manifest="manifest" :url="url"></preview>
+      <preview v-if="url" :manifest="manifest" :url="url" :hasSw="hasSw"></preview>
     </v-app>
   </div>
 </template>
@@ -23,6 +23,7 @@
       return {
         url: '',
         manifest: {},
+        hasSw: false,
         editorIsOpen: true
       }
     },
@@ -41,6 +42,9 @@
             this.manifest = JSON.parse(value)
           } catch (error) {}
         }
+      },
+      setHasSw (value) {
+        this.hasSw = value
       }
     }
   }

@@ -7,13 +7,11 @@
 <script>
   import fetchHeaders from '../../lib/fetch-headers'
   import fetchScreenshot from '../../lib/fetch-screenshot'
+  import VueTypes from 'vue-types'
 
   export default {
     props: {
-      url: {
-        type: String,
-        required: true
-      }
+      url: VueTypes.string.isRequired
     },
     data () {
       return {
