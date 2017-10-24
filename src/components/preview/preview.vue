@@ -5,10 +5,10 @@
       <div class="preview__column">
         <preview-device device="nexus-5x">
           <chrome-nav></chrome-nav>
-          <chrome-prompt v-if="Object.keys(manifest).length" :manifest="manifest" :url="url"></chrome-prompt>
+          <chrome-prompt v-if="Object.keys(manifest).length" :manifest="manifest" :url="url" :hasSw="hasSw"></chrome-prompt>
           <browser-viewport :url="url"></browser-viewport>
         </preview-device>
-        <preview-criteria :manifest="manifest" :url="url"></preview-criteria>
+        <preview-criteria :manifest="manifest" :url="url" :hasSw="hasSw"></preview-criteria>
       </div>
     </v-content>
   </main>
@@ -34,7 +34,8 @@
     },
     props: {
       manifest: VueTypes.object.isRequired,
-      url: VueTypes.string.isRequired
+      url: VueTypes.string.isRequired,
+      hasSw: VueTypes.bool.isRequired
     }
   }
 </script>

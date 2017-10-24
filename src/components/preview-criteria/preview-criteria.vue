@@ -19,11 +19,12 @@
   export default {
     props: {
       url: VueTypes.string.isRequired,
-      manifest: VueTypes.object.isRequired
+      manifest: VueTypes.object.isRequired,
+      hasSw: VueTypes.bool.isRequired
     },
     computed: {
       criteriaList () {
-        return listCriteria({url: this.url, hasSw: true, manifest: this.manifest})
+        return listCriteria({url: this.url, hasSw: this.hasSw, manifest: this.manifest})
       }
     }
   }
