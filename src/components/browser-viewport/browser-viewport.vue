@@ -36,22 +36,22 @@
         const height = Math.ceil(dimensions.height * dpr)
         return { width, height }
       },
-      fetchScreenshot: function (url) {
-        const { width, height } = this.getDimensions()
-        this.imageUrl = undefined
-        fetchScreenshot({ url, width, height })
-          .then(this.setImageFromBlob)
-          .catch(this.showError)
-      },
       setImageFromBlob: function (imageBlob) {
         this.imageUrl = URL.createObjectURL(imageBlob)
       },
       setFrameable: function (url, isFrameable) {
         this.isFrameable = isFrameable
-        if (!isFrameable) this.fetchScreenshot(url)
+        if (!isFrameable) this.useScreenshot(url)
       },
       showError: function (error) {
         console.error(error.message)
+      },
+      useScreenshot: function (url) {
+        const { width, height } = this.getDimensions()
+        this.imageUrl = undefined
+        fetchScreenshot({ url, width, height })
+          .then(this.setImageFromBlob)
+          .catch(this.showError)
       }
     },
     watch: {
