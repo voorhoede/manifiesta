@@ -81,7 +81,7 @@
     "webshot-service": "jbmoelker/webshot"
   },
   "engines": {
-    "node": ">= 8.0.0",
+    "node": ">= 8.6.0",
     "npm": ">= 3.0.0"
   },
   "browserslist": [
