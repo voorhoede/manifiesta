@@ -5,6 +5,9 @@
 </template>
 
 <script>
+  import fetchHeaders from '../../lib/fetch-headers'
+  import fetchScreenshot from '../../lib/fetch-screenshot'
+
   export default {
     props: {
       url: {
@@ -24,40 +27,33 @@
     methods: {
       checkFrameOptions: function (url) {
         this.isFrameable = true
-        fetch(`${process.env.FETCH_HEADERS_API}?url=${url}`)
-          .then(response => response.json())
-          .then(({ errors, headers = [] }) => {
-            if (errors) {
-              return Promise.reject(errors[9])
-            }
-            const xFrameOptions = headers['x-frame-options']
-            if (xFrameOptions) {
-              this.isFrameable = false
-              this.fetchScreenshot(url)
-            } else {
-              this.isFrameable = true
-            }
-          })
+        fetchHeaders(url)
+          .then(headers => this.setFrameable(url, !headers['x-frame-options']))
+          .catch(this.showError)
       },
-      fetchScreenshot: function (url) {
+      getDimensions: function () {
         const dimensions = this.$el.getBoundingClientRect()
         const dpr = window.devicePixelRatio
         const width = Math.ceil(dimensions.width * dpr)
         const height = Math.ceil(dimensions.height * dpr)
+        return { width, height }
+      },
+      fetchScreenshot: function (url) {
+        const { width, height } = this.getDimensions()
         this.imageUrl = undefined
-        fetch(`${process.env.WEBSHOT_API}?url=${url}&w=${width}&h=${height}`)
-          .then(response => {
-            if (response.ok) {
-              return response.blob()
-            } else {
-              return response.json()
-                .then(json => Promise.reject(json.errors[0]))
-            }
-          })
-          .then(imageBlob => {
-            this.imageUrl = URL.createObjectURL(imageBlob)
-          })
-          .catch(error => console.error(error.message))
+        fetchScreenshot({ url, width, height })
+          .then(this.setImageFromBlob)
+          .catch(this.showError)
+      },
+      setImageFromBlob: function (imageBlob) {
+        this.imageUrl = URL.createObjectURL(imageBlob)
+      },
+      setFrameable: function (url, isFrameable) {
+        this.isFrameable = isFrameable
+        if (!isFrameable) this.fetchScreenshot(url)
+      },
+      showError: function (error) {
+        console.error(error.message)
       }
     },
     watch: {
