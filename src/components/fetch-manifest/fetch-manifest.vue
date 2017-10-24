@@ -9,34 +9,17 @@
 </template>
 
 <script>
+  import VueTypes from 'vue-types'
   const invalidUrlError = 'Invalid url'
 
   export default {
     props: {
-      setManifest: {
-        type: Function,
-        required: true
-      },
-      url: {
-        type: String,
-        required: true
-      },
-      setUrl: {
-        type: Function,
-        required: true
-      },
-      isFetching: {
-        type: Boolean,
-        required: true
-      },
-      setIsFetching: {
-        type: Function,
-        required: true
-      },
-      setError: {
-        type: Function,
-        required: true
-      }
+      setManifest: VueTypes.func.isRequired,
+      url: VueTypes.string.isRequired,
+      setUrl: VueTypes.func.isRequired,
+      isFetching: VueTypes.bool.isRequired,
+      setIsFetching: VueTypes.func.isRequired,
+      setError: VueTypes.func.isRequired
     },
     data () {
       return {
@@ -66,7 +49,7 @@
       fetchManifest () {
         this.setIsFetching(true)
         this.setManifest({})
-        fetch(`https://fetch-manifest.now.sh/?url=${this.fetchUrl}`)
+        fetch(`${process.env.FETCH_MANIFEST_API}?url=${this.fetchUrl}`)
           .then(response => response.json())
           .then(response => {
             if (response.errors) {

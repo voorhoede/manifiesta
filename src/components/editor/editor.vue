@@ -23,6 +23,7 @@
 </template>
 
 <script>
+  import VueTypes from 'vue-types'
   import manifestSkeleton from '../../lib/manifest-skeleton.json'
   import FetchManifest from '../fetch-manifest/fetch-manifest'
   import ManifestEditor from '../manifest-editor/manifest-editor'
@@ -35,30 +36,12 @@
       ManifestErrors
     },
     props: {
-      isOpen: {
-        type: Boolean,
-        required: true
-      },
-      manifest: {
-        type: Object,
-        required: true
-      },
-      setManifest: {
-        type: Function,
-        required: true
-      },
-      url: {
-        type: String,
-        required: true
-      },
-      setUrl: {
-        type: Function,
-        required: true
-      },
-      setHasSw: {
-        type: Function,
-        required: true
-      }
+      isOpen: VueTypes.bool.isRequired,
+      manifest: VueTypes.object.isRequired,
+      setManifest: VueTypes.func.isRequired,
+      url: VueTypes.string.isRequired,
+      setUrl: VueTypes.func.isRequired,
+      setHasSw: VueTypes.func.isRequired
     },
     data () {
       return {

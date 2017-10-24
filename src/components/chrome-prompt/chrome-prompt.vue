@@ -21,24 +21,16 @@
 </template>
 
 <script>
+  import VueTypes from 'vue-types'
   import listCriteria from '../../lib/chrome-prompt-criteria'
 
   const delayTimer = 2000
 
   export default {
     props: {
-      manifest: {
-        type: Object,
-        required: true
-      },
-      url: {
-        type: String,
-        required: true
-      },
-      hasSw: {
-        type: Boolean,
-        required: true
-      }
+      manifest: VueTypes.object.isRequired,
+      url: VueTypes.string.isRequired,
+      hasSw: VueTypes.bool.isRequired
     },
     data () {
       return {

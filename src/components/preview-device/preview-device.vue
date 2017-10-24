@@ -8,14 +8,12 @@
 </template>
 
 <script>
+  import VueTypes from 'vue-types'
   import getTime from '../../lib/get-time'
 
   export default {
     props: {
-      device: {
-        type: String,
-        required: true
-      }
+      device: VueTypes.string.isRequired
     },
     data () {
       return {
