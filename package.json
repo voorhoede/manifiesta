@@ -18,6 +18,7 @@
     "json-lint": "0.1.0",
     "jsonschema": "1.2.0",
     "vue": "^2.4.2",
+    "vue-types": "1.0.2",
     "vuetify": "0.16.7"
   },
   "devDependencies": {
