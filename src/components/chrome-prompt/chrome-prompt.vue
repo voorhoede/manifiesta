@@ -23,6 +23,8 @@
 <script>
   import listCriteria from '../../lib/chrome-prompt-criteria'
 
+  const delayTimer = 2000
+
   export default {
     props: {
       manifest: {
@@ -98,7 +100,7 @@
       start: function () {
         setTimeout(() => {
           this.isOpen = true
-        }, 2000)
+        }, delayTimer)
       }
     }
   }
