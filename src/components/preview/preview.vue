@@ -1,24 +1,27 @@
 <template>
-  <main>
+  <main class="preview">
     <v-content>
       <preview-controls></preview-controls>
-      <preview-device>
-        <chrome-nav></chrome-nav>
-        <chrome-prompt></chrome-prompt>
-        <browser-viewport></browser-viewport>
-      </preview-device>
-      <preview-errors></preview-errors>
+      <div class="preview__column">
+        <preview-device device="nexus-5x">
+          <chrome-nav></chrome-nav>
+          <chrome-prompt v-if="Object.keys(manifest).length" :manifest="manifest" :url="url" :hasSw="hasSw"></chrome-prompt>
+          <browser-viewport :url="url"></browser-viewport>
+        </preview-device>
+        <preview-criteria :manifest="manifest" :url="url" :hasSw="hasSw"></preview-criteria>
+      </div>
     </v-content>
   </main>
 </template>
 
 <script>
+  import VueTypes from 'vue-types'
   import BrowserViewport from '../browser-viewport/browser-viewport'
   import ChromePrompt from '../chrome-prompt/chrome-prompt'
   import ChromeNav from '../chrome-nav/chrome-nav'
   import PreviewControls from '../preview-controls/preview-controls'
   import PreviewDevice from '../preview-device/preview-device'
-  import PreviewErrors from '../preview-errors/preview-errors'
+  import PreviewCriteria from '../preview-criteria/preview-criteria'
 
   export default {
     components: {
@@ -27,7 +30,14 @@
       ChromeNav,
       PreviewControls,
       PreviewDevice,
-      PreviewErrors
+      PreviewCriteria
+    },
+    props: {
+      manifest: VueTypes.object.isRequired,
+      url: VueTypes.string.isRequired,
+      hasSw: VueTypes.bool.isRequired
     }
   }
 </script>
+
+<style src="./preview.scss" lang="scss"></style>

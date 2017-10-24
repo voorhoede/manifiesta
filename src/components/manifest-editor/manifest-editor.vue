@@ -5,18 +5,21 @@
 </template>
 
 <script>
-  import {manifestStore} from '../../lib/manifest-store'
+  import VueTypes from 'vue-types'
   import debounce from '../../lib/debounce'
-  import { codemirror } from 'vue-codemirror'
+  import {codemirror} from 'vue-codemirror'
   require('../../lib/codemirror-lint-manifest')
 
   export default {
     components: {
       codemirror
     },
+    props: {
+      manifest: VueTypes.object.isRequired,
+      setManifest: VueTypes.func.isRequired
+    },
     data () {
       return {
-        code: JSON.stringify(manifestStore.data, null, '\t'),
         options: {
           mode: {
             name: 'javascript',
@@ -30,10 +33,15 @@
         }
       }
     },
-    watch: {
-      code: debounce(function (val) {
-        manifestStore.set(val)
-      }, 250)
+    computed: {
+      code: {
+        get () {
+          return JSON.stringify(this.manifest, null, '\t')
+        },
+        set: debounce(function (value) {
+          this.setManifest(value)
+        }, 250)
+      }
     }
   }
 </script>

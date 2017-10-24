@@ -1,5 +1,5 @@
 <template>
-  <div class="chrome-prompt" :class="{ 'is-open': isOpen}">
+  <div v-if="meetsAllCriteria" class="chrome-prompt" :class="{ 'is-open': isOpen}">
     <div class="chrome-prompt-content">
       <div class="chrome-prompt-image">
         <img :src="imageUrl" />
@@ -21,35 +21,50 @@
 </template>
 
 <script>
-  import {manifestStore} from '../../lib/manifest-store'
+  import VueTypes from 'vue-types'
+  import listCriteria from '../../lib/chrome-prompt-criteria'
+
+  const delayTimer = 2000
 
   export default {
+    props: {
+      manifest: VueTypes.object.isRequired,
+      url: VueTypes.string.isRequired,
+      hasSw: VueTypes.bool.isRequired
+    },
     data () {
       return {
-        manifestStore,
         isOpen: false,
         isAdded: false,
         loading: false
       }
     },
     computed: {
+      meetsAllCriteria () {
+        const criteria = listCriteria({url: this.url, hasSw: this.hasSw, manifest: this.manifest})
+        const meetsAllCriteria = Object.values(criteria).every(Boolean)
+        if (meetsAllCriteria) {
+          return true
+        }
+
+        this.reset()
+        return false
+      },
       hostname () {
-        return new URL(this.manifestStore.data.url).hostname
+        return new URL(this.url).hostname
       },
       promptTitle () {
-        return this.manifestStore.data.short_name
+        return this.manifest.short_name
       },
       imageUrl () {
-        return this.manifestStore.data.url + this.manifestStore.data.icons[0].src
+        return this.url + this.manifest.icons[0].src
       },
       buttonText () {
         return (this.isAdded) ? 'Open' : 'Add'
       }
     },
     created () {
-      setTimeout(() => {
-        this.isOpen = true
-      }, 2000)
+      this.start()
     },
     methods: {
       close: function () {
@@ -67,6 +82,17 @@
         }
 
         // Add functionality for the flow, to go to the splash screen
+      },
+      reset: function () {
+        this.isOpen = false
+        this.isAdded = false
+        this.loading = false
+        this.start()
+      },
+      start: function () {
+        setTimeout(() => {
+          this.isOpen = true
+        }, delayTimer)
       }
     }
   }
