@@ -1,6 +1,34 @@
 @import './styles/reset.scss';
 @import './styles/variables.scss';
 
+@font-face {
+  font-family: 'Roboto';
+  src: url('/static/fonts/roboto-light.woff2') format('woff2'),
+       url('/static/fonts/roboto-light.woff') format('woff');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/static/fonts/roboto-regular.woff2') format('woff2'),
+       url('/static/fonts/roboto-regular.woff') format('woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/static/fonts/roboto-medium.woff2') format('woff2'),
+       url('/static/fonts/roboto-medium.woff') format('woff');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/static/fonts/roboto-bold.woff2') format('woff2'),
+       url('/static/fonts/roboto-bold.woff') format('woff');
+  font-weight: 700;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -10,8 +38,12 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
   color: $font-color-default;
+}
+
+.fonts-loaded body {
+  font-family: 'roboto', sans-serif;
 }
 
 .a11y-only {

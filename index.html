@@ -5,7 +5,37 @@
   <meta charset="utf-8">
   <title>manifiesta</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script>
+    (function(document) {
+      var script = document.createElement('script');
+      script.src = '/static/js/fontfaceobserver.min.js';
+      script.async = true;
+      script.onload = function() {
+        loadFonts().then(onFontsLoaded);
+      };
+
+      document.head.appendChild(script);
+
+      function loadFonts() {
+        var font300 = new FontFaceObserver('roboto', { weight: 300 });
+        var font400 = new FontFaceObserver('roboto', { weight: 400 });
+        var font500 = new FontFaceObserver('roboto', { weight: 500 });
+        var font700 = new FontFaceObserver('roboto', { weight: 700 });
+
+        return Promise.all([
+          font300.load(),
+          font400.load(),
+          font500.load(),
+          font700.load()
+        ]);
+      }
+
+      function onFontsLoaded() {
+        document.documentElement.className += ' fonts-loaded';
+      }
+    }(document));
+  </script>
 </head>
 
 <body>
