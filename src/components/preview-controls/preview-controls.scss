@@ -1,5 +1,7 @@
+@import '../../main.scss';
+
 .preview-controls {
-  margin-bottom: 16px;
+  margin-bottom: $default-space;
 }
 
 .preview-controls .input-group__details {

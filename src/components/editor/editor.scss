@@ -7,8 +7,8 @@
 
 .editor__sw-checkbox {
   flex-grow: 0;
-  padding: 0 16px;
-  margin-bottom: 16px;
+  padding: 0 $default-space;
+  margin-bottom: $default-space;
 }
 
 .editor__sw-checkbox .input-group__details {
@@ -23,11 +23,11 @@
   align-items: center;
   border-top: 1px solid $manifest-border-color;
   border-bottom: 1px solid $manifest-border-color;
-  padding: 0 16px;
+  padding: 0 $default-space;
 }
 
 .editor__create-manifest {
-  margin-bottom: 12px;
+  margin-bottom: $default-space * .75;
 }
 
 .editor__error-message {

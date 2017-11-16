@@ -1,5 +1,7 @@
+@import '../../main.scss';
+
 .fetch-manifest {
-  padding: 16px;
+  padding: $default-space;
 }
 .fetch-manifest_button {
   margin: 0;
