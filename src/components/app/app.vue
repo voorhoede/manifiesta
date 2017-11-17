@@ -2,7 +2,7 @@
   <div class="app">
     <v-app>
       <editor :isOpen="editorIsOpen" :manifest="manifest" :setManifest="setManifest" :url="url" :setUrl="setUrl" :setHasSw="setHasSw"></editor>
-      <app-header :toggleEditor="toggleEditor"></app-header>
+      <app-header :toggleEditor="toggleEditor" :isOpen="editorIsOpen"></app-header>
       <previews v-if="url" :manifest="manifest" :url="url" :hasSw="hasSw"></previews>
     </v-app>
   </div>
