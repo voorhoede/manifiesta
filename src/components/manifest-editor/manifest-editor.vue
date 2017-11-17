@@ -7,7 +7,7 @@
 <script>
   import VueTypes from 'vue-types'
   import debounce from '../../lib/debounce'
-  import {codemirror} from 'vue-codemirror'
+  import { codemirror } from 'vue-codemirror-lite'
   require('../../lib/codemirror-lint-manifest')
 
   export default {

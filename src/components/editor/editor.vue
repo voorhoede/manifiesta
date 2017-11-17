@@ -26,8 +26,17 @@
   import VueTypes from 'vue-types'
   import manifestSkeleton from '../../lib/manifest-skeleton.json'
   import FetchManifest from '../fetch-manifest/fetch-manifest'
-  import ManifestEditor from '../manifest-editor/manifest-editor'
   import ManifestErrors from '../manifest-errors/manifest-errors'
+
+  const ManifestEditor = () => ({
+    component: import('../manifest-editor/manifest-editor' /* webpackChunkName:"manifest editor" */),
+    loading: {
+      template: () => '<p>Loading ...</p>'
+    },
+    error: {
+      template: () => '<p>Failed to load the editor.</p>'
+    }
+  })
 
   export default {
     components: {

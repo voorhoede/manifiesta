@@ -1,4 +1,7 @@
 @import '../../main.scss';
+@import '../../../node_modules/codemirror/lib/codemirror.css';
+@import '../../../node_modules/codemirror/addon/lint/lint.css';
+@import '../../../node_modules/codemirror/theme/eclipse.css';
 
 .manifest-editor {
   flex-grow: 1;
@@ -11,4 +14,10 @@
   height: 100%;
   border-top: 1px solid $manifest-border-color;
   border-bottom: 1px solid $manifest-border-color;
+}
+
+.CodeMirror pre {
+  font-size: 1em;
+  font-family: monospace;
+  line-height: 1.6;
 }

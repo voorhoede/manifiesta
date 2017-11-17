@@ -9,6 +9,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+const PreloadWebpackPlugin = require('preload-webpack-plugin')
 
 const env = config.build.env
 
@@ -94,7 +95,11 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+    new PreloadWebpackPlugin({
+      rel: 'prefetch',
+      include: 'asyncChunks'
+    })
   ]
 })
 
