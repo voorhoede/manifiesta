@@ -3,7 +3,7 @@
     <v-app>
       <editor :isOpen="editorIsOpen" :manifest="manifest" :setManifest="setManifest" :url="url" :setUrl="setUrl" :setHasSw="setHasSw"></editor>
       <app-header :toggleEditor="toggleEditor"></app-header>
-      <preview v-if="url" :manifest="manifest" :url="url" :hasSw="hasSw"></preview>
+      <previews v-if="url" :manifest="manifest" :url="url" :hasSw="hasSw"></previews>
     </v-app>
   </div>
 </template>
@@ -11,13 +11,13 @@
 <script>
   import AppHeader from '../app-header/app-header'
   import Editor from '../editor/editor'
-  import Preview from '../preview/preview'
+  import Previews from '../previews/previews'
 
   export default {
     components: {
       AppHeader,
       Editor,
-      Preview
+      Previews
     },
     data () {
       return {
