@@ -1,5 +1,5 @@
 <template>
-  <div v-if="meetsAllCriteria" class="chrome-prompt" :class="{ 'chrome-prompt--is-open': isOpen}">
+  <div class="chrome-prompt" :class="{ 'chrome-prompt--is-open': isOpen}">
     <div class="chrome-prompt__content">
       <div class="chrome-prompt__image">
         <img :src="imageUrl" />
@@ -22,15 +22,13 @@
 
 <script>
   import VueTypes from 'vue-types'
-  import listCriteria from '../../lib/chrome-prompt-criteria'
 
   const delayTimer = 2000
 
   export default {
     props: {
       manifest: VueTypes.object.isRequired,
-      url: VueTypes.string.isRequired,
-      hasSw: VueTypes.bool.isRequired
+      url: VueTypes.string.isRequired
     },
     data () {
       return {
@@ -40,16 +38,6 @@
       }
     },
     computed: {
-      meetsAllCriteria () {
-        const criteria = listCriteria({url: this.url, hasSw: this.hasSw, manifest: this.manifest})
-        const meetsAllCriteria = Object.values(criteria).every(Boolean)
-        if (meetsAllCriteria) {
-          return true
-        }
-
-        this.reset()
-        return false
-      },
       hostname () {
         return new URL(this.url).hostname
       },
@@ -64,7 +52,9 @@
       }
     },
     created () {
-      this.start()
+      setTimeout(() => {
+        this.isOpen = true
+      }, delayTimer)
     },
     methods: {
       close: function () {
@@ -82,17 +72,6 @@
         }
 
         // Add functionality for the flow, to go to the splash screen
-      },
-      reset: function () {
-        this.isOpen = false
-        this.isAdded = false
-        this.loading = false
-        this.start()
-      },
-      start: function () {
-        setTimeout(() => {
-          this.isOpen = true
-        }, delayTimer)
       }
     }
   }
