@@ -1,6 +1,6 @@
 <template>
   <section class="preview-criteria">
-    <h3 class="preview-criteria__title">Criteria for the Chrome install prompt:</h3>
+    <h3 class="preview-criteria__title">Criteria for the {{ browser.text }} install prompt:</h3>
     <ul class="preview-criteria__list">
       <li v-for="(value, text) in criteriaList" :key="text"
       class="preview-criteria__item" :class="value ? 'preview-criteria__item--pass' : 'preview-criteria__item--fail'">
@@ -17,6 +17,7 @@
 
   export default {
     props: {
+      browser: VueTypes.object.isRequired,
       criteriaList: VueTypes.object.isRequired
     }
   }

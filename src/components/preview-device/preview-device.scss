@@ -1,55 +1,67 @@
-$nexus-5x-scale: 1;
-$nexus-5x-width: 452px;
-$nexus-5x-height: 918px;
-$nexus-5x-case-top: 88px;
-$nexus-5x-case-right: 22px;
-$nexus-5x-case-bottom: 146px;
-$nexus-5x-case-left: 18px;
-$nexus-5x-status-bar: 24px;
-$nexus-5x-status-padding-top: 6px;
-$nexus-5x-status-padding-right: 8px;
-$nexus-5x-url: '/static/images/nexus-5x.png';
+$chrome-device-offset-top: 58px;
+$chrome-device-offset-right: 16px;
+$chrome-device-offset-bottom: 68px;
+$chrome-device-offset-left: 16px;
+$chrome-status-bar-height: 18px;
+$samsung-device-offset-top: 69px;
+$samsung-device-offset-right: 18px;
+$samsung-device-offset-bottom: 72px;
+$samsung-device-offset-left: 21px;
+$samsung-status-bar-height: 18px;
 
 .preview-device {
   position: relative;
-  background-size: cover;
-  transform-origin: top left;
 }
 
-.preview-device--nexus-5x {
-  background-image: url($nexus-5x-url);
-  width: $nexus-5x-width;
-  height: $nexus-5x-height;
-  transform: scale($nexus-5x-scale);
-}
-
-.preview-device__time {
+.preview-device__status-bar {
   position: absolute;
+  display: flex;
+  align-items: center;
+  background: black;
+  color: white;
+  padding: 0 4px;
 }
 
-.preview-device--nexus-5x .preview-device__time {
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: white;
-  background: black;
-  top: $nexus-5x-case-top;
-  right: $nexus-5x-case-right;
-  padding-top: $nexus-5x-status-padding-top;
-  padding-right: $nexus-5x-status-padding-right;
+.preview-device .icon {
+  font-size: 12px;
+  vertical-align: bottom;
+}
+
+.preview-device__status-icons {
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: auto;
 }
 
 .preview-device__content {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
 }
 
-.preview-device--nexus-5x .preview-device__content {
-  top: $nexus-5x-case-top + $nexus-5x-status-bar;
-  left: $nexus-5x-case-left;
-  width: calc(100% - #{$nexus-5x-case-left + $nexus-5x-case-right});
-  height: calc(100% - #{$nexus-5x-case-top + $nexus-5x-status-bar + $nexus-5x-case-bottom});
+.preview-device--chrome .preview-device__content {
+  width: calc(100% - #{$chrome-device-offset-left + $chrome-device-offset-right});
+  height: calc(100% - #{$chrome-device-offset-top + $chrome-device-offset-bottom + $chrome-status-bar-height});
+  top: calc(#{$chrome-device-offset-top + $chrome-status-bar-height});
+  left: $chrome-device-offset-left;
+}
+
+.preview-device--chrome .preview-device__status-bar {
+  width: calc(100% - #{$chrome-device-offset-left + $chrome-device-offset-right});
+  height: $chrome-status-bar-height;
+  top: $chrome-device-offset-top;
+  left: $chrome-device-offset-left;
+}
+
+.preview-device--samsungInternet .preview-device__content {
+  width: calc(100% - #{$samsung-device-offset-left + $samsung-device-offset-right});
+  height: calc(100% - #{$samsung-device-offset-top + $samsung-device-offset-bottom + $samsung-status-bar-height});
+  top: calc(#{$samsung-device-offset-top + $samsung-status-bar-height});
+  left: $samsung-device-offset-left;
+}
+
+.preview-device--samsungInternet .preview-device__status-bar {
+  width: calc(100% - #{$samsung-device-offset-left + $samsung-device-offset-right});
+  height: $samsung-status-bar-height;
+  top: $samsung-device-offset-top;
+  left: $samsung-device-offset-left;
 }
